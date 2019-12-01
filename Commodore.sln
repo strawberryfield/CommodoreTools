@@ -7,6 +7,20 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommodoreDisk", "CommodoreD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{5B4133FF-CE52-4B63-9452-FC759E25DE31}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F095FF4C-BA28-404B-92EF-EA735F24E19F}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{36766BEE-1DA9-45BD-9B77-07FEB87BE1E7}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\D64.TXT = Docs\D64.TXT
+		Docs\D71.TXT = Docs\D71.TXT
+		Docs\D80-D82.TXT = Docs\D80-D82.TXT
+		Docs\D81.TXT = Docs\D81.TXT
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
