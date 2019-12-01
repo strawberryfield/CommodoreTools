@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsDisk" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsDisk" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsDisk" msprop:Generator_UserDSName="dsDisk">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Directory" msprop:Generator_TableClassName="DirectoryDataTable" msprop:Generator_TableVarName="tableDirectory" msprop:Generator_RowChangedName="DirectoryRowChanged" msprop:Generator_TablePropName="Directory" msprop:Generator_RowDeletingName="DirectoryRowDeleting" msprop:Generator_RowChangingName="DirectoryRowChanging" msprop:Generator_RowEvHandlerName="DirectoryRowChangeEventHandler" msprop:Generator_RowDeletedName="DirectoryRowDeleted" msprop:Generator_RowClassName="DirectoryRow" msprop:Generator_UserTableName="Directory" msprop:Generator_RowEvArgName="DirectoryRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Filename" msprop:Generator_ColumnVarNameInTable="columnFilename" msprop:Generator_ColumnPropNameInRow="Filename" msprop:Generator_ColumnPropNameInTable="FilenameColumn" msprop:Generator_UserColumnName="Filename" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="FileType" msprop:Generator_ColumnVarNameInTable="columnFileType" msprop:Generator_ColumnPropNameInRow="FileType" msprop:Generator_ColumnPropNameInTable="FileTypeColumn" msprop:Generator_UserColumnName="FileType" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="FileSize" msprop:Generator_ColumnVarNameInTable="columnFileSize" msprop:Generator_ColumnPropNameInRow="FileSize" msprop:Generator_ColumnPropNameInTable="FileSizeColumn" msprop:Generator_UserColumnName="FileSize" type="xs:short" default="0" minOccurs="0" />
+              <xs:element name="Locked" msprop:Generator_ColumnVarNameInTable="columnLocked" msprop:Generator_ColumnPropNameInRow="Locked" msprop:Generator_ColumnPropNameInTable="LockedColumn" msprop:Generator_UserColumnName="Locked" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="Closed" msprop:Generator_ColumnVarNameInTable="columnClosed" msprop:Generator_ColumnPropNameInRow="Closed" msprop:Generator_ColumnPropNameInTable="ClosedColumn" msprop:Generator_UserColumnName="Closed" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="Index" msprop:Generator_ColumnVarNameInTable="columnIndex" msprop:Generator_ColumnPropNameInRow="Index" msprop:Generator_ColumnPropNameInTable="IndexColumn" msprop:Generator_UserColumnName="Index" type="xs:int" default="0" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
