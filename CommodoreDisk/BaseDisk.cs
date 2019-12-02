@@ -160,8 +160,29 @@ namespace Casasoft.Commodore.Disk
         }
         #endregion
 
+        #region Get File
         /// <summary>
-        /// Get a file
+        /// Gets a file by File Name
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <returns>file in byte array</returns>
+        public byte[] GetFile(string filename)
+        {
+            return GetFile(RootDir.GetEntry(filename));
+        }
+
+        /// <summary>
+        /// Gets a file by Index
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns>file in byte array</returns>
+        public byte[] GetFile(Int32 index)
+        {
+            return GetFile(RootDir.GetEntry(index));
+        }
+
+        /// <summary>
+        /// Gets a file by Directory Entry
         /// </summary>
         /// <param name="file">Diretory entry of file to retrieve</param>
         /// <returns>file in byte array</returns>
@@ -192,6 +213,7 @@ namespace Casasoft.Commodore.Disk
                 scanFile(prev, nextTrack, nextSector);
             }
         }
+        #endregion
 
         /// <summary>
         /// Complete directory 

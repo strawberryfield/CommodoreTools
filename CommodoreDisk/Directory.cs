@@ -39,7 +39,7 @@ namespace Casasoft.Commodore.Disk
         }
 
         /// <summary>
-        /// Load directory from disk image database
+        /// Loads directory from disk image database
         /// </summary>
         /// <param name="disk">disk image to read</param>
         /// <param name="track">directory start track</param>
@@ -72,7 +72,27 @@ namespace Casasoft.Commodore.Disk
         }
 
         /// <summary>
-        /// Print directory list to string
+        /// Gets Directory Entry by File Name
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <returns></returns>
+        public DirectoryEntry GetEntry(string filename)
+        {
+            return dir.Find(entry => entry.Filename == filename);
+        }
+
+        /// <summary>
+        /// Gets Directory Entry by Index
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        public DirectoryEntry GetEntry(Int32 index)
+        {
+            return dir.Find(entry => entry.Index == index);
+        }
+
+        /// <summary>
+        /// Prints directory list to string
         /// </summary>
         /// <returns>Formatted files list</returns>
         public string Print()
@@ -87,7 +107,7 @@ namespace Casasoft.Commodore.Disk
         }
 
         /// <summary>
-        /// Insert entries in a datatable
+        /// Inserts entries in a datatable
         /// </summary>
         /// <param name="dt">table to fill</param>
         public void ToDataTable(dsDisk.DirectoryDataTable dt)
