@@ -30,14 +30,40 @@ namespace Casasoft.Commodore.Disk
     public class BaseDisk
     {
         #region fields
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+        /// <summary>
+        /// sectors raw data
+        /// </summary>
         protected List<List<byte[]>> diskData;
-        protected int sectorSize = 256;
+
+        /// <summary>
+        /// number of sectors in each track
+        /// </summary>
         protected List<int> diskStructure;
-        protected int totalSectors = 0;
+
+        /// <summary>
+        /// bytes in each sector
+        /// </summary>
+        public int sectorSize => 256;
+
+        /// <summary>
+        /// total number of sectors in disk (reserved included)
+        /// </summary>
+        public int totalSectors { get; protected set; }
+
+        /// <summary>
+        /// total number of tracks in disk (reserved included)
+        /// </summary>
+        public int totalTracks => diskStructure.Count;
+
+        /// <summary>
+        /// Root directory
+        /// </summary>
         public Directory RootDir;
+
+        /// <summary>
+        /// Disk header and blocks table
+        /// </summary>
         public BAMbase Header;
-#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
         #endregion
 
         #region init
@@ -49,6 +75,7 @@ namespace Casasoft.Commodore.Disk
             diskData = new List<List<byte[]>>();
             diskStructure = new List<int>();
             RootDir = new Directory();
+            totalSectors = 0;
         }
 
         /// <summary>
