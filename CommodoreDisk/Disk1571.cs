@@ -25,6 +25,20 @@ namespace Casasoft.Commodore.Disk
     /// </summary>
     public class Disk1571 : BaseDisk
     {
+        #region static members
+        /// <summary>
+        /// Standard extension for disk image files
+        /// </summary>
+        /// <returns></returns>
+        public static string Extension => ".D71";
+
+        /// <summary>
+        /// Original Commodore disk model
+        /// </summary>
+        /// <returns></returns>
+        public static string Model => "1571";
+        #endregion
+
         /// <summary>
         /// Constructor
         /// </summary>

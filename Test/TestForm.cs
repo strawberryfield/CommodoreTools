@@ -30,6 +30,7 @@ namespace Casasoft.Commodore
         public TestForm()
         {
             InitializeComponent();
+            openFileDialog.Filter = CommodoreDisk.DialogFilter();
         }
 
         private void btnOpen_Click(object sender, EventArgs e)
@@ -59,11 +60,14 @@ namespace Casasoft.Commodore
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            Disk1541 disk = new Disk1541();
-            disk.Load(txtFile.Text);
-            txtOut.Text = disk.Print();
+            BaseDisk disk = CommodoreDisk.Factory(System.IO.Path.GetExtension(txtFile.Text));
+            if (disk != null)
+            {
+                disk.Load(txtFile.Text);
+                txtOut.Text = disk.Print();
 
-            disk.RootDir.ToDataTable(dsDisk.Directory);
+                disk.RootDir.ToDataTable(dsDisk.Directory);
+            }
         }
     }
 }

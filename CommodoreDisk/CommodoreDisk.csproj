@@ -48,6 +48,7 @@
     <Compile Include="BAM8250.cs" />
     <Compile Include="BAMbase.cs" />
     <Compile Include="BAMentry.cs" />
+    <Compile Include="CommodoreDisk.cs" />
     <Compile Include="dsDisk.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -25,6 +25,20 @@ namespace Casasoft.Commodore.Disk
     /// </summary>
     public class Disk8250 : BaseDisk
     {
+        #region static members
+        /// <summary>
+        /// Standard extension for disk image files
+        /// </summary>
+        /// <returns></returns>
+        public static string Extension => ".D82";
+
+        /// <summary>
+        /// Original Commodore disk model
+        /// </summary>
+        /// <returns></returns>
+        public static string Model => "8250";
+        #endregion
+
         /// <summary>
         /// Constructor
         /// </summary>
