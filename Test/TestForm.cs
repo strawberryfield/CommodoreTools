@@ -64,7 +64,7 @@ namespace Casasoft.Commodore
             if (disk != null)
             {
                 disk.Load(txtFile.Text);
-                txtOut.Text = disk.Print();
+                txtOut.Text = disk.ToString();
 
                 disk.RootDir.ToDataTable(dsDisk.Directory);
             }

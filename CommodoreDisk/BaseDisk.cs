@@ -58,12 +58,12 @@ namespace Casasoft.Commodore.Disk
         /// <summary>
         /// Root directory
         /// </summary>
-        public Directory RootDir;
+        public Directory RootDir { get; protected set; }
 
         /// <summary>
         /// Disk header and blocks table
         /// </summary>
-        public BAMbase Header;
+        public BAMbase Header { get; protected set; }
         #endregion
 
         #region init
@@ -246,9 +246,9 @@ namespace Casasoft.Commodore.Disk
         /// Complete directory 
         /// </summary>
         /// <returns></returns>
-        public string Print()
+        public override string ToString()
         {
-            return string.Format("{0}\n{1}{2}", Header.Print(), RootDir.Print(), Header.PrintFreeSectors());
+            return string.Format("{0}\n{1}{2}", Header.ToString(), RootDir.ToString(), Header.PrintFreeSectors());
         }
     }
 }

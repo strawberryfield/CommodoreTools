@@ -122,7 +122,7 @@ namespace Casasoft.Commodore.Disk
         /// Print directory header (disk name)
         /// </summary>
         /// <returns></returns>
-        public string Print()
+        public override string ToString()
         {
             return string.Format("{0,-16}  {1}{2}  {3}{4}",
                 new object[] { DiskName, DOStype[0], DOStype[1], DiskId[0], DiskId[1] });

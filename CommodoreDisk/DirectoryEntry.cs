@@ -91,7 +91,7 @@ namespace Casasoft.Commodore.Disk
         /// Format file info to string
         /// </summary>
         /// <returns>file info string</returns>
-        public string Print()
+        public override string ToString()
         {
             return string.Format("{0,-16}.{1,-3} {2}{3} {4,4}",
                 new object[] { Filename, Type.ToString(), Locked ? "<" : " ", Closed ? "*" : " ", FileSize });

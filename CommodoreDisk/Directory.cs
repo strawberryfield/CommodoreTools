@@ -95,13 +95,13 @@ namespace Casasoft.Commodore.Disk
         /// Prints directory list to string
         /// </summary>
         /// <returns>Formatted files list</returns>
-        public string Print()
+        public override string ToString()
         {
             string ret = string.Empty;
 
             foreach (DirectoryEntry de in dir)
             {
-                ret += de.Print() + "\n";
+                ret += de.ToString() + "\n";
             }
             return ret;
         }
