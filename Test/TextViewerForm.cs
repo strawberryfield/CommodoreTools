@@ -18,22 +18,40 @@
 // along with Casasoft Commodore Utilities.  
 // If not, see <http://www.gnu.org/licenses/>.
 
-using System;
 using System.Windows.Forms;
 
 namespace Casasoft.Commodore
 {
-    static class Program
+    public partial class TextViewerForm : Form
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main()
+        public TextViewerForm()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            InitializeComponent();
+            FileName = string.Empty;
+            Content = string.Empty;
+        }
+
+        public TextViewerForm(string filename, string content) : this()
+        {
+            FileName = filename;
+            Content = content;
+        }
+
+        public TextViewerForm(string filename, byte[] content) :
+            this(filename, System.Text.Encoding.Default.GetString(content))
+        {
+        }
+
+        public string FileName
+        {
+            get => Text;
+            set => Text = value;
+        }
+
+        public string Content
+        {
+            get => richTextBox.Text;
+            set => richTextBox.Text = value;
         }
     }
 }

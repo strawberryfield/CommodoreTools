@@ -5,8 +5,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Casasoft Commodore Test Tool")]
-[assembly: AssemblyDescription("Sample test programa for Commodore Utilities")]
+[assembly: AssemblyTitle("Casasoft Commodore Disk Manager")]
+[assembly: AssemblyDescription("Commodore Disk Images Management Tool")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Casasoft - Roberto Ceccarelli")]
 [assembly: AssemblyProduct("Casasoft Commodore Utilities")]
