@@ -22,43 +22,30 @@ using System.Drawing;
 using System.Drawing.Text;
 using System.Windows.Forms;
 
-namespace Casasoft.Commodore
+namespace Casasoft.Commodore.WindowsUI
 {
-    public partial class TextViewerForm : Form
+    /// <summary>
+    /// Base class for all forms
+    /// </summary>
+    public partial class BaseForm : Form
     {
-        public TextViewerForm()
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public BaseForm()
         {
             InitializeComponent();
-            FileName = string.Empty;
-            Content = string.Empty;
+        }
 
+        /// <summary>
+        /// Gets CBM.ttf from application directory
+        /// </summary>
+        /// <returns></returns>
+        protected Font GetCommodoreFont()
+        {
             PrivateFontCollection privateFonts = new PrivateFontCollection();
             privateFonts.AddFontFile("CBM.ttf");
-            Font CBMfont = new Font(privateFonts.Families[0], 9);
-            richTextBox.Font = CBMfont;
-        }
-
-        public TextViewerForm(string filename, string content) : this()
-        {
-            FileName = filename;
-            Content = content;
-        }
-
-        public TextViewerForm(string filename, byte[] content) :
-            this(filename, System.Text.Encoding.ASCII.GetString(content))
-        {
-        }
-
-        public string FileName
-        {
-            get => Text;
-            set => Text = value;
-        }
-
-        public string Content
-        {
-            get => richTextBox.Text;
-            set => richTextBox.Text = value;
+            return new Font(privateFonts.Families[0], 9);
         }
     }
 }

@@ -18,9 +18,9 @@
 // along with Casasoft Commodore Utilities.  
 // If not, see <http://www.gnu.org/licenses/>.
 
-namespace Casasoft.Commodore
+namespace Casasoft.Commodore.WindowsUI
 {
-    partial class TextViewerForm
+    partial class BaseForm
     {
         /// <summary>
         /// Required designer variable.
@@ -48,33 +48,12 @@ namespace Casasoft.Commodore
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox = new System.Windows.Forms.RichTextBox();
-            this.SuspendLayout();
-            // 
-            // richTextBox
-            // 
-            this.richTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox.Font = new System.Drawing.Font("CBM", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox.Name = "richTextBox";
-            this.richTextBox.Size = new System.Drawing.Size(576, 325);
-            this.richTextBox.TabIndex = 0;
-            this.richTextBox.Text = "";
-            // 
-            // TextViewerForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(576, 325);
-            this.Controls.Add(this.richTextBox);
-            this.Name = "TextViewerForm";
-            this.Text = "TextViewerForm";
-            this.ResumeLayout(false);
-
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "BaseForm";
         }
 
         #endregion
-
-        private System.Windows.Forms.RichTextBox richTextBox;
     }
 }

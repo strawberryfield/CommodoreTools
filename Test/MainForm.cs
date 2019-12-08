@@ -19,8 +19,8 @@
 // If not, see <http://www.gnu.org/licenses/>.
 
 using Casasoft.Commodore.Disk;
+using Casasoft.Commodore.WindowsUI;
 using System;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
