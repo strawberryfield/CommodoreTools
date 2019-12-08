@@ -18,6 +18,8 @@
 // along with Casasoft Commodore Utilities.  
 // If not, see <http://www.gnu.org/licenses/>.
 
+using System.Drawing;
+using System.Drawing.Text;
 using System.Windows.Forms;
 
 namespace Casasoft.Commodore
@@ -29,6 +31,11 @@ namespace Casasoft.Commodore
             InitializeComponent();
             FileName = string.Empty;
             Content = string.Empty;
+
+            PrivateFontCollection privateFonts = new PrivateFontCollection();
+            privateFonts.AddFontFile("CBM.ttf");
+            Font CBMfont = new Font(privateFonts.Families[0], 9);
+            richTextBox.Font = CBMfont;
         }
 
         public TextViewerForm(string filename, string content) : this()
