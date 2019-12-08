@@ -23,6 +23,7 @@ using System;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Casasoft.Commodore
@@ -32,7 +33,8 @@ namespace Casasoft.Commodore
         public MainForm()
         {
             InitializeComponent();
-            openFileDialog.Filter = CommodoreDisk.DialogFilter();
+            openDiskDialog.Filter = CommodoreDisk.DialogFilter;
+            saveFileDialog.Filter = DirectoryEntry.OpenSaveDialogsFilter;
         }
 
         private string fileName = string.Empty;
@@ -40,9 +42,9 @@ namespace Casasoft.Commodore
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            if (openDiskDialog.ShowDialog() == DialogResult.OK)
             {
-                fileName = openFileDialog.FileName;
+                fileName = openDiskDialog.FileName;
                 disk = CommodoreDisk.Factory(System.IO.Path.GetExtension(fileName));
                 if (disk != null)
                 {
@@ -79,18 +81,31 @@ namespace Casasoft.Commodore
             }
         }
 
+        private dsDisk.DirectoryRow currentDirectoryRow;
         private byte[] GetFileByGridRow(int rowIndex)
         {
             DataRowView datarow = (DataRowView)dataGridViewDirectory.Rows[rowIndex].DataBoundItem;
-            dsDisk.DirectoryRow row = (dsDisk.DirectoryRow)datarow.Row;
-            return disk.GetFile(row.Index);
+            currentDirectoryRow = (dsDisk.DirectoryRow)datarow.Row;
+            return disk.GetFile(currentDirectoryRow.Index);
         }
 
         private void viewToolStripMenuItem_Click(object sender, EventArgs e)
         {
             byte[] file = GetFileByGridRow(currentMouseOverRow);
-            TextViewerForm viewer = new TextViewerForm("File", file);
+            TextViewerForm viewer = new TextViewerForm(currentDirectoryRow.Filename, file);
             viewer.ShowDialog();
+        }
+
+        private void saveToFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            byte[] file = GetFileByGridRow(currentMouseOverRow);
+            saveFileDialog.DefaultExt = currentDirectoryRow.FileType;
+            saveFileDialog.FileName = string.Format("{0}.{1}", 
+                currentDirectoryRow.Filename.Trim(), saveFileDialog.DefaultExt);
+            if( saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllBytes(saveFileDialog.FileName, file);
+            }
         }
     }
 }

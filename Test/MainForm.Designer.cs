@@ -49,9 +49,9 @@ namespace Casasoft.Commodore
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtDiskName = new System.Windows.Forms.TextBox();
-            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.openDiskDialog = new System.Windows.Forms.OpenFileDialog();
             this.dataGridViewDirectory = new System.Windows.Forms.DataGridView();
             this.filenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fileTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,6 +79,7 @@ namespace Casasoft.Commodore
             this.contextMenuStripGrid = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDirectory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.directoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsDiskBindingSource)).BeginInit();
@@ -96,9 +97,9 @@ namespace Casasoft.Commodore
             this.txtDiskName.Size = new System.Drawing.Size(358, 20);
             this.txtDiskName.TabIndex = 0;
             // 
-            // openFileDialog
+            // openDiskDialog
             // 
-            this.openFileDialog.Filter = "1541 Files|*.d64|All files|*.*";
+            this.openDiskDialog.Filter = "1541 Files|*.d64|All files|*.*";
             // 
             // dataGridViewDirectory
             // 
@@ -142,8 +143,8 @@ namespace Casasoft.Commodore
             // fileSizeDataGridViewTextBoxColumn
             // 
             this.fileSizeDataGridViewTextBoxColumn.DataPropertyName = "FileSize";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.fileSizeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.fileSizeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.fileSizeDataGridViewTextBoxColumn.HeaderText = "FileSize";
             this.fileSizeDataGridViewTextBoxColumn.Name = "fileSizeDataGridViewTextBoxColumn";
             this.fileSizeDataGridViewTextBoxColumn.ReadOnly = true;
@@ -237,7 +238,7 @@ namespace Casasoft.Commodore
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -307,12 +308,12 @@ namespace Casasoft.Commodore
             this.viewToolStripMenuItem,
             this.saveToFileToolStripMenuItem});
             this.contextMenuStripGrid.Name = "contextMenuStripGrid";
-            this.contextMenuStripGrid.Size = new System.Drawing.Size(181, 70);
+            this.contextMenuStripGrid.Size = new System.Drawing.Size(134, 48);
             // 
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.viewToolStripMenuItem.Text = "View";
             this.viewToolStripMenuItem.Click += new System.EventHandler(this.viewToolStripMenuItem_Click);
             // 
@@ -321,6 +322,11 @@ namespace Casasoft.Commodore
             this.saveToFileToolStripMenuItem.Name = "saveToFileToolStripMenuItem";
             this.saveToFileToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.saveToFileToolStripMenuItem.Text = "Save to File";
+            this.saveToFileToolStripMenuItem.Click += new System.EventHandler(this.saveToFileToolStripMenuItem_Click);
+            // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.Title = "Save file";
             // 
             // MainForm
             // 
@@ -353,7 +359,7 @@ namespace Casasoft.Commodore
         #endregion
 
         private System.Windows.Forms.TextBox txtDiskName;
-        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.OpenFileDialog openDiskDialog;
         private System.Windows.Forms.DataGridView dataGridViewDirectory;
         private Disk.dsDisk dsDisk;
         private System.Windows.Forms.BindingSource directoryBindingSource;
@@ -381,5 +387,6 @@ namespace Casasoft.Commodore
         private System.Windows.Forms.ContextMenuStrip contextMenuStripGrid;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveToFileToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }

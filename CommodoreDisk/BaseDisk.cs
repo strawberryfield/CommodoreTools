@@ -228,14 +228,14 @@ namespace Casasoft.Commodore.Disk
             byte[] payload;
             if (nextTrack == 0)
             {
-                payload = new byte[nextSector];
-                Array.Copy(data, 2, payload, 0, nextSector);
+                payload = new byte[nextSector - 2];
+                Array.Copy(data, 2, payload, 0, nextSector - 2);
                 prev.AddRange(payload);
             }
             else
             {
-                payload = new byte[254];
-                Array.Copy(data, 2, payload, 0, 254);
+                payload = new byte[sectorSize - 2];
+                Array.Copy(data, 2, payload, 0, sectorSize - 2);
                 prev.AddRange(payload);
                 scanFile(prev, nextTrack, nextSector);
             }

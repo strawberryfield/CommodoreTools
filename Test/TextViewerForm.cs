@@ -38,7 +38,7 @@ namespace Casasoft.Commodore
         }
 
         public TextViewerForm(string filename, byte[] content) :
-            this(filename, System.Text.Encoding.Default.GetString(content))
+            this(filename, System.Text.Encoding.ASCII.GetString(content))
         {
         }
 

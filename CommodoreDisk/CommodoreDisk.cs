@@ -57,16 +57,18 @@ namespace Casasoft.Commodore.Disk
         /// <summary>
         /// Filter for Open/Save dialogs
         /// </summary>
-        /// <returns></returns>
-        public static string DialogFilter()
+        public static string DialogFilter
         {
-            string template = "{0} files|*{1}|";
-            string ret = string.Format(template, Disk1541.Model, Disk1541.Extension);
-            ret += string.Format(template, Disk1571.Model, Disk1571.Extension);
-            ret += string.Format(template, Disk1581.Model, Disk1581.Extension);
-            ret += string.Format(template, Disk8050.Model, Disk8050.Extension);
-            ret += string.Format(template, Disk8250.Model, Disk8250.Extension);
-            return ret + "All files|*.*";
+            get
+            {
+                string template = "{0} files|*{1}|";
+                string ret = string.Format(template, Disk1541.Model, Disk1541.Extension);
+                ret += string.Format(template, Disk1571.Model, Disk1571.Extension);
+                ret += string.Format(template, Disk1581.Model, Disk1581.Extension);
+                ret += string.Format(template, Disk8050.Model, Disk8050.Extension);
+                ret += string.Format(template, Disk8250.Model, Disk8250.Extension);
+                return ret + "All files|*.*";
+            }
         }
     }
 }

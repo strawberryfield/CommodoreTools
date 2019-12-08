@@ -58,6 +58,12 @@ namespace Casasoft.Commodore.Disk
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 
         /// <summary>
+        /// Filter for open/save Dialogs
+        /// </summary>
+        public static string OpenSaveDialogsFilter => 
+            "Program|*.PRG|Sequential|*.SEQ|User defined|*.USR|Random file|*.REL|Deleted|*.DEL|Directory|*.CBM|All files|*.*";
+
+        /// <summary>
         /// Build an empty record
         /// </summary>
         public DirectoryEntry()
