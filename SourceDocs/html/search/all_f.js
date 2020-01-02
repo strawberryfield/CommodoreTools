@@ -1,0 +1,12 @@
+var searchData=
+[
+  ['textviewerform_103',['TextViewerForm',['../class_casasoft_1_1_commodore_1_1_windows_u_i_1_1_text_viewer_form.html',1,'Casasoft.Commodore.WindowsUI.TextViewerForm'],['../class_casasoft_1_1_commodore_1_1_windows_u_i_1_1_text_viewer_form.html#a6bdb800ad8ef5be1aae5c525dddecfc4',1,'Casasoft.Commodore.WindowsUI.TextViewerForm.TextViewerForm()'],['../class_casasoft_1_1_commodore_1_1_windows_u_i_1_1_text_viewer_form.html#accd618ad093672c6488e815f260442f4',1,'Casasoft.Commodore.WindowsUI.TextViewerForm.TextViewerForm(string filename, string content)'],['../class_casasoft_1_1_commodore_1_1_windows_u_i_1_1_text_viewer_form.html#ad7cfeb638a59f036ea6ec1351b01b149',1,'Casasoft.Commodore.WindowsUI.TextViewerForm.TextViewerForm(string filename, byte[] content)']]],
+  ['textviewerform_2ecs_104',['TextViewerForm.cs',['../_text_viewer_form_8cs.html',1,'']]],
+  ['textviewerform_2edesigner_2ecs_105',['TextViewerForm.Designer.cs',['../_text_viewer_form_8_designer_8cs.html',1,'']]],
+  ['todatatable_106',['ToDataTable',['../class_casasoft_1_1_commodore_1_1_disk_1_1_directory.html#aa9affa44a159200994f4af8c7b97d4bb',1,'Casasoft::Commodore::Disk::Directory']]],
+  ['tostring_107',['ToString',['../class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mbase.html#af21a23323bd955e150e3ea2762a326be',1,'Casasoft.Commodore.Disk.BAMbase.ToString()'],['../class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a57f05aee5b9f1094d4aaa4d1c1db0028',1,'Casasoft.Commodore.Disk.BaseDisk.ToString()'],['../class_casasoft_1_1_commodore_1_1_disk_1_1_directory.html#a52c9593fb2e47f404d85175218933531',1,'Casasoft.Commodore.Disk.Directory.ToString()'],['../class_casasoft_1_1_commodore_1_1_disk_1_1_directory_entry.html#a7e438c63d6cfc273af48b92020571e52',1,'Casasoft.Commodore.Disk.DirectoryEntry.ToString()']]],
+  ['totalsectors_108',['totalSectors',['../class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#ac42b83b3916abb7f32aafeadcb6b9716',1,'Casasoft::Commodore::Disk::BaseDisk']]],
+  ['totaltracks_109',['totalTracks',['../class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a6c797104fff90f1ff5c3d3a7255082c4',1,'Casasoft::Commodore::Disk::BaseDisk']]],
+  ['track_110',['track',['../class_casasoft_1_1_commodore_1_1_disk_1_1_directory_index.html#ace84fb0b0d468007c20ce1d02b723f79',1,'Casasoft::Commodore::Disk::DirectoryIndex']]],
+  ['type_111',['Type',['../class_casasoft_1_1_commodore_1_1_disk_1_1_directory_entry.html#a95a45af88355ec230e431ba2362204b6',1,'Casasoft::Commodore::Disk::DirectoryEntry']]]
+];

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Casasoft - Roberto Ceccarelli")]
 [assembly: AssemblyProduct("Casasoft Commodore Utilities")]
-[assembly: AssemblyCopyright("Copyright ©  2019 Casasoft - Roberto Ceccarelli")]
+[assembly: AssemblyCopyright("Copyright ©  2019-2020 Casasoft - Roberto Ceccarelli")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

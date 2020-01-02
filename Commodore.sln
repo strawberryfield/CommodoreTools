@@ -9,6 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiskManager", "Test\DiskMan
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F095FF4C-BA28-404B-92EF-EA735F24E19F}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
@@ -22,6 +23,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{36766BEE-1
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsUI", "WindowsUI\WindowsUI.csproj", "{68741AE5-BC8D-4827-88E9-3EECC4EF9756}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicLib", "BasicLib\BasicLib.csproj", "{DF32D704-00A0-4636-86B3-1DAB08F3C349}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doxygen", "Doxygen", "{7A06ACF5-DC46-471B-81B0-0F3F4D1E9899}"
+	ProjectSection(SolutionItems) = preProject
+		Doxygen\customdoxygen.css = Doxygen\customdoxygen.css
+		Doxygen\Doxyfile = Doxygen\Doxyfile
+		Doxygen\footer.html = Doxygen\footer.html
+		Doxygen\header.html = Doxygen\header.html
+		Doxygen\tsf.css = Doxygen\tsf.css
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +53,10 @@ Global
 		{68741AE5-BC8D-4827-88E9-3EECC4EF9756}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68741AE5-BC8D-4827-88E9-3EECC4EF9756}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68741AE5-BC8D-4827-88E9-3EECC4EF9756}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF32D704-00A0-4636-86B3-1DAB08F3C349}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF32D704-00A0-4636-86B3-1DAB08F3C349}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF32D704-00A0-4636-86B3-1DAB08F3C349}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF32D704-00A0-4636-86B3-1DAB08F3C349}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

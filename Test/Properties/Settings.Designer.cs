@@ -25,7 +25,7 @@ namespace Casasoft.Commodore.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("10, 10")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
         public global::System.Drawing.Point MainFormPosition {
             get {
                 return ((global::System.Drawing.Point)(this["MainFormPosition"]));
@@ -37,7 +37,7 @@ namespace Casasoft.Commodore.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("300, 300")]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
         public global::System.Drawing.Size MainFormSize {
             get {
                 return ((global::System.Drawing.Size)(this["MainFormSize"]));
@@ -49,7 +49,7 @@ namespace Casasoft.Commodore.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("20, 20")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
         public global::System.Drawing.Point TextVieverFormPosition {
             get {
                 return ((global::System.Drawing.Point)(this["TextVieverFormPosition"]));
@@ -61,7 +61,7 @@ namespace Casasoft.Commodore.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("300, 300")]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1, -1")]
         public global::System.Drawing.Size TextVieverFormSize {
             get {
                 return ((global::System.Drawing.Size)(this["TextVieverFormSize"]));
