@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['prg_90',['PRG',['../namespace_casasoft_1_1_commodore_1_1_disk.html#a4dc17be05b7d6ee69fcc84c97d050f32addad6c0b99dde50514e9cccf3e56e8e9',1,'Casasoft::Commodore::Disk']]],
-  ['printfreesectors_91',['PrintFreeSectors',['../class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mbase.html#a4be73122804b0807a8b47fb1850e82e6',1,'Casasoft::Commodore::Disk::BAMbase']]],
-  ['putsector_92',['putSector',['../class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a28a4ac788e409e9db23ce9f4e72e6378',1,'Casasoft::Commodore::Disk::BaseDisk']]]
+  ['on_140',['On',['../namespace_casasoft_1_1_commodore_1_1_basic.html#ab994f835797eb10e6bdf5c06cb302c05a521c36a31c2762741cf0f8890cbe05e3',1,'Casasoft::Commodore::Basic']]],
+  ['open_141',['Open',['../namespace_casasoft_1_1_commodore_1_1_basic.html#ab994f835797eb10e6bdf5c06cb302c05ac3bf447eabe632720a3aa1a7ce401274',1,'Casasoft::Commodore::Basic']]],
+  ['opensavedialogsfilter_142',['OpenSaveDialogsFilter',['../class_casasoft_1_1_commodore_1_1_disk_1_1_directory_entry.html#af181f5dddfa57827050ac29055d2beeb',1,'Casasoft::Commodore::Disk::DirectoryEntry']]],
+  ['or_143',['Or',['../namespace_casasoft_1_1_commodore_1_1_basic.html#ab994f835797eb10e6bdf5c06cb302c05a3a2d5fe857d8f9541136a124c2edec6c',1,'Casasoft::Commodore::Basic']]]
 ];

@@ -93,6 +93,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BasicLib\BasicLib.csproj">
+      <Project>{DF32D704-00A0-4636-86B3-1DAB08F3C349}</Project>
+      <Name>BasicLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CommodoreDisk\CommodoreDisk.csproj">
       <Project>{21fad794-01f9-4a47-9ed6-03c12f8c16de}</Project>
       <Name>CommodoreDisk</Name>

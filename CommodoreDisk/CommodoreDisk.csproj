@@ -80,5 +80,11 @@
       <DependentUpon>dsDisk.xsd</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BasicLib\BasicLib.csproj">
+      <Project>{df32d704-00a0-4636-86b3-1dab08f3c349}</Project>
+      <Name>BasicLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

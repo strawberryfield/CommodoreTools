@@ -24,6 +24,7 @@
 /// See the GNU General Public License for more details.
 /// 
 
+using Casasoft.Commodore.Basic;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -234,8 +235,8 @@ namespace Casasoft.Commodore.Disk
             byte[] payload;
             if (nextTrack == 0)
             {
-                payload = new byte[nextSector - 2];
-                Array.Copy(data, 2, payload, 0, nextSector - 2);
+                payload = new byte[nextSector - 1];
+                Array.Copy(data, 2, payload, 0, nextSector - 1);
                 prev.AddRange(payload);
             }
             else
@@ -246,6 +247,39 @@ namespace Casasoft.Commodore.Disk
                 scanFile(prev, nextTrack, nextSector);
             }
         }
+        #endregion
+
+        #region Get PRG File
+        /// <summary>
+        /// Gets a PRG file by File Name
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <returns>PRG file in BasicPRG class</returns>
+        public BasicPRG GetPRGFile(string filename)
+        {
+            return new BasicPRG(GetFile(filename));
+        }
+
+        /// <summary>
+        /// Gets a PRG file by Index
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns>PRG file in BasicPRG class</returns>
+        public BasicPRG GetPRGFile(Int32 index)
+        {
+            return new BasicPRG(GetFile(index));
+        }
+
+        /// <summary>
+        /// Gets a PRG file by Directory Entry
+        /// </summary>
+        /// <param name="file">Diretory entry of file to retrieve</param>
+        /// <returns>PRG file in BasicPRG class</returns>
+        public BasicPRG GetPRGFile(DirectoryEntry file)
+        {
+            return new BasicPRG(GetFile(file));
+        }
+
         #endregion
 
         /// <summary>
