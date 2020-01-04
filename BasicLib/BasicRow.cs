@@ -197,7 +197,7 @@ namespace Casasoft.Commodore.Basic
                 byte c = Code[j];
                 if (c < 128)
                 {
-                    sb.Append(c);
+                    sb.Append((char)c);
                 }
                 else
                 {

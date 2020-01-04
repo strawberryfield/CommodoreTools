@@ -81,7 +81,6 @@ namespace Casasoft.Commodore.Disk
         {
             diskData = new List<List<byte[]>>();
             diskStructure = new List<int>();
-            RootDir = new Directory();
             totalSectors = 0;
         }
 
@@ -180,17 +179,17 @@ namespace Casasoft.Commodore.Disk
         /// <summary>
         /// Load root directory
         /// </summary>
-        /// <remarks>empty virtual method</remarks>
         protected virtual void LoadRoot()
         {
+            RootDir.Load(this);
         }
 
         /// <summary>
         /// Load disk header and free sectors map
         /// </summary>
-        /// <remarks>empty virtual method</remarks>
         protected virtual void LoadBAM()
         {
+            Header.Load(this);
         }
         #endregion
 

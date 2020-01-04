@@ -51,6 +51,7 @@ namespace Casasoft.Commodore.Disk
         public Disk8250() : base()
         {
             Header = new BAM8250();
+            RootDir = new Directory(39, 1);
 
             for (int side = 0; side < 2; side++)
             {
@@ -62,20 +63,5 @@ namespace Casasoft.Commodore.Disk
             initDiskData();
         }
 
-        /// <summary>
-        /// Load root directory starting at 39/1
-        /// </summary>
-        protected override void LoadRoot()
-        {
-            RootDir.Load(this, 39, 1);
-        }
-
-        /// <summary>
-        /// Load BAM 
-        /// </summary>
-        protected override void LoadBAM()
-        {
-            Header.Load(this);
-        }
     }
 }

@@ -25,6 +25,7 @@
 /// 
 
 using System;
+using System.Text;
 
 namespace Casasoft.Commodore.Disk
 {
@@ -39,9 +40,9 @@ namespace Casasoft.Commodore.Disk
     /// </summary>
     public class DirectoryIndex
     {
-        public int track = 0;
-        public int sector = 0;
-        public int entry = 0;
+        public byte track = 0;
+        public byte sector = 0;
+        public byte entry = 0;
     }
 
     /// <summary>
@@ -52,13 +53,13 @@ namespace Casasoft.Commodore.Disk
         public FileType Type;
         public bool Locked;
         public bool Closed;
-        public int FirstTrack;
-        public int FirstSector;
+        public byte FirstTrack;
+        public byte FirstSector;
         public string Filename;
-        public int RelFirstTrack;
-        public int RelFirstSector;
-        public int RelRecordLength;
-        public int FileSize;
+        public byte RelFirstTrack;
+        public byte RelFirstSector;
+        public byte RelRecordLength;
+        public UInt16 FileSize;
         public DirectoryIndex Reference;
         public Int32 Index { get { return Reference.entry + Reference.sector * 10 + Reference.track * 1000; } }
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
@@ -91,12 +92,37 @@ namespace Casasoft.Commodore.Disk
             RelFirstTrack = data[0x15];
             RelFirstSector = data[0x16];
             RelRecordLength = data[0x17];
-            FileSize = data[0x1E] + data[0x1F] * 256;
-            Filename = string.Empty;
+            FileSize = Convert.ToUInt16(data[0x1E] + data[0x1F] * 256);
+            StringBuilder sb = new StringBuilder(16);
             for (int j = 0x05; j <= 0x14; j++)
             {
-                Filename += (char)data[j];
+                sb.Append((char)data[j]);
             }
+            Filename = sb.ToString();
+        }
+
+        /// <summary>
+        /// Returns binary data to write on disk
+        /// </summary>
+        /// <returns></returns>
+        public byte[] ToRaw()
+        {
+            byte[] ret = new byte[32];
+            ret[0] = 0;
+            ret[1] = 0;
+            ret[2] = Convert.ToByte(Type + 0x80);
+            ret[3] = FirstTrack;
+            ret[4] = RelFirstSector;
+            ret[0x15] = RelFirstTrack;
+            ret[0x16] = RelFirstSector;
+            ret[0x17] = RelRecordLength;
+            ret[0x1E] = Convert.ToByte(FileSize % 256);
+            ret[0x1F] = Convert.ToByte(FileSize / 256);
+            for(int j = 0; j<16 || j<Filename.Length; j++)
+            {
+                ret[5 + j] = Convert.ToByte(Filename[j]);
+            }
+            return ret;
         }
 
         /// <summary>

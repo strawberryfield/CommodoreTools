@@ -37,6 +37,16 @@ namespace Casasoft.Commodore.Disk
         private List<DirectoryEntry> dir;
 
         /// <summary>
+        /// First track for dir
+        /// </summary>
+        public byte FirstTrack { get; protected set; }
+
+        /// <summary>
+        /// First sector for dir
+        /// </summary>
+        public byte FirstSector { get; protected set; }
+
+        /// <summary>
         /// Constructor
         /// </summary>
         public Directory()
@@ -45,16 +55,27 @@ namespace Casasoft.Commodore.Disk
         }
 
         /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="firstTrack"></param>
+        /// <param name="firstSector"></param>
+        public Directory(byte firstTrack, byte firstSector) : this()
+        {
+            FirstTrack = firstTrack;
+            FirstSector = firstSector;
+        }
+
+        /// <summary>
         /// Loads directory from disk image database
         /// </summary>
         /// <param name="disk">disk image to read</param>
         /// <param name="track">directory start track</param>
         /// <param name="sector">directory start sector</param>
-        public void Load(BaseDisk disk, int track, int sector)
+        public void Load(BaseDisk disk, byte track, byte sector)
         {
             byte[] sectorData = disk.GetSector(track, sector);
 
-            for (int j = 0; j < 8; j++)
+            for (byte j = 0; j < 8; j++)
             {
                 byte[] entryData = new byte[32];
                 Array.Copy(sectorData, j * 32, entryData, 0, 32);
@@ -65,7 +86,16 @@ namespace Casasoft.Commodore.Disk
             Load(disk, sectorData[0], sectorData[1]);
         }
 
-        private void addEntry(byte[] data, int track, int sector, int record)
+        /// <summary>
+        /// Loads directory from disk image database using standard parameters
+        /// </summary>
+        /// <param name="disk">disk image to read</param>
+        public void Load(BaseDisk disk)
+        {
+            Load(disk, FirstTrack, FirstSector);
+        }
+
+        private void addEntry(byte[] data, byte track, byte sector, byte record)
         {
             if (data[2] != 0)
             {

@@ -51,25 +51,10 @@ namespace Casasoft.Commodore.Disk
         public Disk1581() : base()
         {
             Header = new BAM1581();
+            RootDir = new Directory(40, 3);
 
             for (int j = 1; j <= 80; j++) addTrackStructure(40);
             initDiskData();
-        }
-
-        /// <summary>
-        /// Load root directory starting at 40/3
-        /// </summary>
-        protected override void LoadRoot()
-        {
-            RootDir.Load(this, 40, 3);
-        }
-
-        /// <summary>
-        /// Load BAM 
-        /// </summary>
-        protected override void LoadBAM()
-        {
-            Header.Load(this);
         }
 
     }
