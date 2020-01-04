@@ -35,98 +35,100 @@ namespace Casasoft.Commodore.Basic
         /// <summary>
         /// Tokens descriptions by code
         /// </summary>
-        public static Dictionary<int, string> List;
+        public static Dictionary<byte, string> List;
 
         /// <summary>
         /// Tokens codes by description
         /// </summary>
-        public static Dictionary<string, int> ReverseList;
+        public static Dictionary<string, byte> ReverseList;
         
         /// <summary>
         /// Constructor
         /// </summary>
         static Tokens()
         {
-            List = new Dictionary<int, string>();
-            List.Add((int)Token.End,    "END");
-            List.Add((int)Token.For, "FOR");
-            List.Add((int)Token.Next, "NEXT");
-            List.Add((int)Token.Data, "DATA");
-            List.Add((int)Token.InputSharp, "INPUT#");
-            List.Add((int)Token.Input, "INPUT");
-            List.Add((int)Token.Dim, "DIM");
-            List.Add((int)Token.Read, "READ");
-            List.Add((int)Token.Let, "LET");
-            List.Add((int)Token.Goto, "GOTO");
-            List.Add((int)Token.Run, "RUN");
-            List.Add((int)Token.If, "IF");
-            List.Add((int)Token.Restore, "RESTORE");
-            List.Add((int)Token.Gosub, "GOSUB");
-            List.Add((int)Token.Return, "RETURN");
-            List.Add((int)Token.Rem, "REM");
-            List.Add((int)Token.Stop, "STOP");
-            List.Add((int)Token.On, "ON");
-            List.Add((int)Token.Wait, "WAIT");
-            List.Add((int)Token.Load, "LOAD");
-            List.Add((int)Token.Save, "SAVE");
-            List.Add((int)Token.Verify, "VERIFY");
-            List.Add((int)Token.Def, "DEF");
-            List.Add((int)Token.Poke, "POKE");
-            List.Add((int)Token.PrintSharp, "PRINT#");
-            List.Add((int)Token.Print, "PRINT");
-            List.Add((int)Token.Cont, "CONT");
-            List.Add((int)Token.List, "LIST");
-            List.Add((int)Token.Clr, "CLR");
-            List.Add((int)Token.Cmd, "CMD");
-            List.Add((int)Token.Sys, "SYS");
-            List.Add((int)Token.Open, "OPEN");
-            List.Add((int)Token.Close, "CLOSE");
-            List.Add((int)Token.Get, "GET");
-            List.Add((int)Token.New, "NEW");
-            List.Add((int)Token.Tab, "TAB(");
-            List.Add((int)Token.To, "TO");
-            List.Add((int)Token.Fn, "FN");
-            List.Add((int)Token.Spc, "SPC(");
-            List.Add((int)Token.Then, "THEN");
-            List.Add((int)Token.Not, "NOT");
-            List.Add((int)Token.Step, "STEP");
-            List.Add((int)Token.Plus, "+");
-            List.Add((int)Token.Minus, "−");
-            List.Add((int)Token.Times, "*");
-            List.Add((int)Token.Div, "/");
-            List.Add((int)Token.Exponent, "^");
-            List.Add((int)Token.And, "AND");
-            List.Add((int)Token.Or, "OR");
-            List.Add((int)Token.Major, ">");
-            List.Add((int)Token.Equal, "=");
-            List.Add((int)Token.Minor, "<");
-            List.Add((int)Token.Sgn, "SGN");
-            List.Add((int)Token.Int, "INT");
-            List.Add((int)Token.Abs, "ABS");
-            List.Add((int)Token.Usr, "USR");
-            List.Add((int)Token.Fre, "FRE");
-            List.Add((int)Token.Pos, "POS");
-            List.Add((int)Token.Sqr, "SQR");
-            List.Add((int)Token.Rnd, "RND");
-            List.Add((int)Token.Log, "LOG");
-            List.Add((int)Token.Exp, "EXP");
-            List.Add((int)Token.Cos, "COS");
-            List.Add((int)Token.Sin, "SIN");
-            List.Add((int)Token.Tan, "TAN");
-            List.Add((int)Token.Atn, "ATN");
-            List.Add((int)Token.Peek, "PEEK");
-            List.Add((int)Token.Len, "LEN");
-            List.Add((int)Token.Str, "STR$");
-            List.Add((int)Token.Val, "VAL");
-            List.Add((int)Token.Asc, "ASC");
-            List.Add((int)Token.Chr, "CHR$");
-            List.Add((int)Token.Left, "LEFT$");
-            List.Add((int)Token.Right, "RIGHT$");
-            List.Add((int)Token.Mid, "MID$");
-            List.Add((int)Token.Go, "GO");
+            List = new Dictionary<byte, string>
+            {
+                { (byte)Token.End, "END" },
+                { (byte)Token.For, "FOR" },
+                { (byte)Token.Next, "NEXT" },
+                { (byte)Token.Data, "DATA" },
+                { (byte)Token.InputSharp, "INPUT#" },
+                { (byte)Token.Input, "INPUT" },
+                { (byte)Token.Dim, "DIM" },
+                { (byte)Token.Read, "READ" },
+                { (byte)Token.Let, "LET" },
+                { (byte)Token.Goto, "GOTO" },
+                { (byte)Token.Run, "RUN" },
+                { (byte)Token.If, "IF" },
+                { (byte)Token.Restore, "RESTORE" },
+                { (byte)Token.Gosub, "GOSUB" },
+                { (byte)Token.Return, "RETURN" },
+                { (byte)Token.Rem, "REM" },
+                { (byte)Token.Stop, "STOP" },
+                { (byte)Token.On, "ON" },
+                { (byte)Token.Wait, "WAIT" },
+                { (byte)Token.Load, "LOAD" },
+                { (byte)Token.Save, "SAVE" },
+                { (byte)Token.Verify, "VERIFY" },
+                { (byte)Token.Def, "DEF" },
+                { (byte)Token.Poke, "POKE" },
+                { (byte)Token.PrintSharp, "PRINT#" },
+                { (byte)Token.Print, "PRINT" },
+                { (byte)Token.Cont, "CONT" },
+                { (byte)Token.List, "LIST" },
+                { (byte)Token.Clr, "CLR" },
+                { (byte)Token.Cmd, "CMD" },
+                { (byte)Token.Sys, "SYS" },
+                { (byte)Token.Open, "OPEN" },
+                { (byte)Token.Close, "CLOSE" },
+                { (byte)Token.Get, "GET" },
+                { (byte)Token.New, "NEW" },
+                { (byte)Token.Tab, "TAB(" },
+                { (byte)Token.To, "TO" },
+                { (byte)Token.Fn, "FN" },
+                { (byte)Token.Spc, "SPC(" },
+                { (byte)Token.Then, "THEN" },
+                { (byte)Token.Not, "NOT" },
+                { (byte)Token.Step, "STEP" },
+                { (byte)Token.Plus, "+" },
+                { (byte)Token.Minus, "−" },
+                { (byte)Token.Times, "*" },
+                { (byte)Token.Div, "/" },
+                { (byte)Token.Exponent, "^" },
+                { (byte)Token.And, "AND" },
+                { (byte)Token.Or, "OR" },
+                { (byte)Token.Major, ">" },
+                { (byte)Token.Equal, "=" },
+                { (byte)Token.Minor, "<" },
+                { (byte)Token.Sgn, "SGN" },
+                { (byte)Token.Int, "INT" },
+                { (byte)Token.Abs, "ABS" },
+                { (byte)Token.Usr, "USR" },
+                { (byte)Token.Fre, "FRE" },
+                { (byte)Token.Pos, "POS" },
+                { (byte)Token.Sqr, "SQR" },
+                { (byte)Token.Rnd, "RND" },
+                { (byte)Token.Log, "LOG" },
+                { (byte)Token.Exp, "EXP" },
+                { (byte)Token.Cos, "COS" },
+                { (byte)Token.Sin, "SIN" },
+                { (byte)Token.Tan, "TAN" },
+                { (byte)Token.Atn, "ATN" },
+                { (byte)Token.Peek, "PEEK" },
+                { (byte)Token.Len, "LEN" },
+                { (byte)Token.Str, "STR$" },
+                { (byte)Token.Val, "VAL" },
+                { (byte)Token.Asc, "ASC" },
+                { (byte)Token.Chr, "CHR$" },
+                { (byte)Token.Left, "LEFT$" },
+                { (byte)Token.Right, "RIGHT$" },
+                { (byte)Token.Mid, "MID$" },
+                { (byte)Token.Go, "GO" }
+            };
 
             // Dizionario per le ricerche inverse
-            ReverseList = new Dictionary<string, int>();
+            ReverseList = new Dictionary<string, byte>();
             foreach(var token in List)
             {
                 ReverseList.Add(token.Value, token.Key);

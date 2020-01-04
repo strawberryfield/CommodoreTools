@@ -27,6 +27,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Casasoft.Commodore.Basic
 {
@@ -63,19 +64,6 @@ namespace Casasoft.Commodore.Basic
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="Line"></param>
-        /// <param name="Source"></param>
-        public BasicRow(UInt16 Line, string Source) : this()
-        {
-            for (int j = 0; j < Source.Length; j++)
-            {
-                Code.Add((byte)Source[j]);
-            }
-        }
-
-        /// <summary>
-        /// Constructor
-        /// </summary>
         /// <param name="Ptr"></param>
         /// <param name="Line"></param>
         /// <param name="rawdata"></param>
@@ -86,6 +74,117 @@ namespace Casasoft.Commodore.Basic
             Code.AddRange(rawdata);
         }
 
+        #region tokenizer
+        /// <summary>
+        /// Constructor with tokenizer
+        /// </summary>
+        /// <param name="Source"></param>
+        public BasicRow(string Source) : this()
+        {
+            string cmd = Source.Trim();
+
+            // scan for initial line number
+            Regex linenum = new Regex(@"^\d+");
+            Match linenumVal = linenum.Match(cmd);
+            if (linenumVal.Success)
+            {
+                cmd = cmd.Substring(linenumVal.Length).Trim();
+                LineNumber = Convert.ToUInt16(linenumVal.Value);
+            }
+
+            // tokens search loop
+            while (cmd.Length > 0)
+            {
+                byte tk;
+                if ((tk = FindToken(cmd)) > 0)
+                {
+                    cmd = StringUtils.StringMid(cmd, Tokens.List[tk].Length);
+                    Code.Add(tk); 
+                }
+                else if (!StringUtils.IsAlpha(cmd[0]))
+                {
+                    // special char handling
+                    switch (cmd[0])
+                    {
+                        case '"':
+                            // Found quotes: search for closing ones or end of line
+                            Code.Add((byte)cmd[0]);
+                            cmd = cmd.Substring(1);
+                            int cq = cmd.IndexOf('"');
+                            string quoted;
+                            if (cq >= 0)
+                            {
+                                quoted = StringUtils.StringLeft(cmd, cq + 1);
+                                cmd = StringUtils.StringMid(cmd, cq + 1);
+                            }
+                            else
+                            {
+                                quoted = cmd;
+                                cmd = string.Empty;
+                            }
+                            for (int j = 0; j < quoted.Length; j++) Code.Add((byte)quoted[j]);
+                            break;
+                        case '?':
+                        case '+':
+                        case '*':
+                        case '/':
+                        case '^':
+                        case '<':
+                        case '=':
+                        case '>':
+                            // single char tokens
+                            Code.Add(Tokens.ReverseList[cmd.Substring(0, 1)]);
+                            cmd = cmd.Substring(1);
+                            break;
+                        case '-':
+                            // I don't know why minus must be processed alone 
+                            Code.Add((byte)Token.Minus);
+                            cmd = cmd.Substring(1);
+                            break;
+                        default:
+                            // skip over
+                            Code.Add((byte)cmd[0]);
+                            cmd = cmd.Substring(1);
+                            break;
+                    }
+                }
+                else
+                {
+                    // Next char could by an id
+                    // skip over
+                    Code.Add((byte)cmd[0]);
+                    cmd = cmd.Substring(1);
+                }
+
+            }
+
+        }
+
+        /// <summary>
+        /// Gets a token index from initial part of the string
+        /// </summary>
+        /// <param name="cmdline"></param>
+        /// <returns>0 if no token found</returns>
+        protected byte FindToken(string cmdline)
+        {
+            byte token = 0;
+            cmdline = cmdline.ToUpper();
+            foreach (var tk in Tokens.List)
+            {
+                if (cmdline.Length >= tk.Value.Length)
+                {
+                    if (cmdline.Substring(0, tk.Value.Length) == tk.Value)
+                    {
+                        token = tk.Key;
+                        break;
+                    }
+                }
+            }
+            return token;
+        }
+
+        #endregion
+
         /// <summary>
         /// Formats row in plain text
         /// </summary>
@@ -95,7 +194,7 @@ namespace Casasoft.Commodore.Basic
             StringBuilder sb = new StringBuilder(LineNumber.ToString());
             for (int j = 0; j < Code.Count; j++)
             {
-                char c = (char)Code[j];
+                byte c = Code[j];
                 if (c < 128)
                 {
                     sb.Append(c);
