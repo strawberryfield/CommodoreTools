@@ -46,6 +46,8 @@ namespace Casasoft.Commodore.Basic
         /// </summary>
         public UInt16 StartPtr;
 
+        private const UInt16 stdStart = 0x0801;
+
         #region constructors
         /// <summary>
         /// Constructor for empty program
@@ -53,7 +55,7 @@ namespace Casasoft.Commodore.Basic
         public BasicPRG()
         {
             Lines = new List<BasicRow>();
-            StartPtr = 8 * 256 + 1;
+            StartPtr = stdStart;
         }
 
         /// <summary>
@@ -62,18 +64,38 @@ namespace Casasoft.Commodore.Basic
         /// <param name="file"></param>
         public BasicPRG(byte[] file) : this()
         {
-            StartPtr = (UInt16)(file[0] + 256 * file[1]);
+            Load(file); 
+        }
+    
+        /// <summary>
+        /// Tokenizes an entire text source
+        /// </summary>
+        /// <param name="source"></param>
+        public BasicPRG(string source) : this()
+        {
+            Load(source);
+        }
+        #endregion
+
+        #region loaders
+        /// <summary>
+        /// Loads the program from file image
+        /// </summary>
+        /// <param name="file"></param>
+        public void Load(byte[] file)
+        {
+            StartPtr = Convert.ToUInt16(file[0] + 256 * file[1]);
             for (int j = 1; j < file.Length;)
             {
                 // gets pointer to next line: if 0 exit 
-                UInt16 ptr = (UInt16)(file[++j] + 256 * file[++j]);
+                UInt16 ptr = Convert.ToUInt16(file[++j] + 256 * file[++j]);
                 if (0 == ptr) break;
 
                 // gets line number
-                UInt16 linenum = (UInt16)(file[++j] + 256 * file[++j]);
+                UInt16 linenum = Convert.ToUInt16(file[++j] + 256 * file[++j]);
 
                 // scan for EOL
-                int start = j+1;
+                int start = j + 1;
                 while (file[++j] != 0)
                 {
                 }
@@ -83,8 +105,29 @@ namespace Casasoft.Commodore.Basic
                 Lines.Add(row);
             }
         }
-        #endregion
 
+        /// <summary>
+        /// Tokenizes an entire text source
+        /// </summary>
+        /// <param name="source"></param>
+        public void Load(string source)
+        {
+            string[] sourceLines = source.Split(new char[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+            foreach (string s in sourceLines)
+            {
+                Lines.Add(new BasicRow(s));
+            }
+        }
+
+        /// <summary>
+        /// Erase the whole program
+        /// </summary>
+        public void New()
+        {
+            Lines.Clear();
+        }
+
+        #endregion
         #region lines management
         /// <summary>
         /// Gets line by number
@@ -150,22 +193,70 @@ namespace Casasoft.Commodore.Basic
         }
         #endregion
 
+        #region listing
         /// <summary>
         /// List in plain text
         /// </summary>
         /// <returns></returns>
         public override string ToString()
         {
+            return ToString(UInt16.MinValue, UInt16.MaxValue);
+        }
+
+        /// <summary>
+        /// List the program from line to line
+        /// </summary>
+        /// <param name="first"></param>
+        /// <param name="last"></param>
+        /// <returns></returns>
+        public string ToString(UInt16 first, UInt16 last)
+        {
             Sort();
             StringBuilder sb = new StringBuilder();
-            foreach(BasicRow row in Lines)
+            foreach (BasicRow row in Lines)
             {
-                sb.Append(row.ToString());
-                sb.Append("\n");
+                if (row.LineNumber >= first && row.LineNumber <= last)
+                {
+                    sb.Append(row.ToString());
+                    sb.Append("\n");
+                }
             }
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Listing of the program
+        /// </summary>
+        /// <param name="BasicParam">Lines selection as in Basic</param>
+        /// <returns></returns>
+        public string ToString(string BasicParam)
+        {
+            UInt16 first = UInt16.MinValue;
+            UInt16 last = UInt16.MaxValue;
+
+            if(!string.IsNullOrWhiteSpace(BasicParam))
+            {
+                BasicParam = BasicParam.Trim();
+                int sep = BasicParam.IndexOf('-');
+                if (sep >= 0)
+                {
+                    string strFirst = StringUtils.StringLeft(BasicParam, sep).Trim();
+                    if (!string.IsNullOrEmpty(strFirst)) first = Convert.ToUInt16(strFirst);
+                    string strLast = StringUtils.StringMid(BasicParam, sep + 1).Trim();
+                    if (!string.IsNullOrEmpty(strLast)) last = Convert.ToUInt16(strLast);
+                }
+                else
+                {
+                    first = Convert.ToUInt16(BasicParam);
+                    last = first;
+                }
+            }
+
+            return ToString(first, last);
+        }
+        #endregion
+
+        #region export
         /// <summary>
         /// Total length of the program in Comodore format
         /// </summary>
@@ -203,5 +294,6 @@ namespace Casasoft.Commodore.Basic
             ret[ptr + 1] = 0;
             return ret;
         }
+        #endregion
     }
 }
