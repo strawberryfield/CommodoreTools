@@ -1,0 +1,6 @@
+<map id="Casasoft.Commodore.Disk.BAM8050.loadPartialBAM" name="Casasoft.Commodore.Disk.BAM8050.loadPartialBAM">
+<area shape="rect" id="node1" title="Load partial BAM" alt="" coords="5,39,187,80"/>
+<area shape="rect" id="node2" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a6c20a05f80c26df437d5fac38255ffd4" title="Get sector raw data" alt="" coords="235,5,416,47"/>
+<area shape="rect" id="node4" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mbase.html#ad356ea9361b08565617c79e330e075de" title="Load sector map" alt="" coords="235,71,416,112"/>
+<area shape="rect" id="node3" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a096cae0a830882ad4c32549071fd8e9f" title="Get track by number" alt="" coords="464,5,645,47"/>
+</map>

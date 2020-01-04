@@ -1,0 +1,4 @@
+<map id="Casasoft.Commodore.Disk.BAMbase.PrintFreeSectors" name="Casasoft.Commodore.Disk.BAMbase.PrintFreeSectors">
+<area shape="rect" id="node1" title="Return formatted sectors free" alt="" coords="5,5,187,47"/>
+<area shape="rect" id="node2" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mbase.html#a4a952e793b2360d02f84fcca0419435b" title="Return total free sectors number" alt="" coords="235,5,437,47"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="Casasoft.Commodore.Disk.Directory.Load" name="Casasoft.Commodore.Disk.Directory.Load">
+<area shape="rect" id="node1" title="Loads directory from disk image database" alt="" coords="235,136,416,177"/>
+<area shape="rect" id="node2" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_disk1581.html#ae06f6e0f64ffb95ed00f5a07c80d7006" title="Load root directory starting at 40/3" alt="" coords="5,5,187,47"/>
+<area shape="rect" id="node3" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_disk8050.html#aea810a1480956d2f5dc4b3e02cdbd45e" title="Load root directory starting at 39/1" alt="" coords="5,71,187,112"/>
+<area shape="rect" id="node4" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_disk1541.html#ad02926bc9ac8172ec018cb678b29b723" title="Load root directory starting at 18/1" alt="" coords="5,136,187,177"/>
+<area shape="rect" id="node5" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_disk8250.html#ae6294dc17daab74bfcb532b61530d847" title="Load root directory starting at 39/1" alt="" coords="5,201,187,243"/>
+<area shape="rect" id="node6" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_disk1571.html#a640c53d9898b99156327744c0261d08a" title="Load root directory starting at 18/1" alt="" coords="5,267,187,308"/>
+</map>

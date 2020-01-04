@@ -1,0 +1,6 @@
+<map id="Casasoft.Commodore.Disk.Disk8050.LoadRoot" name="Casasoft.Commodore.Disk.Disk8050.LoadRoot">
+<area shape="rect" id="node1" title="Load root directory starting at 39/1" alt="" coords="5,5,187,47"/>
+<area shape="rect" id="node2" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_directory.html#ae4bfeb2475567378d681ae6478fa51f2" title="Loads directory from disk image database" alt="" coords="235,5,416,47"/>
+<area shape="rect" id="node3" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a6c20a05f80c26df437d5fac38255ffd4" title="Get sector raw data" alt="" coords="464,5,645,47"/>
+<area shape="rect" id="node4" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a096cae0a830882ad4c32549071fd8e9f" title="Get track by number" alt="" coords="693,5,875,47"/>
+</map>

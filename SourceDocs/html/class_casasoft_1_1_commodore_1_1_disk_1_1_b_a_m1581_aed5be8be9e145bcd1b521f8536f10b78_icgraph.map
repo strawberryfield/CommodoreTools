@@ -1,0 +1,4 @@
+<map id="Casasoft.Commodore.Disk.BAM1581.LoadHeader" name="Casasoft.Commodore.Disk.BAM1581.LoadHeader">
+<area shape="rect" id="node1" title="Read disk header" alt="" coords="235,5,416,47"/>
+<area shape="rect" id="node2" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m1581.html#a2e7dc2d006341cc1cef94d5db4607906" title="Load BAM data from disk image" alt="" coords="5,5,187,47"/>
+</map>

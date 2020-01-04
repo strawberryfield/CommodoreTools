@@ -1,0 +1,5 @@
+<map id="Casasoft.Commodore.Disk.BaseDisk.GetFile" name="Casasoft.Commodore.Disk.BaseDisk.GetFile">
+<area shape="rect" id="node1" title="Gets a file by File Name" alt="" coords="235,39,416,80"/>
+<area shape="rect" id="node2" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#ab86e6da38cfe8adaaf5365f9697bcfe5" title="Gets a file by Index" alt="" coords="5,5,187,47"/>
+<area shape="rect" id="node3" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a5a0c53dd761b9d1f4144c869899de043" title="Gets a PRG file by Index" alt="" coords="5,71,187,112"/>
+</map>

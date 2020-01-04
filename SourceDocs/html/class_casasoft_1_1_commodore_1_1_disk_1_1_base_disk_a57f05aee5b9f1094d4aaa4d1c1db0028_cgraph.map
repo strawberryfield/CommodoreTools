@@ -1,0 +1,8 @@
+<map id="Casasoft.Commodore.Disk.BaseDisk.ToString" name="Casasoft.Commodore.Disk.BaseDisk.ToString">
+<area shape="rect" id="node1" title="Complete directory" alt="" coords="5,71,187,112"/>
+<area shape="rect" id="node2" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mbase.html#a4be73122804b0807a8b47fb1850e82e6" title="Return formatted sectors free" alt="" coords="235,5,416,47"/>
+<area shape="rect" id="node4" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_directory.html#a52c9593fb2e47f404d85175218933531" title="Prints directory list to string" alt="" coords="235,71,416,112"/>
+<area shape="rect" id="node6" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mbase.html#af21a23323bd955e150e3ea2762a326be" title="Print directory header (disk name)" alt="" coords="235,136,416,177"/>
+<area shape="rect" id="node3" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mbase.html#a4a952e793b2360d02f84fcca0419435b" title="Return total free sectors number" alt="" coords="464,5,667,47"/>
+<area shape="rect" id="node5" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_directory_entry.html#a7e438c63d6cfc273af48b92020571e52" title="Format file info to string" alt="" coords="475,71,656,112"/>
+</map>

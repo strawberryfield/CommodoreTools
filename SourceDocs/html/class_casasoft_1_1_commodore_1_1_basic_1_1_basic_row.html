@@ -79,6 +79,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#properties">Properties</a> &#124;
 <a href="class_casasoft_1_1_commodore_1_1_basic_1_1_basic_row-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Casasoft.Commodore.Basic.BasicRow Class Reference</div>  </div>
@@ -102,6 +103,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a331a5ccaf083d1d138e80867a4c9cf43"><td class="memItemLeft" align="right" valign="top">override string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_basic_1_1_basic_row.html#a331a5ccaf083d1d138e80867a4c9cf43">ToString</a> ()</td></tr>
 <tr class="memdesc:a331a5ccaf083d1d138e80867a4c9cf43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Formats row in plain text  <a href="class_casasoft_1_1_commodore_1_1_basic_1_1_basic_row.html#a331a5ccaf083d1d138e80867a4c9cf43">More...</a><br /></td></tr>
 <tr class="separator:a331a5ccaf083d1d138e80867a4c9cf43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8802a1a1ebf73d8f1326a952aa2ee432"><td class="memItemLeft" align="right" valign="top">byte[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_basic_1_1_basic_row.html#a8802a1a1ebf73d8f1326a952aa2ee432">ToRaw</a> ()</td></tr>
+<tr class="memdesc:a8802a1a1ebf73d8f1326a952aa2ee432"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert row in <a class="el" href="namespace_casasoft_1_1_commodore.html">Commodore</a> <a class="el" href="namespace_casasoft_1_1_commodore_1_1_basic.html">Basic</a> format  <a href="class_casasoft_1_1_commodore_1_1_basic_1_1_basic_row.html#a8802a1a1ebf73d8f1326a952aa2ee432">More...</a><br /></td></tr>
+<tr class="separator:a8802a1a1ebf73d8f1326a952aa2ee432"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -114,6 +118,12 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a78dab909a0d6bb25f433450ab1504cd3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_casasoft_1_1_commodore_1_1_basic.html#ab994f835797eb10e6bdf5c06cb302c05a4ee29ca12c7d126654bd0e5275de6135">List</a>&lt; byte &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_basic_1_1_basic_row.html#a78dab909a0d6bb25f433450ab1504cd3">Code</a></td></tr>
 <tr class="memdesc:a78dab909a0d6bb25f433450ab1504cd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tokenized row  <a href="class_casasoft_1_1_commodore_1_1_basic_1_1_basic_row.html#a78dab909a0d6bb25f433450ab1504cd3">More...</a><br /></td></tr>
 <tr class="separator:a78dab909a0d6bb25f433450ab1504cd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:ab1d847d79b2bde913af7121c47b25004"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_basic_1_1_basic_row.html#ab1d847d79b2bde913af7121c47b25004">RawLength</a><code> [get]</code></td></tr>
+<tr class="memdesc:ab1d847d79b2bde913af7121c47b25004"><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of the line in <a class="el" href="namespace_casasoft_1_1_commodore.html">Commodore</a> format  <a href="class_casasoft_1_1_commodore_1_1_basic_1_1_basic_row.html#ab1d847d79b2bde913af7121c47b25004">More...</a><br /></td></tr>
+<tr class="separator:ab1d847d79b2bde913af7121c47b25004"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Single line of <a class="el" href="namespace_casasoft_1_1_commodore_1_1_basic.html">Basic</a> PRG class. </p>
@@ -219,6 +229,35 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a8802a1a1ebf73d8f1326a952aa2ee432"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8802a1a1ebf73d8f1326a952aa2ee432">&#9670;&nbsp;</a></span>ToRaw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte [] Casasoft.Commodore.Basic.BasicRow.ToRaw </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert row in <a class="el" href="namespace_casasoft_1_1_commodore.html">Commodore</a> <a class="el" href="namespace_casasoft_1_1_commodore_1_1_basic.html">Basic</a> format </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_casasoft_1_1_commodore_1_1_basic_1_1_basic_row_a8802a1a1ebf73d8f1326a952aa2ee432_icgraph.png" border="0" usemap="#class_casasoft_1_1_commodore_1_1_basic_1_1_basic_row_a8802a1a1ebf73d8f1326a952aa2ee432_icgraph" alt=""/></div>
+<map name="class_casasoft_1_1_commodore_1_1_basic_1_1_basic_row_a8802a1a1ebf73d8f1326a952aa2ee432_icgraph" id="class_casasoft_1_1_commodore_1_1_basic_1_1_basic_row_a8802a1a1ebf73d8f1326a952aa2ee432_icgraph">
+<area shape="rect" title="Convert row in Commodore Basic format" alt="" coords="241,5,429,47"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_basic_1_1_basic_p_r_g.html#a16ed147605abc2d5964350a2185fce48" title="Exports the whole program in raw Commodore format" alt="" coords="5,5,193,47"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a331a5ccaf083d1d138e80867a4c9cf43"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a331a5ccaf083d1d138e80867a4c9cf43">&#9670;&nbsp;</a></span>ToString()</h2>
 
@@ -236,6 +275,15 @@ Public Attributes</h2></td></tr>
 
 <p>Formats row in plain text </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_casasoft_1_1_commodore_1_1_basic_1_1_basic_row_a331a5ccaf083d1d138e80867a4c9cf43_icgraph.png" border="0" usemap="#class_casasoft_1_1_commodore_1_1_basic_1_1_basic_row_a331a5ccaf083d1d138e80867a4c9cf43_icgraph" alt=""/></div>
+<map name="class_casasoft_1_1_commodore_1_1_basic_1_1_basic_row_a331a5ccaf083d1d138e80867a4c9cf43_icgraph" id="class_casasoft_1_1_commodore_1_1_basic_1_1_basic_row_a331a5ccaf083d1d138e80867a4c9cf43_icgraph">
+<area shape="rect" title="Formats row in plain text" alt="" coords="241,5,429,47"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_basic_1_1_basic_p_r_g.html#aa264e2498171333374a0ae94116e80b1" title="List in plain text" alt="" coords="5,5,193,47"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -285,6 +333,31 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Pointer to next row </p>
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="ab1d847d79b2bde913af7121c47b25004"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1d847d79b2bde913af7121c47b25004">&#9670;&nbsp;</a></span>RawLength</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Casasoft.Commodore.Basic.BasicRow.RawLength</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Length of the line in <a class="el" href="namespace_casasoft_1_1_commodore.html">Commodore</a> format </p>
 
 </div>
 </div>

@@ -1,0 +1,4 @@
+<map id="Casasoft.Commodore.Disk.BaseDisk.putSector" name="Casasoft.Commodore.Disk.BaseDisk.putSector">
+<area shape="rect" id="node1" title="Put raw data in a sector" alt="" coords="5,5,187,47"/>
+<area shape="rect" id="node2" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a096cae0a830882ad4c32549071fd8e9f" title="Get track by number" alt="" coords="235,5,416,47"/>
+</map>

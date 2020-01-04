@@ -1,0 +1,4 @@
+<map id="Casasoft.Commodore.Disk.BaseDisk.GetPRGFile" name="Casasoft.Commodore.Disk.BaseDisk.GetPRGFile">
+<area shape="rect" id="node1" title="Gets a PRG file by Index" alt="" coords="5,5,187,47"/>
+<area shape="rect" id="node2" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a558fcc2572911941c8000bd7fc70220a" title="Gets a file by File Name" alt="" coords="235,5,416,47"/>
+</map>

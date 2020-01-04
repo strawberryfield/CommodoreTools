@@ -1,0 +1,8 @@
+<map id="Casasoft.Commodore.Disk.BaseDisk" name="Casasoft.Commodore.Disk.BaseDisk">
+<area shape="rect" id="node1" title="Base disk manager" alt="" coords="5,136,187,177"/>
+<area shape="rect" id="node2" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_disk1541.html" title="class for 1541 disks (sigle side, 35 tracks)" alt="" coords="235,5,416,47"/>
+<area shape="rect" id="node3" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_disk1571.html" title="class for 1571 disks (double side, 70 tracks)" alt="" coords="235,71,416,112"/>
+<area shape="rect" id="node4" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_disk1581.html" title="class for 1581 disks (double side, 80 tracks, 40 sectors/track)" alt="" coords="235,136,416,177"/>
+<area shape="rect" id="node5" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_disk8050.html" title="class for 8050 disks (sigle side, 77 tracks)" alt="" coords="235,201,416,243"/>
+<area shape="rect" id="node6" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_disk8250.html" title="class for 8250 disks (double side, 77+77 tracks)" alt="" coords="235,267,416,308"/>
+</map>

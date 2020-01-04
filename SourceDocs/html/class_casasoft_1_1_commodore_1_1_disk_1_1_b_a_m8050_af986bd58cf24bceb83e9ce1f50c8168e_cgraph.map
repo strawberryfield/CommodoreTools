@@ -1,0 +1,5 @@
+<map id="Casasoft.Commodore.Disk.BAM8050.LoadHeader" name="Casasoft.Commodore.Disk.BAM8050.LoadHeader">
+<area shape="rect" id="node1" title="Read disk header" alt="" coords="5,5,187,47"/>
+<area shape="rect" id="node2" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a6c20a05f80c26df437d5fac38255ffd4" title="Get sector raw data" alt="" coords="235,5,416,47"/>
+<area shape="rect" id="node3" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a096cae0a830882ad4c32549071fd8e9f" title="Get track by number" alt="" coords="464,5,645,47"/>
+</map>

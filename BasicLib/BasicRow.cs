@@ -53,7 +53,7 @@ namespace Casasoft.Commodore.Basic
         /// <summary>
         /// Constructor
         /// </summary>
-        public BasicRow() 
+        public BasicRow()
         {
             NextRowAddress = 0;
             LineNumber = 0;
@@ -93,19 +93,43 @@ namespace Casasoft.Commodore.Basic
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder(LineNumber.ToString());
-            for(int j=0; j<Code.Count; j++)
+            for (int j = 0; j < Code.Count; j++)
             {
                 char c = (char)Code[j];
-                if (c<128)
+                if (c < 128)
                 {
                     sb.Append(c);
-                } 
+                }
                 else
                 {
                     sb.Append(Tokens.List[c]);
                 }
             }
             return sb.ToString();
+        }
+
+        /// <summary>
+        /// Length of the line in Commodore format
+        /// </summary>
+        public int RawLength
+        {
+            get => Code.Count + 5;
+        }
+
+        /// <summary>
+        /// Convert row in Commodore Basic format
+        /// </summary>
+        /// <returns></returns>
+        public byte[] ToRaw()
+        {
+            byte[] ret = new byte[RawLength];
+            ret[0] = Convert.ToByte(NextRowAddress % 256);
+            ret[1] = Convert.ToByte(NextRowAddress / 256);
+            ret[2] = Convert.ToByte(LineNumber % 256);
+            ret[3] = Convert.ToByte(LineNumber / 256);
+            ret[RawLength - 1] = 0;
+            Array.Copy(Code.ToArray(), 0, ret, 4, Code.Count);
+            return ret;
         }
     }
 }

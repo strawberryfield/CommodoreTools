@@ -1,0 +1,4 @@
+<map id="Casasoft.Commodore.Disk.Directory.ToString" name="Casasoft.Commodore.Disk.Directory.ToString">
+<area shape="rect" id="node1" title="Prints directory list to string" alt="" coords="5,5,187,47"/>
+<area shape="rect" id="node2" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_directory_entry.html#a7e438c63d6cfc273af48b92020571e52" title="Format file info to string" alt="" coords="235,5,416,47"/>
+</map>
