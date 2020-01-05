@@ -39,6 +39,19 @@ namespace Casasoft.Commodore.Disk
         public BAM1541() : base()
         {
             DoubleSide = false;
+            SingleSideStructure();
+        }
+
+        /// <summary>
+        /// Structure for single side 
+        /// </summary>
+        /// <param name="side"></param>
+        protected void SingleSideStructure()
+        {
+            for (int j = 1; j <=  17; j++) addTrackStructure(21);
+            for (int j = 18; j <= 24; j++) addTrackStructure(19);
+            for (int j = 25; j <= 30; j++) addTrackStructure(18);
+            for (int j = 31; j <= 35; j++) addTrackStructure(17);
         }
 
         /// <summary>
@@ -49,11 +62,10 @@ namespace Casasoft.Commodore.Disk
         {
             LoadHeader(disk, 18, 0);
 
-            const int tracks = 35;
             byte[] data = disk.GetSector(18, 0);
 
-            byte[] table = new byte[tracks * 4];
-            Array.Copy(data, 4, table, 0, tracks * 4);
+            byte[] table = new byte[totalTracks * 4];
+            Array.Copy(data, 4, table, 0, totalTracks * 4);
             loadMap(table, 4);
         }
     }

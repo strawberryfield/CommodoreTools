@@ -36,12 +36,17 @@ namespace Casasoft.Commodore.Disk
         /// <summary>
         /// Free sectors in track
         /// </summary>
-        public int FreeSectors;
+        public int FreeSectors { get; protected set; }
 
         /// <summary>
         /// free sectors flags
         /// </summary>
-        public byte[] flags;
+        public byte[] flags { get; protected set; }
+
+        /// <summary>
+        /// size of the entry in bytes
+        /// </summary>
+        public readonly int EntrySize;
 
         /// <summary>
         /// Build an empty entry
@@ -50,6 +55,7 @@ namespace Casasoft.Commodore.Disk
         public BAMentry(int size)
         {
             flags = new byte[size];
+            EntrySize = size + 1;
         }
 
         /// <summary>
@@ -73,5 +79,30 @@ namespace Casasoft.Commodore.Disk
             int bit = 7 - (sector % 8);  //reverse bit order
             return (flags[idx] & (1 << bit)) != 0;
         }
+
+        /// <summary>
+        /// marks a sector as used
+        /// </summary>
+        /// <param name="sector"></param>
+        public void SetFlag(int sector)
+        {
+            int idx = sector / 8;
+            int bit = 7 - (sector % 8);  //reverse bit order
+            flags[idx] |= (byte)(1 << bit);
+            FreeSectors--;
+        }
+
+        /// <summary>
+        /// marks a sector as free
+        /// </summary>
+        /// <param name="sector"></param>
+        public void ResetFlag(int sector)
+        {
+            int idx = sector / 8;
+            int bit = 7 - (sector % 8);  //reverse bit order
+            flags[idx] &= (byte)(~(1 << bit));
+            FreeSectors++;
+        }
+
     }
 }

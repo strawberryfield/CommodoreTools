@@ -47,6 +47,22 @@ namespace Casasoft.Commodore.Disk
         public char[] DOStype;
         public List<BAMentry> SectorsMap;
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
+
+        /// <summary>
+        /// number of sectors in each track
+        /// </summary>
+        protected List<byte> diskStructure;
+
+        /// <summary>
+        /// total number of sectors in disk (reserved included)
+        /// </summary>
+        public UInt16 totalSectors { get; protected set; }
+
+        /// <summary>
+        /// total number of tracks in disk (reserved included)
+        /// </summary>
+        public byte totalTracks => (byte)diskStructure.Count;
+
         #endregion
 
         /// <summary>
@@ -58,6 +74,17 @@ namespace Casasoft.Commodore.Disk
             DiskId = new char[2];
             DiskName = string.Empty;
             SectorsMap = new List<BAMentry>();
+            diskStructure = new List<byte>();
+        }
+
+        /// <summary>
+        /// Add track info to structure
+        /// </summary>
+        /// <param name="sectors">number of sectors in the track</param>
+        protected void addTrackStructure(byte sectors)
+        {
+            diskStructure.Add(sectors);
+            totalSectors += sectors;
         }
 
         #region Load
@@ -110,6 +137,14 @@ namespace Casasoft.Commodore.Disk
         }
         #endregion
 
+        /// <summary>
+        /// Saves BAM data to disk image
+        /// </summary>
+        /// <param name="disk">Disk image to write</param>
+        /// <remarks>Empty virtual method</remarks>
+        public virtual void Save(BaseDisk disk)
+        {
+        }
         /// <summary>
         /// Return total free sectors number
         /// </summary>

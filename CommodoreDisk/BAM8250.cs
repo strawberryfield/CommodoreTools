@@ -38,6 +38,7 @@ namespace Casasoft.Commodore.Disk
         /// </summary>
         public BAM8250() : base()
         {
+            SingleSideStructure();
         }
 
         /// <summary>

@@ -31,13 +31,15 @@ namespace Casasoft.Commodore.Disk
     /// <summary>
     /// BAM for 1571 disks (double side, 70 tracks)
     /// </summary>
-    public class BAM1571 : BAMbase
+    public class BAM1571 : BAM1541
     {
         /// <summary>
         /// Constructor
         /// </summary>
         public BAM1571() : base()
         {
+            DoubleSide = true;
+            SingleSideStructure();
         }
 
         /// <summary>

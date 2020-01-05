@@ -36,13 +36,13 @@ namespace Casasoft.Commodore.Disk
         /// Standard extension for disk image files
         /// </summary>
         /// <returns></returns>
-        public static string Extension => ".D64";
+        public const string Extension = ".D64";
 
         /// <summary>
         /// Original Commodore disk model
         /// </summary>
         /// <returns></returns>
-        public static string Model => "1541";
+        public const string Model = "1541";
         #endregion
 
         /// <summary>
