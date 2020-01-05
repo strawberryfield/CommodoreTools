@@ -47,11 +47,17 @@ namespace Casasoft.Commodore.Disk
         public byte FirstSector { get; protected set; }
 
         /// <summary>
+        /// Entries per sector
+        /// </summary>
+        public readonly int EntriesPerSector;
+
+        /// <summary>
         /// Constructor
         /// </summary>
         public Directory()
         {
             dir = new List<DirectoryEntry>();
+            EntriesPerSector = BaseDisk.sectorSize / DirectoryEntry.EntrySize;
         }
 
         /// <summary>
@@ -74,11 +80,11 @@ namespace Casasoft.Commodore.Disk
         public void Load(BaseDisk disk, byte track, byte sector)
         {
             byte[] sectorData = disk.GetSector(track, sector);
-
-            for (byte j = 0; j < 8; j++)
+            
+            for (byte j = 0; j < EntriesPerSector ; j++)
             {
-                byte[] entryData = new byte[32];
-                Array.Copy(sectorData, j * 32, entryData, 0, 32);
+                byte[] entryData = new byte[DirectoryEntry.EntrySize];
+                Array.Copy(sectorData, j * DirectoryEntry.EntrySize, entryData, 0, DirectoryEntry.EntrySize);
                 addEntry(entryData, track, sector, j);
             }
 
@@ -155,6 +161,28 @@ namespace Casasoft.Commodore.Disk
                 dt.AddDirectoryRow(row);
             }
 
+        }
+
+        /// <summary>
+        /// Directory as a list of raw sector data
+        /// </summary>
+        /// <returns></returns>
+        public List<byte[]> ToRaw()
+        {
+            List<byte[]> ret = new List<byte[]>();
+            int sectors = (dir.Count + EntriesPerSector - 1) / EntriesPerSector;
+            // see https://stackoverflow.com/questions/17944/how-to-round-up-the-result-of-integer-division
+            for (int j = 0; j < sectors; j++)
+            {
+                byte[] s = new byte[BaseDisk.sectorSize];
+                for (int k = 0; k < BaseDisk.sectorSize; ++k) s[k] = 0;
+                for (int e = 0; e < EntriesPerSector && j * EntriesPerSector + e < dir.Count; ++e)
+                {
+                    Array.Copy(dir[j * EntriesPerSector + e].ToRaw(), 0, 
+                        s, e * DirectoryEntry.EntrySize, DirectoryEntry.EntrySize);
+                }
+            }
+            return ret;
         }
     }
 }

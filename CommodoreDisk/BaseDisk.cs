@@ -50,7 +50,7 @@ namespace Casasoft.Commodore.Disk
         /// <summary>
         /// bytes in each sector
         /// </summary>
-        public int sectorSize => 256;
+        public const int sectorSize = 256;
 
         /// <summary>
         /// total number of sectors in disk (reserved included)
