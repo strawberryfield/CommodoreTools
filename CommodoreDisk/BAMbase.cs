@@ -36,10 +36,10 @@ namespace Casasoft.Commodore.Disk
     {
         #region properties
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-        public int DirectoryTrack;
-        public int DirectorySector;
-        public int BAMTrack;
-        public int BAMSector;
+        public byte DirectoryTrack;
+        public byte DirectorySector;
+        public byte BAMTrack;
+        public byte BAMSector;
         public bool DoubleSide;
         public char DOSversion;
         public string DiskName;
@@ -63,6 +63,11 @@ namespace Casasoft.Commodore.Disk
         /// </summary>
         public byte totalTracks => (byte)diskStructure.Count;
 
+        /// <summary>
+        /// Size of BAM entries in bytes
+        /// </summary>
+        public byte EntrySize { get; protected set; }
+
         #endregion
 
         /// <summary>
@@ -70,11 +75,12 @@ namespace Casasoft.Commodore.Disk
         /// </summary>
         public BAMbase()
         {
-            DOStype = new char[2];
-            DiskId = new char[2];
+            DOStype = new char[2] { '2', 'A' };
+            DiskId = new char[2] { '0', '0' };
             DiskName = string.Empty;
             SectorsMap = new List<BAMentry>();
             diskStructure = new List<byte>();
+            DOSversion = 'A';
         }
 
         /// <summary>
@@ -122,6 +128,35 @@ namespace Casasoft.Commodore.Disk
         }
 
         /// <summary>
+        /// Disk name in bytes array
+        /// </summary>
+        /// <returns></returns>
+        protected byte[] DiskLabel()
+        {
+            byte[] ret = new byte[16];
+            string s = DiskName.Trim().PadRight(16, (char)0xA0);
+            for (int j = 0; j < 16; ++j) ret[j] = (byte)s[j];
+            return ret;
+        }
+
+        /// <summary>
+        /// Binary sectors map
+        /// </summary>
+        /// <returns></returns>
+        protected byte[] RawMap()
+        {
+            byte[] ret = new byte[totalTracks * EntrySize];
+            for(int j=0; j<totalTracks; ++j)
+            {
+                int offset = j * EntrySize;
+                BAMentry be = SectorsMap[j];
+                ret[offset] = be.FreeSectors;
+                Array.Copy(be.flags, 0, ret, offset + 1, EntrySize - 1);
+            }
+            return ret;
+        }
+
+        /// <summary>
         /// Load sector map
         /// </summary>
         /// <param name="data">raw bytes of map</param>
@@ -138,6 +173,15 @@ namespace Casasoft.Commodore.Disk
         #endregion
 
         /// <summary>
+        /// Frees all sectors
+        /// </summary>
+        public void ClearBAM()
+        {
+            SectorsMap.Clear();
+            foreach (byte b in diskStructure) SectorsMap.Add(new BAMentry(EntrySize-1, b));
+        }
+
+        /// <summary>
         /// Saves BAM data to disk image
         /// </summary>
         /// <param name="disk">Disk image to write</param>
@@ -145,6 +189,7 @@ namespace Casasoft.Commodore.Disk
         public virtual void Save(BaseDisk disk)
         {
         }
+
         /// <summary>
         /// Return total free sectors number
         /// </summary>

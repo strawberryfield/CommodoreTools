@@ -79,6 +79,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#properties">Properties</a> &#124;
 <a href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mentry-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Casasoft.Commodore.Disk.BAMentry Class Reference</div>  </div>
@@ -90,30 +91,45 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a46f53c585860a6e645fa73555889e546"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mentry.html#a46f53c585860a6e645fa73555889e546">BAMentry</a> (int size)</td></tr>
-<tr class="memdesc:a46f53c585860a6e645fa73555889e546"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build an empty entry  <a href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mentry.html#a46f53c585860a6e645fa73555889e546">More...</a><br /></td></tr>
-<tr class="separator:a46f53c585860a6e645fa73555889e546"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a1f0d946f2ba0d878f87aeab68a4f3a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mentry.html#a0a1f0d946f2ba0d878f87aeab68a4f3a">BAMentry</a> (int size, byte sectors)</td></tr>
+<tr class="memdesc:a0a1f0d946f2ba0d878f87aeab68a4f3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build an empty entry  <a href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mentry.html#a0a1f0d946f2ba0d878f87aeab68a4f3a">More...</a><br /></td></tr>
+<tr class="separator:a0a1f0d946f2ba0d878f87aeab68a4f3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac685a2e99056d9aeefbc62cf0e8c2cb5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mentry.html#ac685a2e99056d9aeefbc62cf0e8c2cb5">BAMentry</a> (byte[] data)</td></tr>
 <tr class="memdesc:ac685a2e99056d9aeefbc62cf0e8c2cb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build an entry from raw data  <a href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mentry.html#ac685a2e99056d9aeefbc62cf0e8c2cb5">More...</a><br /></td></tr>
 <tr class="separator:ac685a2e99056d9aeefbc62cf0e8c2cb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33a7841dd2d657c2288425d5bbda30bd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mentry.html#a33a7841dd2d657c2288425d5bbda30bd">GetFlag</a> (int sector)</td></tr>
 <tr class="memdesc:a33a7841dd2d657c2288425d5bbda30bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get status of sector  <a href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mentry.html#a33a7841dd2d657c2288425d5bbda30bd">More...</a><br /></td></tr>
 <tr class="separator:a33a7841dd2d657c2288425d5bbda30bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8387dd91d82338ce68d27c499077e0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mentry.html#ab8387dd91d82338ce68d27c499077e0d">SetFlag</a> (int sector)</td></tr>
+<tr class="memdesc:ab8387dd91d82338ce68d27c499077e0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">marks a sector as used  <a href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mentry.html#ab8387dd91d82338ce68d27c499077e0d">More...</a><br /></td></tr>
+<tr class="separator:ab8387dd91d82338ce68d27c499077e0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb0a52755dec845fbcfb42d348c44d29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mentry.html#aeb0a52755dec845fbcfb42d348c44d29">ResetFlag</a> (int sector)</td></tr>
+<tr class="memdesc:aeb0a52755dec845fbcfb42d348c44d29"><td class="mdescLeft">&#160;</td><td class="mdescRight">marks a sector as free  <a href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mentry.html#aeb0a52755dec845fbcfb42d348c44d29">More...</a><br /></td></tr>
+<tr class="separator:aeb0a52755dec845fbcfb42d348c44d29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a6c208beea7e554db5b7b90b591ce79eb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mentry.html#a6c208beea7e554db5b7b90b591ce79eb">FreeSectors</a></td></tr>
-<tr class="memdesc:a6c208beea7e554db5b7b90b591ce79eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free sectors in track  <a href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mentry.html#a6c208beea7e554db5b7b90b591ce79eb">More...</a><br /></td></tr>
-<tr class="separator:a6c208beea7e554db5b7b90b591ce79eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2d43633ae7b878e6f4f94ce2c3d8d60"><td class="memItemLeft" align="right" valign="top">byte[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mentry.html#ab2d43633ae7b878e6f4f94ce2c3d8d60">flags</a></td></tr>
+<tr class="memitem:ad1f8a9a94d573a4da990d55bd1a8990a"><td class="memItemLeft" align="right" valign="top">readonly int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mentry.html#ad1f8a9a94d573a4da990d55bd1a8990a">EntrySize</a></td></tr>
+<tr class="memdesc:ad1f8a9a94d573a4da990d55bd1a8990a"><td class="mdescLeft">&#160;</td><td class="mdescRight">size of the entry in bytes  <a href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mentry.html#ad1f8a9a94d573a4da990d55bd1a8990a">More...</a><br /></td></tr>
+<tr class="separator:ad1f8a9a94d573a4da990d55bd1a8990a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73daf5f03b4d2b387b8f0b3ca7b53c62"><td class="memItemLeft" align="right" valign="top">readonly byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mentry.html#a73daf5f03b4d2b387b8f0b3ca7b53c62">MaxSectors</a></td></tr>
+<tr class="memdesc:a73daf5f03b4d2b387b8f0b3ca7b53c62"><td class="mdescLeft">&#160;</td><td class="mdescRight">available sectors in track  <a href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mentry.html#a73daf5f03b4d2b387b8f0b3ca7b53c62">More...</a><br /></td></tr>
+<tr class="separator:a73daf5f03b4d2b387b8f0b3ca7b53c62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:ad4ec8ea44815fd8e82c576c9b06f9dca"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mentry.html#ad4ec8ea44815fd8e82c576c9b06f9dca">FreeSectors</a><code> [get, protected set]</code></td></tr>
+<tr class="memdesc:ad4ec8ea44815fd8e82c576c9b06f9dca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free sectors in track  <a href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mentry.html#ad4ec8ea44815fd8e82c576c9b06f9dca">More...</a><br /></td></tr>
+<tr class="separator:ad4ec8ea44815fd8e82c576c9b06f9dca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2d43633ae7b878e6f4f94ce2c3d8d60"><td class="memItemLeft" align="right" valign="top">byte[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mentry.html#ab2d43633ae7b878e6f4f94ce2c3d8d60">flags</a><code> [get, protected set]</code></td></tr>
 <tr class="memdesc:ab2d43633ae7b878e6f4f94ce2c3d8d60"><td class="mdescLeft">&#160;</td><td class="mdescRight">free sectors flags  <a href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mentry.html#ab2d43633ae7b878e6f4f94ce2c3d8d60">More...</a><br /></td></tr>
 <tr class="separator:ab2d43633ae7b878e6f4f94ce2c3d8d60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Single track sector map </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a46f53c585860a6e645fa73555889e546"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46f53c585860a6e645fa73555889e546">&#9670;&nbsp;</a></span>BAMentry() <span class="overload">[1/2]</span></h2>
+<a id="a0a1f0d946f2ba0d878f87aeab68a4f3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a1f0d946f2ba0d878f87aeab68a4f3a">&#9670;&nbsp;</a></span>BAMentry() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -122,8 +138,18 @@ Public Attributes</h2></td></tr>
           <td class="memname">Casasoft.Commodore.Disk.BAMentry.BAMentry </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>size</em></td><td>)</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">byte&#160;</td>
+          <td class="paramname"><em>sectors</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -132,6 +158,7 @@ Public Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">size</td><td>size of track map in BAM table</td></tr>
+    <tr><td class="paramname">sectors</td><td>sectors in track</td></tr>
   </table>
   </dd>
 </dl>
@@ -192,33 +219,134 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="ab2d43633ae7b878e6f4f94ce2c3d8d60"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2d43633ae7b878e6f4f94ce2c3d8d60">&#9670;&nbsp;</a></span>flags</h2>
+<a id="aeb0a52755dec845fbcfb42d348c44d29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb0a52755dec845fbcfb42d348c44d29">&#9670;&nbsp;</a></span>ResetFlag()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
+          <td class="memname">void Casasoft.Commodore.Disk.BAMentry.ResetFlag </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sector</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>marks a sector as free </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sector</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab8387dd91d82338ce68d27c499077e0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8387dd91d82338ce68d27c499077e0d">&#9670;&nbsp;</a></span>SetFlag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Casasoft.Commodore.Disk.BAMentry.SetFlag </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sector</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>marks a sector as used </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sector</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="ad1f8a9a94d573a4da990d55bd1a8990a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1f8a9a94d573a4da990d55bd1a8990a">&#9670;&nbsp;</a></span>EntrySize</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly int Casasoft.Commodore.Disk.BAMentry.EntrySize</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>size of the entry in bytes </p>
+
+</div>
+</div>
+<a id="a73daf5f03b4d2b387b8f0b3ca7b53c62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73daf5f03b4d2b387b8f0b3ca7b53c62">&#9670;&nbsp;</a></span>MaxSectors</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly byte Casasoft.Commodore.Disk.BAMentry.MaxSectors</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>available sectors in track </p>
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="ab2d43633ae7b878e6f4f94ce2c3d8d60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2d43633ae7b878e6f4f94ce2c3d8d60">&#9670;&nbsp;</a></span>flags</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
           <td class="memname">byte [] Casasoft.Commodore.Disk.BAMentry.flags</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">protected set</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>free sectors flags </p>
 
 </div>
 </div>
-<a id="a6c208beea7e554db5b7b90b591ce79eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c208beea7e554db5b7b90b591ce79eb">&#9670;&nbsp;</a></span>FreeSectors</h2>
+<a id="ad4ec8ea44815fd8e82c576c9b06f9dca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4ec8ea44815fd8e82c576c9b06f9dca">&#9670;&nbsp;</a></span>FreeSectors</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int Casasoft.Commodore.Disk.BAMentry.FreeSectors</td>
+          <td class="memname">byte Casasoft.Commodore.Disk.BAMentry.FreeSectors</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">protected set</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Free sectors in track </p>

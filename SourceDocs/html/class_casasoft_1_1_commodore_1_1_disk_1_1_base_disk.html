@@ -79,6 +79,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
@@ -112,6 +113,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6c20a05f80c26df437d5fac38255ffd4"><td class="memItemLeft" align="right" valign="top">byte[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a6c20a05f80c26df437d5fac38255ffd4">GetSector</a> (int track, int sector)</td></tr>
 <tr class="memdesc:a6c20a05f80c26df437d5fac38255ffd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get sector raw data  <a href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a6c20a05f80c26df437d5fac38255ffd4">More...</a><br /></td></tr>
 <tr class="separator:a6c20a05f80c26df437d5fac38255ffd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ee06536e9037033812b7b037987b086"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a4ee06536e9037033812b7b037987b086">PutSector</a> (int track, int sector, byte[] data)</td></tr>
+<tr class="memdesc:a4ee06536e9037033812b7b037987b086"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put raw data in a sector  <a href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a4ee06536e9037033812b7b037987b086">More...</a><br /></td></tr>
+<tr class="separator:a4ee06536e9037033812b7b037987b086"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e59d444a2f7bcce5bfbb58088c14fd6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a1e59d444a2f7bcce5bfbb58088c14fd6">Load</a> (string filename)</td></tr>
 <tr class="memdesc:a1e59d444a2f7bcce5bfbb58088c14fd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load disk image from file  <a href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a1e59d444a2f7bcce5bfbb58088c14fd6">More...</a><br /></td></tr>
 <tr class="separator:a1e59d444a2f7bcce5bfbb58088c14fd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,33 +140,33 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a57f05aee5b9f1094d4aaa4d1c1db0028"><td class="memItemLeft" align="right" valign="top">override string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a57f05aee5b9f1094d4aaa4d1c1db0028">ToString</a> ()</td></tr>
 <tr class="memdesc:a57f05aee5b9f1094d4aaa4d1c1db0028"><td class="mdescLeft">&#160;</td><td class="mdescRight">Complete directory  <a href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a57f05aee5b9f1094d4aaa4d1c1db0028">More...</a><br /></td></tr>
 <tr class="separator:a57f05aee5b9f1094d4aaa4d1c1db0028"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a648c615400a8f9a021d79432f521a18c"><td class="memItemLeft" align="right" valign="top">virtual byte[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a648c615400a8f9a021d79432f521a18c">ToRaw</a> ()</td></tr>
+<tr class="memdesc:a648c615400a8f9a021d79432f521a18c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw data to save on host disk  <a href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a648c615400a8f9a021d79432f521a18c">More...</a><br /></td></tr>
+<tr class="separator:a648c615400a8f9a021d79432f521a18c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:afce64ae52ecd635dd3b916520e5eb145"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#afce64ae52ecd635dd3b916520e5eb145">sectorSize</a> =&gt; 256</td></tr>
-<tr class="memdesc:afce64ae52ecd635dd3b916520e5eb145"><td class="mdescLeft">&#160;</td><td class="mdescRight">bytes in each sector  <a href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#afce64ae52ecd635dd3b916520e5eb145">More...</a><br /></td></tr>
-<tr class="separator:afce64ae52ecd635dd3b916520e5eb145"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c797104fff90f1ff5c3d3a7255082c4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a6c797104fff90f1ff5c3d3a7255082c4">totalTracks</a> =&gt; diskStructure.Count</td></tr>
+<tr class="memitem:a6c797104fff90f1ff5c3d3a7255082c4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a6c797104fff90f1ff5c3d3a7255082c4">totalTracks</a> =&gt; Header.totalTracks</td></tr>
 <tr class="memdesc:a6c797104fff90f1ff5c3d3a7255082c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">total number of tracks in disk (reserved included)  <a href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a6c797104fff90f1ff5c3d3a7255082c4">More...</a><br /></td></tr>
 <tr class="separator:a6c797104fff90f1ff5c3d3a7255082c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a917338883334c206fce30e5bec23cce1"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a917338883334c206fce30e5bec23cce1">sectorSize</a> = 256</td></tr>
+<tr class="memdesc:a917338883334c206fce30e5bec23cce1"><td class="mdescLeft">&#160;</td><td class="mdescRight">bytes in each sector  <a href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a917338883334c206fce30e5bec23cce1">More...</a><br /></td></tr>
+<tr class="separator:a917338883334c206fce30e5bec23cce1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a30a52239f6df9eee3356dd0a97ad8e5b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a30a52239f6df9eee3356dd0a97ad8e5b">initDiskData</a> ()</td></tr>
 <tr class="memdesc:a30a52239f6df9eee3356dd0a97ad8e5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create database container  <a href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a30a52239f6df9eee3356dd0a97ad8e5b">More...</a><br /></td></tr>
 <tr class="separator:a30a52239f6df9eee3356dd0a97ad8e5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8282492f3ef3ef7bd0de04e0d59d54fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a8282492f3ef3ef7bd0de04e0d59d54fc">addTrackStructure</a> (int sectors)</td></tr>
-<tr class="memdesc:a8282492f3ef3ef7bd0de04e0d59d54fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add track info to structure  <a href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a8282492f3ef3ef7bd0de04e0d59d54fc">More...</a><br /></td></tr>
-<tr class="separator:a8282492f3ef3ef7bd0de04e0d59d54fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27efd8b454edf57354270063ca5b3e16"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a27efd8b454edf57354270063ca5b3e16">addEmptyTrack</a> (int sectors)</td></tr>
 <tr class="memdesc:a27efd8b454edf57354270063ca5b3e16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a blank track to database  <a href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a27efd8b454edf57354270063ca5b3e16">More...</a><br /></td></tr>
 <tr class="separator:a27efd8b454edf57354270063ca5b3e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a096cae0a830882ad4c32549071fd8e9f"><td class="memItemLeft" align="right" valign="top">List&lt; byte[]&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a096cae0a830882ad4c32549071fd8e9f">getTrack</a> (int track)</td></tr>
 <tr class="memdesc:a096cae0a830882ad4c32549071fd8e9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get track by number  <a href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a096cae0a830882ad4c32549071fd8e9f">More...</a><br /></td></tr>
 <tr class="separator:a096cae0a830882ad4c32549071fd8e9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28a4ac788e409e9db23ce9f4e72e6378"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a28a4ac788e409e9db23ce9f4e72e6378">putSector</a> (int track, int sector, byte[] data)</td></tr>
-<tr class="memdesc:a28a4ac788e409e9db23ce9f4e72e6378"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put raw data in a sector  <a href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a28a4ac788e409e9db23ce9f4e72e6378">More...</a><br /></td></tr>
-<tr class="separator:a28a4ac788e409e9db23ce9f4e72e6378"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4cb697be0bd090b0b6e3e8bf24956b0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#ab4cb697be0bd090b0b6e3e8bf24956b0">LoadRoot</a> ()</td></tr>
 <tr class="memdesc:ab4cb697be0bd090b0b6e3e8bf24956b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load root directory  <a href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#ab4cb697be0bd090b0b6e3e8bf24956b0">More...</a><br /></td></tr>
 <tr class="separator:ab4cb697be0bd090b0b6e3e8bf24956b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -175,15 +179,9 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a33bc4234ddae3c2b0a0ff9fd5b21e4c9"><td class="memItemLeft" align="right" valign="top">List&lt; List&lt; byte[]&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a33bc4234ddae3c2b0a0ff9fd5b21e4c9">diskData</a></td></tr>
 <tr class="memdesc:a33bc4234ddae3c2b0a0ff9fd5b21e4c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">sectors raw data  <a href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a33bc4234ddae3c2b0a0ff9fd5b21e4c9">More...</a><br /></td></tr>
 <tr class="separator:a33bc4234ddae3c2b0a0ff9fd5b21e4c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07e5b5e21e8ea15123579c8dd739d107"><td class="memItemLeft" align="right" valign="top">List&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a07e5b5e21e8ea15123579c8dd739d107">diskStructure</a></td></tr>
-<tr class="memdesc:a07e5b5e21e8ea15123579c8dd739d107"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of sectors in each track  <a href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a07e5b5e21e8ea15123579c8dd739d107">More...</a><br /></td></tr>
-<tr class="separator:a07e5b5e21e8ea15123579c8dd739d107"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:ac42b83b3916abb7f32aafeadcb6b9716"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#ac42b83b3916abb7f32aafeadcb6b9716">totalSectors</a><code> [get, protected set]</code></td></tr>
-<tr class="memdesc:ac42b83b3916abb7f32aafeadcb6b9716"><td class="mdescLeft">&#160;</td><td class="mdescRight">total number of sectors in disk (reserved included)  <a href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#ac42b83b3916abb7f32aafeadcb6b9716">More...</a><br /></td></tr>
-<tr class="separator:ac42b83b3916abb7f32aafeadcb6b9716"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b9d7945a63e01d891214d496a45f16e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_directory.html">Directory</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a6b9d7945a63e01d891214d496a45f16e">RootDir</a><code> [get, protected set]</code></td></tr>
 <tr class="memdesc:a6b9d7945a63e01d891214d496a45f16e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Root directory  <a href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a6b9d7945a63e01d891214d496a45f16e">More...</a><br /></td></tr>
 <tr class="separator:a6b9d7945a63e01d891214d496a45f16e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -252,53 +250,6 @@ Here is the caller graph for this function:</div>
 <map name="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_a27efd8b454edf57354270063ca5b3e16_icgraph" id="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_a27efd8b454edf57354270063ca5b3e16_icgraph">
 <area shape="rect" title="Add a blank track to database" alt="" coords="464,136,645,177"/>
 <area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a30a52239f6df9eee3356dd0a97ad8e5b" title="Create database container" alt="" coords="235,136,416,177"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_disk1541.html#a7a5de8e818e7247f69059e93b82e7c50" title="Constructor" alt="" coords="5,5,187,47"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_disk1571.html#a1b895342c35b80f8dad8e2f2d8bc004c" title="Constructor" alt="" coords="5,71,187,112"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_disk1581.html#abee3002efab5749d8ded35dd9a411a31" title="Constructor" alt="" coords="5,136,187,177"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_disk8050.html#adfb071d6536b2f36d59e2719e0b4fc3d" title="Constructor" alt="" coords="5,201,187,243"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_disk8250.html#a97693d0e15eee15991e00938da9a23bb" title="Constructor" alt="" coords="5,267,187,308"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a8282492f3ef3ef7bd0de04e0d59d54fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8282492f3ef3ef7bd0de04e0d59d54fc">&#9670;&nbsp;</a></span>addTrackStructure()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Casasoft.Commodore.Disk.BaseDisk.addTrackStructure </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>sectors</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Add track info to structure </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">sectors</td><td>number of sectors in the track</td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_a8282492f3ef3ef7bd0de04e0d59d54fc_icgraph.png" border="0" usemap="#class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_a8282492f3ef3ef7bd0de04e0d59d54fc_icgraph" alt=""/></div>
-<map name="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_a8282492f3ef3ef7bd0de04e0d59d54fc_icgraph" id="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_a8282492f3ef3ef7bd0de04e0d59d54fc_icgraph">
-<area shape="rect" title="Add track info to structure" alt="" coords="235,136,423,177"/>
 <area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_disk1541.html#a7a5de8e818e7247f69059e93b82e7c50" title="Constructor" alt="" coords="5,5,187,47"/>
 <area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_disk1571.html#a1b895342c35b80f8dad8e2f2d8bc004c" title="Constructor" alt="" coords="5,71,187,112"/>
 <area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_disk1581.html#abee3002efab5749d8ded35dd9a411a31" title="Constructor" alt="" coords="5,136,187,177"/>
@@ -558,22 +509,19 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_a6c20a05f80c26df437d5fac38255ffd4_icgraph.png" border="0" usemap="#class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_a6c20a05f80c26df437d5fac38255ffd4_icgraph" alt=""/></div>
 <map name="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_a6c20a05f80c26df437d5fac38255ffd4_icgraph" id="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_a6c20a05f80c26df437d5fac38255ffd4_icgraph">
-<area shape="rect" title="Get sector raw data" alt="" coords="464,203,645,244"/>
+<area shape="rect" title="Get sector raw data" alt="" coords="464,193,645,235"/>
 <area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m1571.html#a27f78992e72ec3511b98f2e8efa9701b" title="Load BAM data from disk image" alt="" coords="5,5,187,47"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m1581.html#a2e7dc2d006341cc1cef94d5db4607906" title="Load BAM data from disk image" alt="" coords="5,136,187,177"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m1541.html#ac4031462cd031dec1465209e88143d94" title="Load BAM data from disk image" alt="" coords="5,71,187,112"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_directory.html#ae4bfeb2475567378d681ae6478fa51f2" title="Loads directory from disk image database" alt="" coords="235,315,416,356"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m1581.html#aed5be8be9e145bcd1b521f8536f10b78" title="Read disk header" alt="" coords="235,232,416,273"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m8050.html#af986bd58cf24bceb83e9ce1f50c8168e" title="Read disk header" alt="" coords="235,495,416,536"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mbase.html#a0fc36cde81ff9b2d1697e0bea281ed38" title="Load header from disk image" alt="" coords="235,64,416,105"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m8050.html#a4d348b0475370e32382f125182195649" title="Load partial BAM" alt="" coords="235,560,416,601"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_disk1581.html#ae06f6e0f64ffb95ed00f5a07c80d7006" title="Load root directory starting at 40/3" alt="" coords="5,201,187,243"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_disk8050.html#aea810a1480956d2f5dc4b3e02cdbd45e" title="Load root directory starting at 39/1" alt="" coords="5,267,187,308"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_disk1541.html#ad02926bc9ac8172ec018cb678b29b723" title="Load root directory starting at 18/1" alt="" coords="5,332,187,373"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_disk8250.html#ae6294dc17daab74bfcb532b61530d847" title="Load root directory starting at 39/1" alt="" coords="5,397,187,439"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_disk1571.html#a640c53d9898b99156327744c0261d08a" title="Load root directory starting at 18/1" alt="" coords="5,463,187,504"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m8050.html#a433fd710a7efb8c1e84befc14ee280ed" title="Load BAM data from disk image" alt="" coords="5,528,187,569"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m8250.html#aa7c817ac16c069d6cb7efefe4584e774" title="Load BAM data from disk image" alt="" coords="5,593,187,635"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m1581.html#a2e7dc2d006341cc1cef94d5db4607906" title="Load BAM data from disk image" alt="" coords="5,160,187,201"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m1541.html#ac4031462cd031dec1465209e88143d94" title="Loads BAM data from disk image" alt="" coords="5,79,187,120"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_directory.html#a26d47737f8b284d09b849523b5a628d3" title="Loads directory from disk image database" alt="" coords="235,288,416,329"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m1581.html#aed5be8be9e145bcd1b521f8536f10b78" title="Read disk header" alt="" coords="235,223,416,264"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m8050.html#af986bd58cf24bceb83e9ce1f50c8168e" title="Read disk header" alt="" coords="235,353,416,395"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mbase.html#a0fc36cde81ff9b2d1697e0bea281ed38" title="Load header from disk image" alt="" coords="235,55,416,96"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m8050.html#a4d348b0475370e32382f125182195649" title="Load partial BAM" alt="" coords="235,419,416,460"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_directory.html#a4b14b604e4ea5fa31c6c5ab1dfadc23e" title="Loads directory from disk image database using standard parameters" alt="" coords="5,291,187,332"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#ab4cb697be0bd090b0b6e3e8bf24956b0" title="Load root directory" alt="" coords="5,225,187,267"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m8250.html#aa7c817ac16c069d6cb7efefe4584e774" title="Load BAM data from disk image" alt="" coords="5,421,187,463"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m8050.html#a433fd710a7efb8c1e84befc14ee280ed" title="Load BAM data from disk image" alt="" coords="5,356,187,397"/>
 </map>
 </div>
 
@@ -616,24 +564,22 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_a096cae0a830882ad4c32549071fd8e9f_icgraph.png" border="0" usemap="#class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_a096cae0a830882ad4c32549071fd8e9f_icgraph" alt=""/></div>
 <map name="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_a096cae0a830882ad4c32549071fd8e9f_icgraph" id="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_a096cae0a830882ad4c32549071fd8e9f_icgraph">
-<area shape="rect" title="Get track by number" alt="" coords="693,236,875,277"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a6c20a05f80c26df437d5fac38255ffd4" title="Get sector raw data" alt="" coords="464,203,645,244"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a28a4ac788e409e9db23ce9f4e72e6378" title="Put raw data in a sector" alt="" coords="464,268,645,309"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m1571.html#a27f78992e72ec3511b98f2e8efa9701b" title="Load BAM data from disk image" alt="" coords="5,5,187,47"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m1581.html#a2e7dc2d006341cc1cef94d5db4607906" title="Load BAM data from disk image" alt="" coords="5,136,187,177"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m1541.html#ac4031462cd031dec1465209e88143d94" title="Load BAM data from disk image" alt="" coords="5,71,187,112"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_directory.html#ae4bfeb2475567378d681ae6478fa51f2" title="Loads directory from disk image database" alt="" coords="235,315,416,356"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m1581.html#aed5be8be9e145bcd1b521f8536f10b78" title="Read disk header" alt="" coords="235,232,416,273"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m8050.html#af986bd58cf24bceb83e9ce1f50c8168e" title="Read disk header" alt="" coords="235,495,416,536"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mbase.html#a0fc36cde81ff9b2d1697e0bea281ed38" title="Load header from disk image" alt="" coords="235,64,416,105"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m8050.html#a4d348b0475370e32382f125182195649" title="Load partial BAM" alt="" coords="235,560,416,601"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_disk1581.html#ae06f6e0f64ffb95ed00f5a07c80d7006" title="Load root directory starting at 40/3" alt="" coords="5,201,187,243"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_disk8050.html#aea810a1480956d2f5dc4b3e02cdbd45e" title="Load root directory starting at 39/1" alt="" coords="5,267,187,308"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_disk1541.html#ad02926bc9ac8172ec018cb678b29b723" title="Load root directory starting at 18/1" alt="" coords="5,332,187,373"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_disk8250.html#ae6294dc17daab74bfcb532b61530d847" title="Load root directory starting at 39/1" alt="" coords="5,397,187,439"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_disk1571.html#a640c53d9898b99156327744c0261d08a" title="Load root directory starting at 18/1" alt="" coords="5,463,187,504"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m8050.html#a433fd710a7efb8c1e84befc14ee280ed" title="Load BAM data from disk image" alt="" coords="5,528,187,569"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m8250.html#aa7c817ac16c069d6cb7efefe4584e774" title="Load BAM data from disk image" alt="" coords="5,593,187,635"/>
+<area shape="rect" title="Get track by number" alt="" coords="693,364,875,405"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a6c20a05f80c26df437d5fac38255ffd4" title="Get sector raw data" alt="" coords="464,285,645,327"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a4ee06536e9037033812b7b037987b086" title="Put raw data in a sector" alt="" coords="464,441,645,483"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m1571.html#a27f78992e72ec3511b98f2e8efa9701b" title="Load BAM data from disk image" alt="" coords="5,239,187,280"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m1581.html#a2e7dc2d006341cc1cef94d5db4607906" title="Load BAM data from disk image" alt="" coords="5,165,187,207"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m1541.html#ac4031462cd031dec1465209e88143d94" title="Loads BAM data from disk image" alt="" coords="5,319,187,360"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_directory.html#a26d47737f8b284d09b849523b5a628d3" title="Loads directory from disk image database" alt="" coords="235,52,416,93"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m1581.html#aed5be8be9e145bcd1b521f8536f10b78" title="Read disk header" alt="" coords="235,117,416,159"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m8050.html#af986bd58cf24bceb83e9ce1f50c8168e" title="Read disk header" alt="" coords="235,403,416,444"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mbase.html#a0fc36cde81ff9b2d1697e0bea281ed38" title="Load header from disk image" alt="" coords="235,285,416,327"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m8050.html#a4d348b0475370e32382f125182195649" title="Load partial BAM" alt="" coords="235,468,416,509"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_directory.html#a4b14b604e4ea5fa31c6c5ab1dfadc23e" title="Loads directory from disk image database using standard parameters" alt="" coords="5,71,187,112"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#ab4cb697be0bd090b0b6e3e8bf24956b0" title="Load root directory" alt="" coords="5,5,187,47"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m8250.html#aa7c817ac16c069d6cb7efefe4584e774" title="Load BAM data from disk image" alt="" coords="5,403,187,444"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m8050.html#a433fd710a7efb8c1e84befc14ee280ed" title="Load BAM data from disk image" alt="" coords="5,468,187,509"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m1541.html#a711ad5ecc65ac8a1840194b2892b4219" title="Saves BAM data to disk image" alt="" coords="235,533,416,575"/>
 </map>
 </div>
 
@@ -738,9 +684,15 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Load disk header and free sectors map </p>
-<p>empty virtual method</p>
-
-<p>Reimplemented in <a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_disk1571.html#adca3fade7ae9244455380b2056eee9ac">Casasoft.Commodore.Disk.Disk1571</a>, <a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_disk8250.html#aabc15a0d887ea7f9a4b0b0012d3c2945">Casasoft.Commodore.Disk.Disk8250</a>, <a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_disk1541.html#a077c242c9dae295bc55da4bb3a705d15">Casasoft.Commodore.Disk.Disk1541</a>, <a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_disk8050.html#afaa729eb105e5b2fa4507da43e94ae8c">Casasoft.Commodore.Disk.Disk8050</a>, and <a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_disk1581.html#a0cfba0049390f02303668e9f9cb0a1e8">Casasoft.Commodore.Disk.Disk1581</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_ae43f2abb35b13dd1b3d15641eccd74aa_cgraph.png" border="0" usemap="#class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_ae43f2abb35b13dd1b3d15641eccd74aa_cgraph" alt=""/></div>
+<map name="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_ae43f2abb35b13dd1b3d15641eccd74aa_cgraph" id="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_ae43f2abb35b13dd1b3d15641eccd74aa_cgraph">
+<area shape="rect" title="Load disk header and free sectors map" alt="" coords="5,5,187,47"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mbase.html#a395be75561669a457def63a79ecd7d9d" title="Load BAM data from disk image" alt="" coords="235,5,416,47"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -768,23 +720,28 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Load root directory </p>
-<p>empty virtual method</p>
-
-<p>Reimplemented in <a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_disk1571.html#a640c53d9898b99156327744c0261d08a">Casasoft.Commodore.Disk.Disk1571</a>, <a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_disk8250.html#ae6294dc17daab74bfcb532b61530d847">Casasoft.Commodore.Disk.Disk8250</a>, <a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_disk1541.html#ad02926bc9ac8172ec018cb678b29b723">Casasoft.Commodore.Disk.Disk1541</a>, <a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_disk8050.html#aea810a1480956d2f5dc4b3e02cdbd45e">Casasoft.Commodore.Disk.Disk8050</a>, and <a class="el" href="class_casasoft_1_1_commodore_1_1_disk_1_1_disk1581.html#ae06f6e0f64ffb95ed00f5a07c80d7006">Casasoft.Commodore.Disk.Disk1581</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_ab4cb697be0bd090b0b6e3e8bf24956b0_cgraph.png" border="0" usemap="#class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_ab4cb697be0bd090b0b6e3e8bf24956b0_cgraph" alt=""/></div>
+<map name="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_ab4cb697be0bd090b0b6e3e8bf24956b0_cgraph" id="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_ab4cb697be0bd090b0b6e3e8bf24956b0_cgraph">
+<area shape="rect" title="Load root directory" alt="" coords="5,5,187,47"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_directory.html#a26d47737f8b284d09b849523b5a628d3" title="Loads directory from disk image database" alt="" coords="235,5,416,47"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a6c20a05f80c26df437d5fac38255ffd4" title="Get sector raw data" alt="" coords="464,5,645,47"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a096cae0a830882ad4c32549071fd8e9f" title="Get track by number" alt="" coords="693,5,875,47"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="a28a4ac788e409e9db23ce9f4e72e6378"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28a4ac788e409e9db23ce9f4e72e6378">&#9670;&nbsp;</a></span>putSector()</h2>
+<a id="a4ee06536e9037033812b7b037987b086"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ee06536e9037033812b7b037987b086">&#9670;&nbsp;</a></span>PutSector()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Casasoft.Commodore.Disk.BaseDisk.putSector </td>
+          <td class="memname">void Casasoft.Commodore.Disk.BaseDisk.PutSector </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>track</em>, </td>
@@ -807,11 +764,6 @@ Here is the caller graph for this function:</div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Put raw data in a sector </p>
@@ -826,10 +778,56 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_a28a4ac788e409e9db23ce9f4e72e6378_cgraph.png" border="0" usemap="#class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_a28a4ac788e409e9db23ce9f4e72e6378_cgraph" alt=""/></div>
-<map name="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_a28a4ac788e409e9db23ce9f4e72e6378_cgraph" id="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_a28a4ac788e409e9db23ce9f4e72e6378_cgraph">
+<div class="center"><img src="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_a4ee06536e9037033812b7b037987b086_cgraph.png" border="0" usemap="#class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_a4ee06536e9037033812b7b037987b086_cgraph" alt=""/></div>
+<map name="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_a4ee06536e9037033812b7b037987b086_cgraph" id="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_a4ee06536e9037033812b7b037987b086_cgraph">
 <area shape="rect" title="Put raw data in a sector" alt="" coords="5,5,187,47"/>
 <area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a096cae0a830882ad4c32549071fd8e9f" title="Get track by number" alt="" coords="235,5,416,47"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_a4ee06536e9037033812b7b037987b086_icgraph.png" border="0" usemap="#class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_a4ee06536e9037033812b7b037987b086_icgraph" alt=""/></div>
+<map name="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_a4ee06536e9037033812b7b037987b086_icgraph" id="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_a4ee06536e9037033812b7b037987b086_icgraph">
+<area shape="rect" title="Put raw data in a sector" alt="" coords="235,5,416,47"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m1541.html#a711ad5ecc65ac8a1840194b2892b4219" title="Saves BAM data to disk image" alt="" coords="5,5,187,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a648c615400a8f9a021d79432f521a18c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a648c615400a8f9a021d79432f521a18c">&#9670;&nbsp;</a></span>ToRaw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual byte [] Casasoft.Commodore.Disk.BaseDisk.ToRaw </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Raw data to save on host disk </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_a648c615400a8f9a021d79432f521a18c_cgraph.png" border="0" usemap="#class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_a648c615400a8f9a021d79432f521a18c_cgraph" alt=""/></div>
+<map name="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_a648c615400a8f9a021d79432f521a18c_cgraph" id="class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk_a648c615400a8f9a021d79432f521a18c_cgraph">
+<area shape="rect" title="Raw data to save on host disk" alt="" coords="5,5,187,47"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mbase.html#a0a12b7be311c12da0a2a877bd1a165a2" title="Saves BAM data to disk image" alt="" coords="235,5,416,47"/>
 </map>
 </div>
 
@@ -861,8 +859,7 @@ Here is the call graph for this function:</div>
 <area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mbase.html#a4be73122804b0807a8b47fb1850e82e6" title="Return formatted sectors free" alt="" coords="235,5,416,47"/>
 <area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_directory.html#a52c9593fb2e47f404d85175218933531" title="Prints directory list to string" alt="" coords="235,71,416,112"/>
 <area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mbase.html#af21a23323bd955e150e3ea2762a326be" title="Print directory header (disk name)" alt="" coords="235,136,416,177"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mbase.html#a4a952e793b2360d02f84fcca0419435b" title="Return total free sectors number" alt="" coords="464,5,667,47"/>
-<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_directory_entry.html#a7e438c63d6cfc273af48b92020571e52" title="Format file info to string" alt="" coords="475,71,656,112"/>
+<area shape="rect" href="class_casasoft_1_1_commodore_1_1_disk_1_1_directory_entry.html#a7e438c63d6cfc273af48b92020571e52" title="Format file info to string" alt="" coords="464,71,645,112"/>
 </map>
 </div>
 
@@ -893,8 +890,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a07e5b5e21e8ea15123579c8dd739d107"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a07e5b5e21e8ea15123579c8dd739d107">&#9670;&nbsp;</a></span>diskStructure</h2>
+<a id="a917338883334c206fce30e5bec23cce1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a917338883334c206fce30e5bec23cce1">&#9670;&nbsp;</a></span>sectorSize</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -903,30 +900,14 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">List&lt;int&gt; Casasoft.Commodore.Disk.BaseDisk.diskStructure</td>
+          <td class="memname">const int Casasoft.Commodore.Disk.BaseDisk.sectorSize = 256</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
-</div><div class="memdoc">
-
-<p>number of sectors in each track </p>
-
-</div>
-</div>
-<a id="afce64ae52ecd635dd3b916520e5eb145"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afce64ae52ecd635dd3b916520e5eb145">&#9670;&nbsp;</a></span>sectorSize</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Casasoft.Commodore.Disk.BaseDisk.sectorSize =&gt; 256</td>
-        </tr>
-      </table>
 </div><div class="memdoc">
 
 <p>bytes in each sector </p>
@@ -940,7 +921,7 @@ Here is the call graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int Casasoft.Commodore.Disk.BaseDisk.totalTracks =&gt; diskStructure.Count</td>
+          <td class="memname">int Casasoft.Commodore.Disk.BaseDisk.totalTracks =&gt; Header.totalTracks</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -995,30 +976,6 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Root directory </p>
-
-</div>
-</div>
-<a id="ac42b83b3916abb7f32aafeadcb6b9716"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac42b83b3916abb7f32aafeadcb6b9716">&#9670;&nbsp;</a></span>totalSectors</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Casasoft.Commodore.Disk.BaseDisk.totalSectors</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">protected set</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>total number of sectors in disk (reserved included) </p>
 
 </div>
 </div>

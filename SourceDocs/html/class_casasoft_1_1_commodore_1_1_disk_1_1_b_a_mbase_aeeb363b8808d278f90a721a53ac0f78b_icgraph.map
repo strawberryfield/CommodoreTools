@@ -1,0 +1,4 @@
+<map id="Casasoft.Commodore.Disk.BAMbase.RawMap" name="Casasoft.Commodore.Disk.BAMbase.RawMap">
+<area shape="rect" id="node1" title="Binary sectors map" alt="" coords="235,5,416,47"/>
+<area shape="rect" id="node2" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m1541.html#a711ad5ecc65ac8a1840194b2892b4219" title="Saves BAM data to disk image" alt="" coords="5,5,187,47"/>
+</map>

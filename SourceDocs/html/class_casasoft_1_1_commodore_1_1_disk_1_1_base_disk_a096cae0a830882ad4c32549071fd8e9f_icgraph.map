@@ -1,20 +1,18 @@
 <map id="Casasoft.Commodore.Disk.BaseDisk.getTrack" name="Casasoft.Commodore.Disk.BaseDisk.getTrack">
-<area shape="rect" id="node1" title="Get track by number" alt="" coords="693,236,875,277"/>
-<area shape="rect" id="node2" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a6c20a05f80c26df437d5fac38255ffd4" title="Get sector raw data" alt="" coords="464,203,645,244"/>
-<area shape="rect" id="node18" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a28a4ac788e409e9db23ce9f4e72e6378" title="Put raw data in a sector" alt="" coords="464,268,645,309"/>
-<area shape="rect" id="node3" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m1571.html#a27f78992e72ec3511b98f2e8efa9701b" title="Load BAM data from disk image" alt="" coords="5,5,187,47"/>
-<area shape="rect" id="node4" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m1581.html#a2e7dc2d006341cc1cef94d5db4607906" title="Load BAM data from disk image" alt="" coords="5,136,187,177"/>
-<area shape="rect" id="node5" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m1541.html#ac4031462cd031dec1465209e88143d94" title="Load BAM data from disk image" alt="" coords="5,71,187,112"/>
-<area shape="rect" id="node6" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_directory.html#ae4bfeb2475567378d681ae6478fa51f2" title="Loads directory from disk image database" alt="" coords="235,315,416,356"/>
-<area shape="rect" id="node12" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m1581.html#aed5be8be9e145bcd1b521f8536f10b78" title="Read disk header" alt="" coords="235,232,416,273"/>
-<area shape="rect" id="node13" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m8050.html#af986bd58cf24bceb83e9ce1f50c8168e" title="Read disk header" alt="" coords="235,495,416,536"/>
-<area shape="rect" id="node16" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mbase.html#a0fc36cde81ff9b2d1697e0bea281ed38" title="Load header from disk image" alt="" coords="235,64,416,105"/>
-<area shape="rect" id="node17" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m8050.html#a4d348b0475370e32382f125182195649" title="Load partial BAM" alt="" coords="235,560,416,601"/>
-<area shape="rect" id="node7" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_disk1581.html#ae06f6e0f64ffb95ed00f5a07c80d7006" title="Load root directory starting at 40/3" alt="" coords="5,201,187,243"/>
-<area shape="rect" id="node8" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_disk8050.html#aea810a1480956d2f5dc4b3e02cdbd45e" title="Load root directory starting at 39/1" alt="" coords="5,267,187,308"/>
-<area shape="rect" id="node9" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_disk1541.html#ad02926bc9ac8172ec018cb678b29b723" title="Load root directory starting at 18/1" alt="" coords="5,332,187,373"/>
-<area shape="rect" id="node10" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_disk8250.html#ae6294dc17daab74bfcb532b61530d847" title="Load root directory starting at 39/1" alt="" coords="5,397,187,439"/>
-<area shape="rect" id="node11" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_disk1571.html#a640c53d9898b99156327744c0261d08a" title="Load root directory starting at 18/1" alt="" coords="5,463,187,504"/>
-<area shape="rect" id="node14" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m8050.html#a433fd710a7efb8c1e84befc14ee280ed" title="Load BAM data from disk image" alt="" coords="5,528,187,569"/>
-<area shape="rect" id="node15" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m8250.html#aa7c817ac16c069d6cb7efefe4584e774" title="Load BAM data from disk image" alt="" coords="5,593,187,635"/>
+<area shape="rect" id="node1" title="Get track by number" alt="" coords="693,364,875,405"/>
+<area shape="rect" id="node2" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a6c20a05f80c26df437d5fac38255ffd4" title="Get sector raw data" alt="" coords="464,285,645,327"/>
+<area shape="rect" id="node15" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a4ee06536e9037033812b7b037987b086" title="Put raw data in a sector" alt="" coords="464,441,645,483"/>
+<area shape="rect" id="node3" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m1571.html#a27f78992e72ec3511b98f2e8efa9701b" title="Load BAM data from disk image" alt="" coords="5,239,187,280"/>
+<area shape="rect" id="node4" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m1581.html#a2e7dc2d006341cc1cef94d5db4607906" title="Load BAM data from disk image" alt="" coords="5,165,187,207"/>
+<area shape="rect" id="node5" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m1541.html#ac4031462cd031dec1465209e88143d94" title="Loads BAM data from disk image" alt="" coords="5,319,187,360"/>
+<area shape="rect" id="node6" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_directory.html#a26d47737f8b284d09b849523b5a628d3" title="Loads directory from disk image database" alt="" coords="235,52,416,93"/>
+<area shape="rect" id="node9" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m1581.html#aed5be8be9e145bcd1b521f8536f10b78" title="Read disk header" alt="" coords="235,117,416,159"/>
+<area shape="rect" id="node10" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m8050.html#af986bd58cf24bceb83e9ce1f50c8168e" title="Read disk header" alt="" coords="235,403,416,444"/>
+<area shape="rect" id="node13" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mbase.html#a0fc36cde81ff9b2d1697e0bea281ed38" title="Load header from disk image" alt="" coords="235,285,416,327"/>
+<area shape="rect" id="node14" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m8050.html#a4d348b0475370e32382f125182195649" title="Load partial BAM" alt="" coords="235,468,416,509"/>
+<area shape="rect" id="node7" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_directory.html#a4b14b604e4ea5fa31c6c5ab1dfadc23e" title="Loads directory from disk image database using standard parameters" alt="" coords="5,71,187,112"/>
+<area shape="rect" id="node8" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#ab4cb697be0bd090b0b6e3e8bf24956b0" title="Load root directory" alt="" coords="5,5,187,47"/>
+<area shape="rect" id="node11" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m8250.html#aa7c817ac16c069d6cb7efefe4584e774" title="Load BAM data from disk image" alt="" coords="5,403,187,444"/>
+<area shape="rect" id="node12" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m8050.html#a433fd710a7efb8c1e84befc14ee280ed" title="Load BAM data from disk image" alt="" coords="5,468,187,509"/>
+<area shape="rect" id="node16" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_m1541.html#a711ad5ecc65ac8a1840194b2892b4219" title="Saves BAM data to disk image" alt="" coords="235,533,416,575"/>
 </map>

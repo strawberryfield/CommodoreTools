@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['opensavedialogsfilter_336',['OpenSaveDialogsFilter',['../class_casasoft_1_1_commodore_1_1_disk_1_1_directory_entry.html#af181f5dddfa57827050ac29055d2beeb',1,'Casasoft::Commodore::Disk::DirectoryEntry']]]
+  ['opensavedialogsfilter_372',['OpenSaveDialogsFilter',['../class_casasoft_1_1_commodore_1_1_disk_1_1_directory_entry.html#a2ed3fcb1cb4131a9bc22ba60fa6e05cc',1,'Casasoft::Commodore::Disk::DirectoryEntry']]]
 ];

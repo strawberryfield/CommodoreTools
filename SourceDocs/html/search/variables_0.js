@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['bamsector_309',['BAMSector',['../class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mbase.html#a35c413be61cd584cfde4be63eee4e649',1,'Casasoft::Commodore::Disk::BAMbase']]],
-  ['bamtrack_310',['BAMTrack',['../class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mbase.html#a705ec43e0e8a0c6e5e89f3ad68590b75',1,'Casasoft::Commodore::Disk::BAMbase']]]
+  ['bamsector_345',['BAMSector',['../class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mbase.html#a0e9783593dbf46d76527577bc194c270',1,'Casasoft::Commodore::Disk::BAMbase']]],
+  ['bamtrack_346',['BAMTrack',['../class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mbase.html#adf2d7d2812f0c5f81a1b502aca05a58e',1,'Casasoft::Commodore::Disk::BAMbase']]]
 ];

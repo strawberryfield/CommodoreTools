@@ -1,6 +1,5 @@
 <map id="Casasoft.Commodore.Disk.Disk1571.Disk1571" name="Casasoft.Commodore.Disk.Disk1571.Disk1571">
-<area shape="rect" id="node1" title="Constructor" alt="" coords="5,39,187,80"/>
-<area shape="rect" id="node2" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a8282492f3ef3ef7bd0de04e0d59d54fc" title="Add track info to structure" alt="" coords="235,5,423,47"/>
-<area shape="rect" id="node3" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a30a52239f6df9eee3356dd0a97ad8e5b" title="Create database container" alt="" coords="238,71,419,112"/>
-<area shape="rect" id="node4" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a27efd8b454edf57354270063ca5b3e16" title="Add a blank track to database" alt="" coords="471,71,652,112"/>
+<area shape="rect" id="node1" title="Constructor" alt="" coords="5,5,187,47"/>
+<area shape="rect" id="node2" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a30a52239f6df9eee3356dd0a97ad8e5b" title="Create database container" alt="" coords="235,5,416,47"/>
+<area shape="rect" id="node3" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a27efd8b454edf57354270063ca5b3e16" title="Add a blank track to database" alt="" coords="464,5,645,47"/>
 </map>

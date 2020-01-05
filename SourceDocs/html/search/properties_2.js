@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['filename_434',['FileName',['../class_casasoft_1_1_commodore_1_1_windows_u_i_1_1_text_viewer_form.html#a34b85ca06b47278d47577a0182482c95',1,'Casasoft::Commodore::WindowsUI::TextViewerForm']]]
+  ['entrysize_471',['EntrySize',['../class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mbase.html#a563a3987770a1af6e83e279ea9ae2ee4',1,'Casasoft::Commodore::Disk::BAMbase']]]
 ];

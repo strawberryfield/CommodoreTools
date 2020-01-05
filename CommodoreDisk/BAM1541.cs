@@ -40,12 +40,14 @@ namespace Casasoft.Commodore.Disk
         {
             DoubleSide = false;
             SingleSideStructure();
+            EntrySize = 4;
+            DirectoryTrack = 18;
+            DirectorySector = 1;
         }
 
         /// <summary>
         /// Structure for single side 
         /// </summary>
-        /// <param name="side"></param>
         protected void SingleSideStructure()
         {
             for (int j = 1; j <=  17; j++) addTrackStructure(21);
@@ -55,7 +57,7 @@ namespace Casasoft.Commodore.Disk
         }
 
         /// <summary>
-        /// Load BAM data from disk image
+        /// Loads BAM data from disk image
         /// </summary>
         /// <param name="disk">Disk image to read</param>
         public override void Load(BaseDisk disk)
@@ -67,6 +69,35 @@ namespace Casasoft.Commodore.Disk
             byte[] table = new byte[totalTracks * 4];
             Array.Copy(data, 4, table, 0, totalTracks * 4);
             loadMap(table, 4);
+        }
+
+        /// <summary>
+        /// Saves BAM data to disk image
+        /// </summary>
+        /// <param name="disk">Disk image to write</param>
+        public override void Save(BaseDisk disk)
+        {
+            byte[] data = new byte[BaseDisk.sectorSize];
+            data[0] = DirectoryTrack;
+            data[1] = DirectorySector;
+            data[2] = (byte)DOSversion;
+            data[3] = 0;
+            data[0xA0] = 0xA0;
+            data[0xA1] = 0xA0;
+            data[0xA2] = (byte)DiskId[0];
+            data[0xA3] = (byte)DiskId[1];
+            data[0xA4] = 0xA0;
+            data[0xA5] = (byte)DOStype[0];
+            data[0xA6] = (byte)DOStype[1];
+            data[0xA7] = 0xA0;
+            data[0xA8] = 0xA0;
+            data[0xA9] = 0xA0;
+            data[0xAA] = 0xA0;
+            for (int j = 0xAB; j < BaseDisk.sectorSize; ++j) data[j] = 0;
+            Array.Copy(DiskLabel(), 0, data, 0x90, 16);
+            Array.Copy(RawMap(), 0, data, 4, totalTracks * EntrySize);
+
+            disk.PutSector(18, 0, data);
         }
     }
 }

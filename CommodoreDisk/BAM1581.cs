@@ -39,6 +39,7 @@ namespace Casasoft.Commodore.Disk
         public BAM1581() : base()
         {
             for (int j = 1; j <= 80; j++) addTrackStructure(40);
+            EntrySize = 6;
         }
 
         /// <summary>

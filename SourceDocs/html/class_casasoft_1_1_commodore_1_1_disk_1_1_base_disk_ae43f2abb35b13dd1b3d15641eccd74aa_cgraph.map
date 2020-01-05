@@ -1,0 +1,4 @@
+<map id="Casasoft.Commodore.Disk.BaseDisk.LoadBAM" name="Casasoft.Commodore.Disk.BaseDisk.LoadBAM">
+<area shape="rect" id="node1" title="Load disk header and free sectors map" alt="" coords="5,5,187,47"/>
+<area shape="rect" id="node2" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mbase.html#a395be75561669a457def63a79ecd7d9d" title="Load BAM data from disk image" alt="" coords="235,5,416,47"/>
+</map>

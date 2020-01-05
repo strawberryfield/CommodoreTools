@@ -41,6 +41,7 @@ namespace Casasoft.Commodore
         {
             InitializeComponent();
             openDiskDialog.Filter = CommodoreDisk.DialogFilter;
+            saveDiskDialog.Filter = CommodoreDisk.DialogFilter;
             saveFileDialog.Filter = DirectoryEntry.OpenSaveDialogsFilter;
         }
 
@@ -57,7 +58,7 @@ namespace Casasoft.Commodore
                 {
                     disk.Load(fileName);
                     disk.RootDir.ToDataTable(dsDisk.Directory);
-                    txtDiskName.Text = disk.Header.DiskName;
+                    txtDiskName.Text = disk.Header.DiskName.Trim();
                     txtId.Text = new string(disk.Header.DiskId);
                     txtDos.Text = new string(disk.Header.DOStype);
                 }
@@ -118,6 +119,27 @@ namespace Casasoft.Commodore
             {
                 File.WriteAllBytes(saveFileDialog.FileName, file);
             }
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            byte[] diskimage = disk.ToRaw();
+            saveDiskDialog.FileName = disk.Header.DiskName;
+            if(saveDiskDialog.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllBytes(saveDiskDialog.FileName, diskimage);
+            }
+        }
+
+        private void txtDiskName_TextChanged(object sender, EventArgs e)
+        {
+            disk.Header.DiskName = txtDiskName.Text;
+        }
+
+        private void txtId_TextChanged(object sender, EventArgs e)
+        {
+            disk.Header.DiskId[0] = txtId.Text[0];
+            disk.Header.DiskId[1] = txtId.Text[1];
         }
     }
 }

@@ -1,0 +1,7 @@
+<map id="Casasoft.Commodore.Disk.BAM1541.Save" name="Casasoft.Commodore.Disk.BAM1541.Save">
+<area shape="rect" id="node1" title="Saves BAM data to disk image" alt="" coords="5,71,187,112"/>
+<area shape="rect" id="node2" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mbase.html#a9c7d824f2d87be6bbcfd43c870d5f0bb" title="Disk name in bytes array" alt="" coords="235,5,416,47"/>
+<area shape="rect" id="node3" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a4ee06536e9037033812b7b037987b086" title="Put raw data in a sector" alt="" coords="235,71,416,112"/>
+<area shape="rect" id="node5" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_b_a_mbase.html#aeeb363b8808d278f90a721a53ac0f78b" title="Binary sectors map" alt="" coords="235,136,416,177"/>
+<area shape="rect" id="node4" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a096cae0a830882ad4c32549071fd8e9f" title="Get track by number" alt="" coords="464,71,645,112"/>
+</map>

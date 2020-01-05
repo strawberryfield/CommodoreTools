@@ -36,7 +36,7 @@ namespace Casasoft.Commodore.Disk
         /// <summary>
         /// Free sectors in track
         /// </summary>
-        public int FreeSectors { get; protected set; }
+        public byte FreeSectors { get; protected set; }
 
         /// <summary>
         /// free sectors flags
@@ -49,20 +49,27 @@ namespace Casasoft.Commodore.Disk
         public readonly int EntrySize;
 
         /// <summary>
+        /// available sectors in track
+        /// </summary>
+        public readonly byte MaxSectors;
+
+        /// <summary>
         /// Build an empty entry
         /// </summary>
         /// <param name="size">size of track map in BAM table</param>
-        public BAMentry(int size)
+        /// <param name="sectors">sectors in track</param>
+        public BAMentry(int size, byte sectors)
         {
             flags = new byte[size];
             EntrySize = size + 1;
+            MaxSectors = sectors;
         }
 
         /// <summary>
         /// Build an entry from raw data
         /// </summary>
         /// <param name="data">raw entry data</param>
-        public BAMentry(byte[] data) : this(data.Length - 1)
+        public BAMentry(byte[] data) : this(data.Length - 1, 0)
         {
             FreeSectors = data[0];
             Array.Copy(data, 1, flags, 0, data.Length - 1);

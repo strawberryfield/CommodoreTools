@@ -1,0 +1,6 @@
+<map id="Casasoft.Commodore.Disk.Directory.Load" name="Casasoft.Commodore.Disk.Directory.Load">
+<area shape="rect" id="node1" title="Loads directory from disk image database using standard parameters" alt="" coords="5,5,187,47"/>
+<area shape="rect" id="node2" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_directory.html#a26d47737f8b284d09b849523b5a628d3" title="Loads directory from disk image database" alt="" coords="235,5,416,47"/>
+<area shape="rect" id="node3" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a6c20a05f80c26df437d5fac38255ffd4" title="Get sector raw data" alt="" coords="464,5,645,47"/>
+<area shape="rect" id="node4" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a096cae0a830882ad4c32549071fd8e9f" title="Get track by number" alt="" coords="693,5,875,47"/>
+</map>

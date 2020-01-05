@@ -39,12 +39,12 @@ namespace Casasoft.Commodore.Disk
         public BAM8050() : base()
         {
             SingleSideStructure();
+            EntrySize = 5;
         }
 
         /// <summary>
         /// Structure for single side 
         /// </summary>
-        /// <param name="side"></param>
         protected void SingleSideStructure()
         {
             for (int j = 1; j <=  39; j++) addTrackStructure(29);

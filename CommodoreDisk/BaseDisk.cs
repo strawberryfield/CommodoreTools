@@ -48,11 +48,6 @@ namespace Casasoft.Commodore.Disk
         public const int sectorSize = 256;
 
         /// <summary>
-        /// total number of sectors in disk (reserved included)
-        /// </summary>
-        public int totalSectors { get; protected set; }
-
-        /// <summary>
         /// total number of tracks in disk (reserved included)
         /// </summary>
         public int totalTracks => Header.totalTracks;
@@ -75,7 +70,6 @@ namespace Casasoft.Commodore.Disk
         public BaseDisk()
         {
             diskData = new List<List<byte[]>>();
-            totalSectors = 0;
         }
 
         /// <summary>
@@ -132,7 +126,7 @@ namespace Casasoft.Commodore.Disk
         /// <param name="track">track number</param>
         /// <param name="sector">sector number in the track</param>
         /// <param name="data">raw sector content</param>
-        protected void putSector(int track, int sector, byte[] data)
+        public void PutSector(int track, int sector, byte[] data)
         {
             data.CopyTo(getTrack(track).ToArray()[sector], 0);
         }
@@ -152,7 +146,7 @@ namespace Casasoft.Commodore.Disk
                     for (int sector = 0; sector < Header.diskStructure.ToArray()[track - 1]; sector++)
                     {
                         byte[] sectorData = reader.ReadBytes(sectorSize);
-                        putSector(track, sector, sectorData);
+                        PutSector(track, sector, sectorData);
                     }
                 }
             }
@@ -272,6 +266,24 @@ namespace Casasoft.Commodore.Disk
         public override string ToString()
         {
             return string.Format("{0}\n{1}{2}", Header.ToString(), RootDir.ToString(), Header.PrintFreeSectors());
+        }
+
+        /// <summary>
+        /// Raw data to save on host disk
+        /// </summary>
+        /// <returns></returns>
+        public virtual byte[] ToRaw()
+        {
+            byte[] ret = new byte[Header.totalSectors * sectorSize];
+            Header.Save(this);
+            int current = 0;
+            foreach(List<byte[]> trk in diskData)
+                foreach(byte[] sect in trk)
+                {
+                    Array.Copy(sect, 0, ret, current * sectorSize, sectorSize);
+                    current++;
+                }
+            return ret;
         }
     }
 }

@@ -1,0 +1,4 @@
+<map id="Casasoft.Commodore.Disk.BAMbase.Save" name="Casasoft.Commodore.Disk.BAMbase.Save">
+<area shape="rect" id="node1" title="Saves BAM data to disk image" alt="" coords="235,5,416,47"/>
+<area shape="rect" id="node2" href="$class_casasoft_1_1_commodore_1_1_disk_1_1_base_disk.html#a648c615400a8f9a021d79432f521a18c" title="Raw data to save on host disk" alt="" coords="5,5,187,47"/>
+</map>
