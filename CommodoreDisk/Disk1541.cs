@@ -52,11 +52,6 @@ namespace Casasoft.Commodore.Disk
         {
             Header = new BAM1541();
             RootDir = new Directory(18, 1);
-
-            for (int j = 1; j <= 17; j++) addTrackStructure(21);
-            for (int j = 18; j <= 24; j++) addTrackStructure(19);
-            for (int j = 25; j <= 30; j++) addTrackStructure(18);
-            for (int j = 31; j <= 35; j++) addTrackStructure(17);
             initDiskData();
         }
 

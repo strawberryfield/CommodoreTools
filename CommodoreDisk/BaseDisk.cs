@@ -43,11 +43,6 @@ namespace Casasoft.Commodore.Disk
         protected List<List<byte[]>> diskData;
 
         /// <summary>
-        /// number of sectors in each track
-        /// </summary>
-        protected List<int> diskStructure;
-
-        /// <summary>
         /// bytes in each sector
         /// </summary>
         public const int sectorSize = 256;
@@ -60,7 +55,7 @@ namespace Casasoft.Commodore.Disk
         /// <summary>
         /// total number of tracks in disk (reserved included)
         /// </summary>
-        public int totalTracks => diskStructure.Count;
+        public int totalTracks => Header.totalTracks;
 
         /// <summary>
         /// Root directory
@@ -80,7 +75,6 @@ namespace Casasoft.Commodore.Disk
         public BaseDisk()
         {
             diskData = new List<List<byte[]>>();
-            diskStructure = new List<int>();
             totalSectors = 0;
         }
 
@@ -89,20 +83,10 @@ namespace Casasoft.Commodore.Disk
         /// </summary>
         protected void initDiskData()
         {
-            for (int j = 1; j <= diskStructure.Count; j++)
+            for (int j = 1; j <= Header.diskStructure.Count; j++)
             {
-                addEmptyTrack(diskStructure.ToArray()[j - 1]);
+                addEmptyTrack(Header.diskStructure.ToArray()[j - 1]);
             }
-        }
-
-        /// <summary>
-        /// Add track info to structure
-        /// </summary>
-        /// <param name="sectors">number of sectors in the track</param>
-        protected void addTrackStructure(int sectors)
-        {
-            diskStructure.Add(sectors);
-            totalSectors += sectors;
         }
 
         /// <summary>
@@ -163,9 +147,9 @@ namespace Casasoft.Commodore.Disk
         {
             using (BinaryReader reader = new BinaryReader(File.Open(filename, FileMode.Open)))
             {
-                for (int track = 1; track <= diskStructure.Count; track++)
+                for (int track = 1; track <= Header.diskStructure.Count; track++)
                 {
-                    for (int sector = 0; sector < diskStructure.ToArray()[track - 1]; sector++)
+                    for (int sector = 0; sector < Header.diskStructure.ToArray()[track - 1]; sector++)
                     {
                         byte[] sectorData = reader.ReadBytes(sectorSize);
                         putSector(track, sector, sectorData);

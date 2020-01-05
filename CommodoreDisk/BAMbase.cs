@@ -51,7 +51,7 @@ namespace Casasoft.Commodore.Disk
         /// <summary>
         /// number of sectors in each track
         /// </summary>
-        protected List<byte> diskStructure;
+        public List<byte> diskStructure { get; protected set; }
 
         /// <summary>
         /// total number of sectors in disk (reserved included)

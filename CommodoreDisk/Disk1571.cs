@@ -36,13 +36,13 @@ namespace Casasoft.Commodore.Disk
         /// Standard extension for disk image files
         /// </summary>
         /// <returns></returns>
-        public static string Extension => ".D71";
+        public const string Extension = ".D71";
 
         /// <summary>
         /// Original Commodore disk model
         /// </summary>
         /// <returns></returns>
-        public static string Model => "1571";
+        public const string Model = "1571";
         #endregion
 
         /// <summary>
@@ -52,18 +52,6 @@ namespace Casasoft.Commodore.Disk
         {
             Header = new BAM1571();
             RootDir = new Directory(18, 1);
-
-            // side one
-            for (int j = 1; j <= 17; j++) addTrackStructure(21);
-            for (int j = 18; j <= 24; j++) addTrackStructure(19);
-            for (int j = 25; j <= 30; j++) addTrackStructure(18);
-            for (int j = 31; j <= 35; j++) addTrackStructure(17);
-            // side two
-            for (int j = 36; j <= 52; j++) addTrackStructure(21);
-            for (int j = 53; j <= 59; j++) addTrackStructure(19);
-            for (int j = 60; j <= 65; j++) addTrackStructure(18);
-            for (int j = 66; j <= 70; j++) addTrackStructure(17);
-
             initDiskData();
         }
 

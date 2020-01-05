@@ -36,13 +36,13 @@ namespace Casasoft.Commodore.Disk
         /// Standard extension for disk image files
         /// </summary>
         /// <returns></returns>
-        public static string Extension => ".D80";
+        public const string Extension = ".D80";
 
         /// <summary>
         /// Original Commodore disk model
         /// </summary>
         /// <returns></returns>
-        public static string Model => "8050";
+        public const string Model = "8050";
         #endregion
 
         /// <summary>
@@ -52,11 +52,6 @@ namespace Casasoft.Commodore.Disk
         {
             Header = new BAM8050();
             RootDir = new Directory(39, 1);
-
-            for (int j = 1; j <= 39; j++) addTrackStructure(29);
-            for (int j = 40; j <= 53; j++) addTrackStructure(27);
-            for (int j = 54; j <= 64; j++) addTrackStructure(25);
-            for (int j = 65; j <= 77; j++) addTrackStructure(23);
             initDiskData();
         }
     }
