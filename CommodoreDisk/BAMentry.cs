@@ -61,6 +61,7 @@ namespace Casasoft.Commodore.Disk
         public BAMentry(int size, byte sectors)
         {
             flags = new byte[size];
+            for (int j = 0; j < size; ++j) flags[j] = 0xFF;
             EntrySize = size + 1;
             MaxSectors = sectors;
         }

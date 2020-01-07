@@ -285,5 +285,16 @@ namespace Casasoft.Commodore.Disk
                 }
             return ret;
         }
+
+        /// <summary>
+        /// Sector filled with 0
+        /// </summary>
+        /// <returns></returns>
+        public static byte[] EmptySector()
+        {
+            byte[] ret = new byte[sectorSize];
+            for (int j = 0; j < sectorSize; ++j) ret[j] = 0;
+            return ret;
+        }
     }
 }

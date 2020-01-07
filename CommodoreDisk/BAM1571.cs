@@ -40,6 +40,7 @@ namespace Casasoft.Commodore.Disk
         {
             DoubleSide = true;
             SingleSideStructure();
+            SectorsMap[53 - 1].ResetFlag(0); //  BAM sector on 53/0
         }
 
         /// <summary>
@@ -67,6 +68,29 @@ namespace Casasoft.Commodore.Disk
             {
                 Array.Copy(data, j * 3, table, j * 4, 3);
             }
+        }
+
+        /// <summary>
+        /// Saves BAM data to disk image
+        /// </summary>
+        /// <param name="disk">Disk image to write</param>
+        public override void Save(BaseDisk disk)
+        {
+            byte[] data = BaseHeader();
+            Array.Copy(RawMap(), 0, data, 4, 35 * EntrySize);
+            for(int j = 0; j<35; ++j)
+            {
+                data[0xDD + j] = SectorsMap[35 + j].FreeSectors;
+            }
+            disk.PutSector(18, 0, data);
+
+            data = BaseDisk.EmptySector();
+            for (int j = 0; j < 35; ++j)
+            {
+                Array.Copy(SectorsMap[35 + j].flags, 0, data, j * 3, 3);
+            }
+            disk.PutSector(53, 0, data);
+
         }
 
     }

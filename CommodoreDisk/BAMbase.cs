@@ -145,11 +145,23 @@ namespace Casasoft.Commodore.Disk
         /// <returns></returns>
         protected byte[] RawMap()
         {
-            byte[] ret = new byte[totalTracks * EntrySize];
-            for(int j=0; j<totalTracks; ++j)
+             return RawMap(1, totalTracks);
+        }
+
+        /// <summary>
+        /// Binary sectors map
+        /// </summary>
+        /// <param name="firstTrack"></param>
+        /// <param name="lastTrack"></param>
+        /// <returns></returns>
+        protected byte[] RawMap(byte firstTrack, byte lastTrack)
+        {
+            int nTracks = lastTrack - firstTrack + 1;
+            byte[] ret = new byte[nTracks * EntrySize];
+            for (int j = 0; j < nTracks; ++j)
             {
                 int offset = j * EntrySize;
-                BAMentry be = SectorsMap[j];
+                BAMentry be = SectorsMap[j + firstTrack - 1];
                 ret[offset] = be.FreeSectors;
                 Array.Copy(be.flags, 0, ret, offset + 1, EntrySize - 1);
             }
@@ -178,7 +190,7 @@ namespace Casasoft.Commodore.Disk
         public void ClearBAM()
         {
             SectorsMap.Clear();
-            foreach (byte b in diskStructure) SectorsMap.Add(new BAMentry(EntrySize-1, b));
+            foreach (byte b in diskStructure) SectorsMap.Add(new BAMentry(EntrySize - 1, b));
         }
 
         /// <summary>
@@ -197,9 +209,9 @@ namespace Casasoft.Commodore.Disk
         public int GetFreeSectorCount()
         {
             int ret = 0;
-            for(int j=1; j<= SectorsMap.Count; j++)
+            for (int j = 1; j <= SectorsMap.Count; j++)
             {
-                if (j != DirectoryTrack) ret += SectorsMap[j - 1].FreeSectors; 
+                if (j != DirectoryTrack) ret += SectorsMap[j - 1].FreeSectors;
             }
             return ret;
         }

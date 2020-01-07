@@ -40,6 +40,14 @@ namespace Casasoft.Commodore.Disk
         {
             for (int j = 1; j <= 80; j++) addTrackStructure(40);
             EntrySize = 6;
+            DirectoryTrack = 40;
+            DirectorySector = 3;
+            DOSversion = 'D';
+            DOStype[0] = '3';
+            DOStype[1] = 'D';
+            SectorsMap[DirectoryTrack - 1].ResetFlag(0); // Header sector on 40/0
+            SectorsMap[DirectoryTrack - 1].ResetFlag(1); // BAM sector on 40/1
+            SectorsMap[DirectoryTrack - 1].ResetFlag(2); // BAM sector on 40/2
         }
 
         /// <summary>
@@ -73,6 +81,54 @@ namespace Casasoft.Commodore.Disk
             byte[] data = disk.GetSector(track, sector);
             DOStype[0] = (char)data[0xA5];
             DOStype[1] = (char)data[0xA6];
+        }
+
+        /// <summary>
+        /// Saves BAM data to disk image
+        /// </summary>
+        /// <param name="disk">Disk image to write</param>
+        public override void Save(BaseDisk disk)
+        {
+            byte[] data = BaseDisk.EmptySector();
+            data[0] = DirectoryTrack;
+            data[1] = DirectorySector;
+            data[2] = (byte)DOSversion;
+            data[0x14] = 0xA0;
+            data[0x15] = 0xA0;
+            data[0x16] = (byte)DiskId[0];
+            data[0x17] = (byte)DiskId[1];
+            data[0x18] = 0xA0;
+            data[0x19] = (byte)DOStype[0];
+            data[0x1A] = (byte)DOStype[1];
+            data[0x1B] = 0xA0;
+            data[0x1C] = 0xA0;
+            Array.Copy(DiskLabel(), 0, data, 4, 16);
+            disk.PutSector(DirectoryTrack, 0, data);
+
+            data = BAMsectorHeader();
+            data[0] = DirectoryTrack;
+            data[1] = 2;
+            Array.Copy(RawMap(41, 80), 0, data, 16, 40 * EntrySize);
+            disk.PutSector(DirectoryTrack, 1, data);
+
+            data = BAMsectorHeader();
+            data[0] = 0;
+            data[1] = 0xFF;
+            Array.Copy(RawMap(1, 40), 0, data, 16, 40 * EntrySize);
+            disk.PutSector(DirectoryTrack, 2, data);
+        }
+
+        private byte[] BAMsectorHeader()
+        {
+            byte[] data = BaseDisk.EmptySector();
+            data[2] = (byte)DOSversion;
+            data[3] = (byte)~DOSversion;
+            data[4] = (byte)DiskId[0];
+            data[5] = (byte)DiskId[1];
+            data[6] = 0; // No checks
+            data[7] = 0; // No autorun
+
+            return data;
         }
 
     }

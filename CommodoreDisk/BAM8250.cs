@@ -39,6 +39,9 @@ namespace Casasoft.Commodore.Disk
         public BAM8250() : base()
         {
             SingleSideStructure();
+            SectorsMap[BAMtrack].ResetFlag(6); // BAM sector on 38/0
+            SectorsMap[BAMtrack].ResetFlag(9); // BAM sector on 38/3
+
         }
 
         /// <summary>
@@ -48,10 +51,40 @@ namespace Casasoft.Commodore.Disk
         public override void Load(BaseDisk disk)
         {
             LoadHeader(disk, 39, 0);
-            loadPartialBAM(disk, 38, 0);
-            loadPartialBAM(disk, 38, 3);
-            loadPartialBAM(disk, 38, 6);
-            loadPartialBAM(disk, 38, 9);
+            loadPartialBAM(disk, BAMtrack, 0);
+            loadPartialBAM(disk, BAMtrack, 3);
+            loadPartialBAM(disk, BAMtrack, 6);
+            loadPartialBAM(disk, BAMtrack, 9);
+        }
+
+        /// <summary>
+        /// Saves BAM data to disk image
+        /// </summary>
+        /// <param name="disk">Disk image to write</param>
+        public override void Save(BaseDisk disk)
+        {
+            SaveHeader(disk);
+
+            byte[] data = BAMsector(1, 50);
+            data[0] = BAMtrack;
+            data[1] = 3;
+            disk.PutSector(BAMtrack, 0, data);
+
+            data = BAMsector(51, 100);
+            data[0] = BAMtrack;
+            data[1] = 6;
+            disk.PutSector(BAMtrack, 3, data);
+
+            data = BAMsector(51, 150);
+            data[0] = BAMtrack;
+            data[1] = 9;
+            disk.PutSector(BAMtrack, 6, data);
+
+            data = BAMsector(151, 154);
+            data[0] = DirectoryTrack;
+            data[1] = DirectorySector;
+            disk.PutSector(BAMtrack, 9, data);
+
         }
 
     }

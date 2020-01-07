@@ -34,12 +34,25 @@ namespace Casasoft.Commodore.Disk
     public class BAM8050 : BAMbase
     {
         /// <summary>
+        /// Track for BAM
+        /// </summary>
+        public const byte BAMtrack = 38;
+
+        /// <summary>
         /// Constructor
         /// </summary>
         public BAM8050() : base()
         {
             SingleSideStructure();
             EntrySize = 5;
+            DirectoryTrack = 39;
+            DirectorySector = 1;
+            SectorsMap[DirectoryTrack - 1].ResetFlag(0); // Header sector on 39/0
+            SectorsMap[BAMtrack].ResetFlag(0); // BAM sector on 38/0
+            SectorsMap[BAMtrack].ResetFlag(3); // BAM sector on 38/3
+            DOSversion = 'C';
+            DOStype[0] = '2';
+            DOStype[1] = 'C';
         }
 
         /// <summary>
@@ -60,8 +73,8 @@ namespace Casasoft.Commodore.Disk
         public override void Load(BaseDisk disk)
         {
             LoadHeader(disk, 39, 0);
-            loadPartialBAM(disk, 38, 0);
-            loadPartialBAM(disk, 38, 3);
+            loadPartialBAM(disk, BAMtrack, 0);
+            loadPartialBAM(disk, BAMtrack, 3);
         }
 
         /// <summary>
@@ -107,6 +120,66 @@ namespace Casasoft.Commodore.Disk
             DOStype[0] = (char)data[0x1B];
             DOStype[1] = (char)data[0x1C];
         }
+
+        /// <summary>
+        /// Saves BAM data to disk image
+        /// </summary>
+        /// <param name="disk">Disk image to write</param>
+        public override void Save(BaseDisk disk)
+        {
+            SaveHeader(disk);
+            
+            byte[] data = BAMsector(1, 50);
+            data[0] = BAMtrack;
+            data[1] = 3;
+            disk.PutSector(BAMtrack, 0, data);
+
+            data = BAMsector(51,77);
+            data[0] = DirectoryTrack;
+            data[1] = DirectorySector;
+            disk.PutSector(BAMtrack, 3, data);
+        }
+
+        /// <summary>
+        /// Writes disk header
+        /// </summary>
+        /// <param name="disk"></param>
+        protected void SaveHeader(BaseDisk disk)
+        {
+            byte[] data = BaseDisk.EmptySector();
+            data[0] = BAMtrack;
+            data[1] = 0;
+            data[2] = (byte)DOSversion;
+            data[0x17] = 0xA0;
+            data[0x18] = (byte)DiskId[0];
+            data[0x19] = (byte)DiskId[1];
+            data[0x1A] = 0xA0;
+            data[0x1B] = (byte)DOStype[0];
+            data[0x1C] = (byte)DOStype[1];
+            data[0x1D] = 0xA0;
+            data[0x1E] = 0xA0;
+            data[0x1F] = 0xA0;
+            data[0x20] = 0xA0;
+            Array.Copy(DiskLabel(), 0, data, 6, 16);
+            disk.PutSector(DirectoryTrack, 0, data);
+        }
+
+        /// <summary>
+        /// Single bam sector
+        /// </summary>
+        /// <param name="firstTrack"></param>
+        /// <param name="lastTrack"></param>
+        /// <returns></returns>
+        protected byte[] BAMsector(byte firstTrack, byte lastTrack)
+        {
+            byte[] data = BaseDisk.EmptySector();
+            data[2] = (byte)DOSversion;
+            data[4] = firstTrack;
+            data[5] = (byte)(lastTrack + 1);
+            Array.Copy(RawMap(firstTrack, lastTrack), 0, data, 6, (lastTrack - firstTrack + 1) * EntrySize);
+            return data;
+        }
+
 
     }
 }

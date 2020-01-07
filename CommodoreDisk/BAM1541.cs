@@ -43,6 +43,7 @@ namespace Casasoft.Commodore.Disk
             EntrySize = 4;
             DirectoryTrack = 18;
             DirectorySector = 1;
+            SectorsMap[DirectoryTrack - 1].ResetFlag(0); // Header and BAM sector on 18/0
         }
 
         /// <summary>
@@ -77,11 +78,23 @@ namespace Casasoft.Commodore.Disk
         /// <param name="disk">Disk image to write</param>
         public override void Save(BaseDisk disk)
         {
-            byte[] data = new byte[BaseDisk.sectorSize];
+            byte[] data = BaseHeader();
+            Array.Copy(RawMap(), 0, data, 4, totalTracks * EntrySize);
+
+            disk.PutSector(18, 0, data);
+        }
+
+        /// <summary>
+        /// Disk Header
+        /// </summary>
+        /// <returns></returns>
+        protected virtual byte[] BaseHeader()
+        {
+            byte[] data = BaseDisk.EmptySector();
             data[0] = DirectoryTrack;
             data[1] = DirectorySector;
             data[2] = (byte)DOSversion;
-            data[3] = 0;
+            data[3] = (byte)(DoubleSide ? 0x80 : 0);
             data[0xA0] = 0xA0;
             data[0xA1] = 0xA0;
             data[0xA2] = (byte)DiskId[0];
@@ -93,11 +106,8 @@ namespace Casasoft.Commodore.Disk
             data[0xA8] = 0xA0;
             data[0xA9] = 0xA0;
             data[0xAA] = 0xA0;
-            for (int j = 0xAB; j < BaseDisk.sectorSize; ++j) data[j] = 0;
             Array.Copy(DiskLabel(), 0, data, 0x90, 16);
-            Array.Copy(RawMap(), 0, data, 4, totalTracks * EntrySize);
-
-            disk.PutSector(18, 0, data);
+            return data;
         }
     }
 }
