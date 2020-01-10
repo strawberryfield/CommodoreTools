@@ -39,8 +39,8 @@ namespace Casasoft.Commodore.Disk
         public BAM1541() : base()
         {
             DoubleSide = false;
-            SingleSideStructure();
             EntrySize = 4;
+            SingleSideStructure();
             DirectoryTrack = 18;
             DirectorySector = 1;
             SectorsMap[DirectoryTrack - 1].ResetFlag(0); // Header and BAM sector on 18/0

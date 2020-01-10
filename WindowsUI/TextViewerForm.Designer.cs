@@ -62,11 +62,14 @@ namespace Casasoft.Commodore.WindowsUI
             // 
             // richTextBox
             // 
-            this.richTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox.Font = new System.Drawing.Font("CBM", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox.Location = new System.Drawing.Point(24, 22);
             this.richTextBox.Name = "richTextBox";
-            this.richTextBox.Size = new System.Drawing.Size(576, 325);
+            this.richTextBox.Size = new System.Drawing.Size(527, 280);
             this.richTextBox.TabIndex = 0;
             this.richTextBox.Text = "";
             // 

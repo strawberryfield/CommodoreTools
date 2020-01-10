@@ -24,10 +24,14 @@
 /// See the GNU General Public License for more details.
 /// 
 
+using Casasoft.Commodore.Video;
+
 namespace Casasoft.Commodore.WindowsUI
 {
     public partial class TextViewerForm : BaseForm
     {
+        private C64Colors Colors;
+
         /// <summary>
         /// Constructor
         /// </summary>
@@ -36,8 +40,12 @@ namespace Casasoft.Commodore.WindowsUI
             InitializeComponent();
             FileName = string.Empty;
             Content = string.Empty;
+            Colors = new C64Colors();
+            BackColor = Colors[C64Color.LightBlue].RGBColor;
 
             richTextBox.Font = GetCommodoreFont();
+            richTextBox.BackColor = Colors[C64Color.Blue].RGBColor;
+            richTextBox.ForeColor = Colors[C64Color.LightBlue].RGBColor;
         }
 
         /// <summary>

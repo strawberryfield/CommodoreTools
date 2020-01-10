@@ -90,6 +90,7 @@ namespace Casasoft.Commodore.Disk
         protected void addTrackStructure(byte sectors)
         {
             diskStructure.Add(sectors);
+            SectorsMap.Add(new BAMentry(EntrySize-1, sectors));
             totalSectors += sectors;
         }
 
