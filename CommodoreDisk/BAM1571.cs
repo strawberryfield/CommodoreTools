@@ -57,6 +57,7 @@ namespace Casasoft.Commodore.Disk
 
             byte[] table = new byte[tracks * 4];
             Array.Copy(data, 4, table, 0, tracks * 4);
+            SectorsMap.Clear();
             loadMap(table, 4);
 
             for (int j = 0; j < tracks; j++)
@@ -68,6 +69,7 @@ namespace Casasoft.Commodore.Disk
             {
                 Array.Copy(data, j * 3, table, j * 4, 3);
             }
+            loadMap(table, 4);
         }
 
         /// <summary>

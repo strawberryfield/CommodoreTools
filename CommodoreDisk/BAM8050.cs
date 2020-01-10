@@ -73,6 +73,7 @@ namespace Casasoft.Commodore.Disk
         public override void Load(BaseDisk disk)
         {
             LoadHeader(disk, 39, 0);
+            SectorsMap.Clear();
             loadPartialBAM(disk, BAMtrack, 0);
             loadPartialBAM(disk, BAMtrack, 3);
         }

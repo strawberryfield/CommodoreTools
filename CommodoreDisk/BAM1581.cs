@@ -63,6 +63,7 @@ namespace Casasoft.Commodore.Disk
             byte[] table = new byte[tracks * 6];
             byte[] data = disk.GetSector(40, 1);
             Array.Copy(data, 0x10, table, 0, tracks * 6);
+            SectorsMap.Clear();
             loadMap(table, 6);
             data = disk.GetSector(40, 2);
             Array.Copy(data, 0x10, table, 0, tracks * 6);
