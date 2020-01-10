@@ -5,6 +5,7 @@
 /// @author
 /// copyright (c) 2020 Roberto Ceccarelli - Casasoft  
 /// http://strawberryfield.altervista.org 
+/// based on MSDN example
 /// 
 /// @copyright
 /// Casasoft Commodore Utilities is free software: 
@@ -29,8 +30,13 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+
 namespace Casasoft.Commodore.WindowsUI
 {
+    /// <summary>
+    /// Class for drop down radio menu
+    /// </summary>
     public class ToolStripRadioButtonMenuItem : ToolStripMenuItem
     {
         public ToolStripRadioButtonMenuItem()
@@ -272,3 +278,5 @@ namespace Casasoft.Commodore.WindowsUI
     }
 
 }
+
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member

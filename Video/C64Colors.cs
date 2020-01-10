@@ -43,13 +43,37 @@ namespace Casasoft.Commodore.Video
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     }
     
+    /// <summary>
+    /// Colors definitions
+    /// </summary>
     public class ColorDefinition
     {
+        /// <summary>
+        /// Color name
+        /// </summary>
         public readonly string Name;
+
+        /// <summary>
+        /// Char to select code in text
+        /// </summary>
         public readonly char KeyCode;
+
+        /// <summary>
+        /// RGB values
+        /// </summary>
         public readonly Color RGBColor;
+
+        /// <summary>
+        /// Color id for poke
+        /// </summary>
         public readonly C64Color ColorId;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="code"></param>
+        /// <param name="keycode"></param>
+        /// <param name="rgb"></param>
         public ColorDefinition(C64Color code, char keycode, Color rgb)
         {
             ColorId = code;
@@ -58,6 +82,14 @@ namespace Casasoft.Commodore.Video
             RGBColor = rgb;
         }
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="code"></param>
+        /// <param name="keycode"></param>
+        /// <param name="red"></param>
+        /// <param name="green"></param>
+        /// <param name="blue"></param>
         public ColorDefinition(C64Color code, byte keycode, int red, int green, int blue) :
             this(code, (char)keycode, Color.FromArgb(red, green, blue))
         { }
@@ -88,14 +120,33 @@ namespace Casasoft.Commodore.Video
             new ColorDefinition(C64Color.LightGray, 155, 187, 187, 187)
         };
 
+        /// <summary>
+        /// Color definition by colors enum
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
         public ColorDefinition this[C64Color index] => Colors[(int)index];
 
+        /// <summary>
+        /// Color definition by numeric id
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
         public ColorDefinition this[int index] => Colors[index];
 
+        /// <summary>
+        /// Color definition by key code
+        /// </summary>
+        /// <param name="c"></param>
+        /// <returns></returns>
         public ColorDefinition ByKeyCode(char c) {
             return Array.Find(Colors, x => x.KeyCode == c);
         }
 
+        /// <summary>
+        /// Colors list as array
+        /// </summary>
+        /// <returns></returns>
         public ColorDefinition[] ToArray() => Colors;
     }
 }
