@@ -3,7 +3,7 @@
 /// This file is part of Casasoft Commodore Utilities
 /// 
 /// @author
-/// copyright (c) 2019-2020 Roberto Ceccarelli - Casasoft  
+/// copyright (c) 2020 Roberto Ceccarelli - Casasoft  
 /// http://strawberryfield.altervista.org 
 /// 
 /// @copyright
@@ -48,16 +48,18 @@ namespace Casasoft.Commodore.Video
         public readonly string Name;
         public readonly char KeyCode;
         public readonly Color RGBColor;
+        public readonly C64Color ColorId;
 
-        public ColorDefinition(string name, char keycode, Color rgb)
+        public ColorDefinition(C64Color code, char keycode, Color rgb)
         {
-            Name = name;
+            ColorId = code;
+            Name = code.ToString();
             KeyCode = keycode;
             RGBColor = rgb;
         }
 
         public ColorDefinition(C64Color code, byte keycode, int red, int green, int blue) :
-            this(code.ToString(), (char)keycode, Color.FromArgb(red, green, blue))
+            this(code, (char)keycode, Color.FromArgb(red, green, blue))
         { }
     }
 
@@ -92,7 +94,8 @@ namespace Casasoft.Commodore.Video
 
         public ColorDefinition ByKeyCode(char c) {
             return Array.Find(Colors, x => x.KeyCode == c);
-        } 
+        }
 
+        public ColorDefinition[] ToArray() => Colors;
     }
 }

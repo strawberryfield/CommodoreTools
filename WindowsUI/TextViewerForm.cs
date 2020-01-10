@@ -25,6 +25,7 @@
 /// 
 
 using Casasoft.Commodore.Video;
+using System.Windows.Forms;
 
 namespace Casasoft.Commodore.WindowsUI
 {
@@ -32,20 +33,36 @@ namespace Casasoft.Commodore.WindowsUI
     {
         private C64Colors Colors;
 
+        #region inits
         /// <summary>
         /// Constructor
         /// </summary>
         public TextViewerForm() : base()
         {
             InitializeComponent();
+            Colors = new C64Colors();
+            AddColorsMenu(textColorToolStripMenuItem, C64Color.LightBlue);
+            AddColorsMenu(backgroundColorToolStripMenuItem, C64Color.Blue);
+            AddColorsMenu(borderColorToolStripMenuItem, C64Color.LightBlue);
+
             FileName = string.Empty;
             Content = string.Empty;
-            Colors = new C64Colors();
             BackColor = Colors[C64Color.LightBlue].RGBColor;
 
             richTextBox.Font = GetCommodoreFont();
             richTextBox.BackColor = Colors[C64Color.Blue].RGBColor;
             richTextBox.ForeColor = Colors[C64Color.LightBlue].RGBColor;
+        }
+
+        private void AddColorsMenu(ToolStripMenuItem menu, C64Color sel)
+        {
+            foreach (ColorDefinition c in Colors.ToArray())
+            {
+                ToolStripRadioButtonMenuItem item = new ToolStripRadioButtonMenuItem(c.Name);
+                item.Tag = c;
+                if (c.ColorId == sel) item.Checked = true;
+                menu.DropDownItems.Add(item);
+            }
         }
 
         /// <summary>
@@ -68,10 +85,11 @@ namespace Casasoft.Commodore.WindowsUI
             this(filename, System.Text.Encoding.ASCII.GetString(content))
         {
         }
+        #endregion
 
-/// <summary>
-/// get/set filename
-/// </summary>
+        /// <summary>
+        /// get/set filename
+        /// </summary>
         public string FileName
         {
             get => Text;
@@ -86,5 +104,42 @@ namespace Casasoft.Commodore.WindowsUI
             get => richTextBox.Text;
             set => richTextBox.Text = value;
         }
+
+        #region menu handlers
+        private void textColorToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            ColorDefinition c = e.ClickedItem.Tag as ColorDefinition;
+            richTextBox.ForeColor = c.RGBColor;
+        }
+
+        private void backgroundColorToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            ColorDefinition c = e.ClickedItem.Tag as ColorDefinition;
+            richTextBox.BackColor = c.RGBColor;
+        }
+
+        private void borderColorToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            ColorDefinition c = e.ClickedItem.Tag as ColorDefinition;
+            BackColor = c.RGBColor;
+        }
+
+        private void loadToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            Close();
+        }
+
+        #endregion
+
     }
 }

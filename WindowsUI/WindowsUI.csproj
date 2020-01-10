@@ -57,6 +57,9 @@
     <Compile Include="TextViewerForm.Designer.cs">
       <DependentUpon>TextViewerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ToolStripRadioButtonItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="BaseForm.resx">
