@@ -57,6 +57,7 @@ namespace Casasoft.Commodore.WindowsUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TextViewerForm));
             this.richTextBox = new System.Windows.Forms.RichTextBox();
             this.mainMenu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -109,14 +110,14 @@ namespace Casasoft.Commodore.WindowsUI
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.loadToolStripMenuItem.Text = "Load";
             this.loadToolStripMenuItem.Click += new System.EventHandler(this.loadToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -128,7 +129,7 @@ namespace Casasoft.Commodore.WindowsUI
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -145,21 +146,21 @@ namespace Casasoft.Commodore.WindowsUI
             // textColorToolStripMenuItem
             // 
             this.textColorToolStripMenuItem.Name = "textColorToolStripMenuItem";
-            this.textColorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.textColorToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.textColorToolStripMenuItem.Text = "Text Color";
             this.textColorToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.textColorToolStripMenuItem_DropDownItemClicked);
             // 
             // backgroundColorToolStripMenuItem
             // 
             this.backgroundColorToolStripMenuItem.Name = "backgroundColorToolStripMenuItem";
-            this.backgroundColorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.backgroundColorToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.backgroundColorToolStripMenuItem.Text = "Background Color";
             this.backgroundColorToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.backgroundColorToolStripMenuItem_DropDownItemClicked);
             // 
             // borderColorToolStripMenuItem
             // 
             this.borderColorToolStripMenuItem.Name = "borderColorToolStripMenuItem";
-            this.borderColorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.borderColorToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.borderColorToolStripMenuItem.Text = "Border Color";
             this.borderColorToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.borderColorToolStripMenuItem_DropDownItemClicked);
             // 
@@ -170,6 +171,7 @@ namespace Casasoft.Commodore.WindowsUI
             this.ClientSize = new System.Drawing.Size(576, 345);
             this.Controls.Add(this.richTextBox);
             this.Controls.Add(this.mainMenu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mainMenu;
             this.Name = "TextViewerForm";
             this.Text = "TextViewerForm";

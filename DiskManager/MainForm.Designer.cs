@@ -55,7 +55,8 @@ namespace Casasoft.Commodore
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.txtDiskName = new System.Windows.Forms.TextBox();
             this.openDiskDialog = new System.Windows.Forms.OpenFileDialog();
             this.dataGridViewDirectory = new System.Windows.Forms.DataGridView();
@@ -152,8 +153,8 @@ namespace Casasoft.Commodore
             // fileSizeDataGridViewTextBoxColumn
             // 
             this.fileSizeDataGridViewTextBoxColumn.DataPropertyName = "FileSize";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.fileSizeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.fileSizeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.fileSizeDataGridViewTextBoxColumn.HeaderText = "FileSize";
             this.fileSizeDataGridViewTextBoxColumn.Name = "fileSizeDataGridViewTextBoxColumn";
             this.fileSizeDataGridViewTextBoxColumn.ReadOnly = true;
@@ -358,6 +359,7 @@ namespace Casasoft.Commodore
             this.Controls.Add(this.dataGridViewDirectory);
             this.Controls.Add(this.txtDiskName);
             this.Controls.Add(this.menuStripMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStripMain;
             this.Name = "MainForm";
             this.Text = "Commodore Disk Manager";
