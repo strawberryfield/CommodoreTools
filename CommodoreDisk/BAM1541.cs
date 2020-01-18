@@ -41,9 +41,8 @@ namespace Casasoft.Commodore.Disk
             DoubleSide = false;
             EntrySize = 4;
             SingleSideStructure();
-            DirectoryTrack = 18;
-            DirectorySector = 1;
-            SectorsMap[DirectoryTrack - 1].ResetFlag(0); // Header and BAM sector on 18/0
+            Directory = new SectorId(18, 1);
+            SectorsMap[Directory.Track - 1].ResetFlag(0); // Header and BAM sector on 18/0
         }
 
         /// <summary>
@@ -92,8 +91,8 @@ namespace Casasoft.Commodore.Disk
         protected virtual byte[] BaseHeader()
         {
             byte[] data = BaseDisk.EmptySector();
-            data[0] = DirectoryTrack;
-            data[1] = DirectorySector;
+            data[0] = Directory.Track;
+            data[1] = Directory.Sector;
             data[2] = (byte)DOSversion;
             data[3] = (byte)(DoubleSide ? 0x80 : 0);
             data[0xA0] = 0xA0;

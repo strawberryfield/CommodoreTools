@@ -40,14 +40,13 @@ namespace Casasoft.Commodore.Disk
         {
             EntrySize = 6;
             for (int j = 1; j <= 80; j++) addTrackStructure(40);
-            DirectoryTrack = 40;
-            DirectorySector = 3;
+            Directory = new SectorId(40, 1);
             DOSversion = 'D';
             DOStype[0] = '3';
             DOStype[1] = 'D';
-            SectorsMap[DirectoryTrack - 1].ResetFlag(0); // Header sector on 40/0
-            SectorsMap[DirectoryTrack - 1].ResetFlag(1); // BAM sector on 40/1
-            SectorsMap[DirectoryTrack - 1].ResetFlag(2); // BAM sector on 40/2
+            SectorsMap[Directory.Track - 1].ResetFlag(0); // Header sector on 40/0
+            SectorsMap[Directory.Track - 1].ResetFlag(1); // BAM sector on 40/1
+            SectorsMap[Directory.Track - 1].ResetFlag(2); // BAM sector on 40/2
         }
 
         /// <summary>
@@ -91,8 +90,8 @@ namespace Casasoft.Commodore.Disk
         public override void Save(BaseDisk disk)
         {
             byte[] data = BaseDisk.EmptySector();
-            data[0] = DirectoryTrack;
-            data[1] = DirectorySector;
+            data[0] = Directory.Track;
+            data[1] = Directory.Sector;
             data[2] = (byte)DOSversion;
             data[0x14] = 0xA0;
             data[0x15] = 0xA0;
@@ -104,19 +103,19 @@ namespace Casasoft.Commodore.Disk
             data[0x1B] = 0xA0;
             data[0x1C] = 0xA0;
             Array.Copy(DiskLabel(), 0, data, 4, 16);
-            disk.PutSector(DirectoryTrack, 0, data);
+            disk.PutSector(Directory.Track, 0, data);
 
             data = BAMsectorHeader();
-            data[0] = DirectoryTrack;
+            data[0] = Directory.Track;
             data[1] = 2;
             Array.Copy(RawMap(41, 80), 0, data, 16, 40 * EntrySize);
-            disk.PutSector(DirectoryTrack, 1, data);
+            disk.PutSector(Directory.Track, 1, data);
 
             data = BAMsectorHeader();
             data[0] = 0;
             data[1] = 0xFF;
             Array.Copy(RawMap(1, 40), 0, data, 16, 40 * EntrySize);
-            disk.PutSector(DirectoryTrack, 2, data);
+            disk.PutSector(Directory.Track, 2, data);
         }
 
         private byte[] BAMsectorHeader()

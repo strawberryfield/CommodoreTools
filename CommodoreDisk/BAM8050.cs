@@ -45,9 +45,8 @@ namespace Casasoft.Commodore.Disk
         {
             EntrySize = 5;
             SingleSideStructure();
-            DirectoryTrack = 39;
-            DirectorySector = 1;
-            SectorsMap[DirectoryTrack - 1].ResetFlag(0); // Header sector on 39/0
+            Directory = new SectorId(39, 1);
+            SectorsMap[Directory.Track - 1].ResetFlag(0); // Header sector on 39/0
             SectorsMap[BAMtrack].ResetFlag(0); // BAM sector on 38/0
             SectorsMap[BAMtrack].ResetFlag(3); // BAM sector on 38/3
             DOSversion = 'C';
@@ -106,10 +105,8 @@ namespace Casasoft.Commodore.Disk
         {
             byte[] data = disk.GetSector(track, sector);
 
-            BAMTrack = data[0];
-            BAMSector = data[1];
-            DirectoryTrack = 39;
-            DirectorySector = 1;
+            BAM = new SectorId(data[0], data[1]);
+            Directory = new SectorId(39, 1);
             DOSversion = (char)data[2];
             DiskName = string.Empty;
             for (int j = 0x06; j <= 0x16; j++)
@@ -136,8 +133,8 @@ namespace Casasoft.Commodore.Disk
             disk.PutSector(BAMtrack, 0, data);
 
             data = BAMsector(51,77);
-            data[0] = DirectoryTrack;
-            data[1] = DirectorySector;
+            data[0] = Directory.Track;
+            data[1] = Directory.Sector;
             disk.PutSector(BAMtrack, 3, data);
         }
 
@@ -162,7 +159,7 @@ namespace Casasoft.Commodore.Disk
             data[0x1F] = 0xA0;
             data[0x20] = 0xA0;
             Array.Copy(DiskLabel(), 0, data, 6, 16);
-            disk.PutSector(DirectoryTrack, 0, data);
+            disk.PutSector(Directory.Track, 0, data);
         }
 
         /// <summary>

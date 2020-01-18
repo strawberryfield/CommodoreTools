@@ -110,7 +110,7 @@ namespace Casasoft.Commodore.Disk
         }
 
         /// <summary>
-        /// Get sector raw data
+        /// Gets sector raw data
         /// </summary>
         /// <param name="track">track number</param>
         /// <param name="sector">sector number in the track</param>
@@ -121,7 +121,17 @@ namespace Casasoft.Commodore.Disk
         }
 
         /// <summary>
-        /// Put raw data in a sector
+        /// Gets sector raw data
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>raw sector content</returns>
+        public byte[] GetSector(SectorId id)
+        {
+            return GetSector(id.Track, id.Sector);
+        }
+
+        /// <summary>
+        /// Puts raw data in a sector
         /// </summary>
         /// <param name="track">track number</param>
         /// <param name="sector">sector number in the track</param>
@@ -129,6 +139,16 @@ namespace Casasoft.Commodore.Disk
         public void PutSector(int track, int sector, byte[] data)
         {
             data.CopyTo(getTrack(track).ToArray()[sector], 0);
+        }
+
+        /// <summary>
+        /// Puts raw data in a sector
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="data">>raw sector content</param>
+        public void PutSector(SectorId id, byte[] data)
+        {
+            PutSector(id.Track, id.Sector, data);
         }
         #endregion
 
@@ -200,20 +220,19 @@ namespace Casasoft.Commodore.Disk
         public byte[] GetFile(DirectoryEntry file)
         {
             List<byte> ret = new List<byte>();
-            scanFile(ret, file.FirstTrack, file.FirstSector);
+            scanFile(ret, file.First);
             return ret.ToArray();
         }
 
-        private void scanFile(List<byte> prev, int track, int sector)
+        private void scanFile(List<byte> prev, SectorId id)
         {
-            byte[] data = GetSector(track, sector);
-            int nextTrack = data[0];
-            int nextSector = data[1];
+            byte[] data = GetSector(id);
+            SectorId next = new SectorId(data[0], data[1]);
             byte[] payload;
-            if (nextTrack == 0)
+            if (next.Track == 0)
             {
-                payload = new byte[nextSector - 1];
-                Array.Copy(data, 2, payload, 0, nextSector - 1);
+                payload = new byte[next.Sector - 1];
+                Array.Copy(data, 2, payload, 0, next.Sector - 1);
                 prev.AddRange(payload);
             }
             else
@@ -221,7 +240,7 @@ namespace Casasoft.Commodore.Disk
                 payload = new byte[sectorSize - 2];
                 Array.Copy(data, 2, payload, 0, sectorSize - 2);
                 prev.AddRange(payload);
-                scanFile(prev, nextTrack, nextSector);
+                scanFile(prev, next);
             }
         }
         #endregion

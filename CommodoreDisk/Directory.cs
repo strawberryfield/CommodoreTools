@@ -37,14 +37,9 @@ namespace Casasoft.Commodore.Disk
         private List<DirectoryEntry> dir;
 
         /// <summary>
-        /// First track for dir
+        /// First track/sector for dir
         /// </summary>
-        public byte FirstTrack { get; protected set; }
-
-        /// <summary>
-        /// First sector for dir
-        /// </summary>
-        public byte FirstSector { get; protected set; }
+        public SectorId First { get; protected set; }
 
         /// <summary>
         /// Entries per sector
@@ -65,31 +60,37 @@ namespace Casasoft.Commodore.Disk
         /// </summary>
         /// <param name="firstTrack"></param>
         /// <param name="firstSector"></param>
-        public Directory(byte firstTrack, byte firstSector) : this()
+        public Directory(byte firstTrack, byte firstSector) : this(new SectorId(firstTrack, firstSector))
         {
-            FirstTrack = firstTrack;
-            FirstSector = firstSector;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="first">first track/sector</param>
+        public Directory(SectorId first) : this()
+        {
+            First = first;
         }
 
         /// <summary>
         /// Loads directory from disk image database
         /// </summary>
         /// <param name="disk">disk image to read</param>
-        /// <param name="track">directory start track</param>
-        /// <param name="sector">directory start sector</param>
-        public void Load(BaseDisk disk, byte track, byte sector)
+        /// <param name="id">directory start track/sector</param>
+        public void Load(BaseDisk disk, SectorId id)
         {
-            byte[] sectorData = disk.GetSector(track, sector);
+            byte[] sectorData = disk.GetSector(id);
 
             for (byte j = 0; j < EntriesPerSector; j++)
             {
                 byte[] entryData = new byte[DirectoryEntry.EntrySize];
                 Array.Copy(sectorData, j * DirectoryEntry.EntrySize, entryData, 0, DirectoryEntry.EntrySize);
-                addEntry(entryData, track, sector, j);
+                addEntry(entryData, id, j);
             }
 
             if (sectorData[0] == 0) return;
-            Load(disk, sectorData[0], sectorData[1]);
+            Load(disk, new SectorId(sectorData[0], sectorData[1]));
         }
 
         /// <summary>
@@ -98,16 +99,16 @@ namespace Casasoft.Commodore.Disk
         /// <param name="disk">disk image to read</param>
         public void Load(BaseDisk disk)
         {
-            Load(disk, FirstTrack, FirstSector);
+            Load(disk, First);
         }
 
-        private void addEntry(byte[] data, byte track, byte sector, byte record)
+        private void addEntry(byte[] data, SectorId id, byte record)
         {
             if (data[2] != 0)
             {
                 DirectoryEntry entry = new DirectoryEntry(data);
-                entry.Reference.track = track;
-                entry.Reference.sector = sector;
+                entry.Reference.track = id.Track;
+                entry.Reference.sector = id.Sector;
                 entry.Reference.entry = record;
                 dir.Add(entry);
             }
@@ -192,19 +193,19 @@ namespace Casasoft.Commodore.Disk
         {
             disk.Header.FreeSectorsOnDirectoryTrack();
             List<byte[]> rawData = ToRaw();
-            byte prevSect = disk.Header.DirectorySector;
+            byte prevSect = disk.Header.Directory.Sector;
             if (rawData.Count > 0)
             {
-                disk.PutSector(disk.Header.DirectoryTrack, prevSect, rawData[0]);
+                disk.PutSector(disk.Header.Directory.Track, prevSect, rawData[0]);
                 for (int j = 1; j < rawData.Count; ++j)
                 {
-                    int sect = disk.Header.GetAFreeSector(disk.Header.DirectoryTrack);
+                    int sect = disk.Header.GetAFreeSector(disk.Header.Directory.Track);
                     if(sect > 0)
                     {
-                        disk.GetSector(disk.Header.DirectoryTrack, prevSect)[0] = disk.Header.DirectoryTrack;
-                        disk.GetSector(disk.Header.DirectoryTrack, prevSect)[0] = (byte)sect;
+                        disk.GetSector(disk.Header.Directory.Track, prevSect)[0] = disk.Header.Directory.Track;
+                        disk.GetSector(disk.Header.Directory.Track, prevSect)[0] = (byte)sect;
                         prevSect = (byte)sect;
-                        disk.PutSector(disk.Header.DirectoryTrack, sect, rawData[j]);
+                        disk.PutSector(disk.Header.Directory.Track, sect, rawData[j]);
                     }
                 }
             }

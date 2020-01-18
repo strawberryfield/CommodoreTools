@@ -63,6 +63,7 @@
     <Compile Include="Disk8050.cs" />
     <Compile Include="Disk8250.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SectorId.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.editorconfig">

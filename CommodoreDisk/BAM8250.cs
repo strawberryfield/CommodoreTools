@@ -82,8 +82,8 @@ namespace Casasoft.Commodore.Disk
             disk.PutSector(BAMtrack, 6, data);
 
             data = BAMsector(151, 154);
-            data[0] = DirectoryTrack;
-            data[1] = DirectorySector;
+            data[0] = Directory.Track;
+            data[1] = Directory.Sector;
             disk.PutSector(BAMtrack, 9, data);
 
         }

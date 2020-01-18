@@ -36,10 +36,8 @@ namespace Casasoft.Commodore.Disk
     {
         #region properties
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-        public byte DirectoryTrack;
-        public byte DirectorySector;
-        public byte BAMTrack;
-        public byte BAMSector;
+        public SectorId Directory;
+        public SectorId BAM;
         public bool DoubleSide;
         public char DOSversion;
         public string DiskName;
@@ -114,8 +112,7 @@ namespace Casasoft.Commodore.Disk
         {
             byte[] data = disk.GetSector(track, sector);
 
-            DirectoryTrack = data[0];
-            DirectorySector = data[1];
+            Directory = new SectorId(data[0], data[1]);
             DOSversion = (char)data[2];
             DiskName = string.Empty;
             for (int j = 0x90; j <= 0x9F; j++)
@@ -212,7 +209,7 @@ namespace Casasoft.Commodore.Disk
             int ret = 0;
             for (int j = 1; j <= SectorsMap.Count; j++)
             {
-                if (j != DirectoryTrack) ret += SectorsMap[j - 1].FreeSectors;
+                if (j != Directory.Track) ret += SectorsMap[j - 1].FreeSectors;
             }
             return ret;
         }
@@ -241,8 +238,8 @@ namespace Casasoft.Commodore.Disk
         /// </summary>
         public virtual void FreeSectorsOnDirectoryTrack()
         {
-            BAMentry trk = SectorsMap[DirectoryTrack];
-            for(byte sector = DirectorySector; sector <= diskStructure[DirectoryTrack]; ++sector)
+            BAMentry trk = SectorsMap[Directory.Track];
+            for(byte sector = Directory.Sector; sector <= diskStructure[Directory.Track]; ++sector)
             {
                 trk.SetFlag(sector);
             }
