@@ -276,6 +276,7 @@ namespace Casasoft.Commodore.Disk
         {
             byte[] ret = new byte[Header.totalSectors * sectorSize];
             Header.Save(this);
+            RootDir.Save(this);
             int current = 0;
             foreach(List<byte[]> trk in diskData)
                 foreach(byte[] sect in trk)
@@ -296,5 +297,6 @@ namespace Casasoft.Commodore.Disk
             for (int j = 0; j < sectorSize; ++j) ret[j] = 0;
             return ret;
         }
+
     }
 }

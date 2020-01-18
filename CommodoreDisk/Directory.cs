@@ -80,8 +80,8 @@ namespace Casasoft.Commodore.Disk
         public void Load(BaseDisk disk, byte track, byte sector)
         {
             byte[] sectorData = disk.GetSector(track, sector);
-            
-            for (byte j = 0; j < EntriesPerSector ; j++)
+
+            for (byte j = 0; j < EntriesPerSector; j++)
             {
                 byte[] entryData = new byte[DirectoryEntry.EntrySize];
                 Array.Copy(sectorData, j * DirectoryEntry.EntrySize, entryData, 0, DirectoryEntry.EntrySize);
@@ -174,15 +174,41 @@ namespace Casasoft.Commodore.Disk
             // see https://stackoverflow.com/questions/17944/how-to-round-up-the-result-of-integer-division
             for (int j = 0; j < sectors; j++)
             {
-                byte[] s = new byte[BaseDisk.sectorSize];
-                for (int k = 0; k < BaseDisk.sectorSize; ++k) s[k] = 0;
+                byte[] s = BaseDisk.EmptySector();
                 for (int e = 0; e < EntriesPerSector && j * EntriesPerSector + e < dir.Count; ++e)
                 {
-                    Array.Copy(dir[j * EntriesPerSector + e].ToRaw(), 0, 
+                    Array.Copy(dir[j * EntriesPerSector + e].ToRaw(), 0,
                         s, e * DirectoryEntry.EntrySize, DirectoryEntry.EntrySize);
                 }
             }
             return ret;
         }
+
+        /// <summary>
+        /// Puts directory in disk sectors
+        /// </summary>
+        /// <param name="disk"></param>
+        public void Save(BaseDisk disk)
+        {
+            disk.Header.FreeSectorsOnDirectoryTrack();
+            List<byte[]> rawData = ToRaw();
+            byte prevSect = disk.Header.DirectorySector;
+            if (rawData.Count > 0)
+            {
+                disk.PutSector(disk.Header.DirectoryTrack, prevSect, rawData[0]);
+                for (int j = 1; j < rawData.Count; ++j)
+                {
+                    int sect = disk.Header.GetAFreeSector(disk.Header.DirectoryTrack);
+                    if(sect > 0)
+                    {
+                        disk.GetSector(disk.Header.DirectoryTrack, prevSect)[0] = disk.Header.DirectoryTrack;
+                        disk.GetSector(disk.Header.DirectoryTrack, prevSect)[0] = (byte)sect;
+                        prevSect = (byte)sect;
+                        disk.PutSector(disk.Header.DirectoryTrack, sect, rawData[j]);
+                    }
+                }
+            }
+        }
+
     }
 }

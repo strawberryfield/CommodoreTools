@@ -235,5 +235,41 @@ namespace Casasoft.Commodore.Disk
         {
             return string.Format("{0,4} sectors free", GetFreeSectorCount());
         }
+
+        /// <summary>
+        /// Frees all sectors available for directory store
+        /// </summary>
+        public virtual void FreeSectorsOnDirectoryTrack()
+        {
+            BAMentry trk = SectorsMap[DirectoryTrack];
+            for(byte sector = DirectorySector; sector <= diskStructure[DirectoryTrack]; ++sector)
+            {
+                trk.SetFlag(sector);
+            }
+        }
+
+        /// <summary>
+        /// First free sector in track
+        /// </summary>
+        /// <param name="track"></param>
+        /// <returns>-1 if no sector available</returns>
+        public int GetAFreeSector(byte track)
+        {
+            int ret = -1;
+            BAMentry trk = SectorsMap[track];
+            if(trk.FreeSectors > 0)
+            {
+                for(int j=0; j<diskStructure[track]; ++j)
+                {
+                    if (trk.GetFlag(j))
+                    {
+                        ret = j;
+                        break;
+                    }
+                }
+            }
+            return ret;
+        }
+
     }
 }
